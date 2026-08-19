@@ -13,7 +13,9 @@ from __future__ import annotations
 
 from ..core.http import Bloqueado, FalhouDeVerdade, buscar
 from ..core.modelos import normalizar_texto
-from .plataformas import noomis, renderizado, rx, smarter_e, swapcard, tradechina
+from .plataformas import (
+    noomis, renderizado, rx, smarter_e, swapcard, tradechina, wordpress,
+)
 from .plataformas.descoberta import descobrir
 from .plataformas.detectar import detectar_plataforma
 
@@ -235,6 +237,21 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
             return _resultado(BLOQUEADO, plataforma="rx", pagina=pagina, detalhe=exc.motivo)
         except FalhouDeVerdade as exc:
             plataforma = "rx"  # segue para o genérico, mas registra o que era
+
+    # 3b) WordPress REST: muitas feiras medias publicam a lista num tipo de conteudo
+    #     proprio e nem sabem. Vem limpo e paginado, e ganha do raspador.
+    if "wp-json" in html or "/wp-content/" in html:
+        try:
+            dados = wordpress.coletar(site)
+            if dados["expositores"]:
+                return _resultado(OK, plataforma="wordpress", pagina=pagina,
+                                  url_dados=site, expositores=dados["expositores"],
+                                  total_informado=dados["total_informado"])
+        except Bloqueado as exc:
+            return _resultado(BLOQUEADO, plataforma="wordpress", pagina=pagina,
+                              detalhe=exc.motivo)
+        except FalhouDeVerdade:
+            pass  # sem tipo de conteúdo de expositor: segue para o genérico
 
     # 4) genérico sobre o HTML servido
     empresas = _parse_generico(pagina)
