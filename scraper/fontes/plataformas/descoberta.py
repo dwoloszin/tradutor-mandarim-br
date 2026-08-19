@@ -24,7 +24,10 @@ CAMINHOS_CANDIDATOS = [
     "/expositores", "/expositores/", "/lista-de-expositores", "/lista-de-expositores/",
     "/lista-expositores", "/a-feira/lista-expositores/", "/expositores/lista",
     "/exhibitors", "/exhibitor-list", "/exhibitors/", "/participantes",
-    "/pt-br/expositores.html", "/pt-br/lista-de-expositores.html",
+    # A RX usa inicial maiuscula e o servidor e case-sensitive: a variante minuscula
+    # devolve 404 e a feira inteira se perde por causa de uma letra.
+    "/pt-br/Expositores.html", "/pt-br/expositores.html",
+    "/pt-br/Lista-de-Expositores.html", "/pt-br/lista-de-expositores.html",
     "/pt-br/visitar/lista-de-expositores.html", "/catalogo-de-expositores",
     "/quem-expoe", "/marcas", "/empresas-participantes",
 ]

@@ -330,3 +330,7 @@ textarea.nota {
   .campo.busca input { min-width: 100%; }
   .campo, .campo select, .campo input { width: 100%; }
 }
+
+/* Filtro que não vale para a aba atual: visível, mas claramente fora de uso. */
+.campo.inativo, .alternador.inativo { opacity: .38; cursor: not-allowed; }
+.campo.inativo select, .alternador.inativo input { cursor: not-allowed; }

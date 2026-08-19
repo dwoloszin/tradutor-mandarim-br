@@ -98,6 +98,33 @@ def etapa_agenda(hoje: date | None = None) -> dict:
             novos += 1
         eventos_tab.upsert(evento)
 
+    # Feira curada cuja única aparição na agenda é a edição que já passou: o
+    # data_texto do config descreve a PRÓXIMA edição, então criamos esse evento.
+    # Sem isto, bienais como FEICON e EXPOMAFE ficam eternamente "encerradas".
+    from .core.datas import interpretar_periodo as _periodo
+    from .core.modelos import chave_evento as _chave, novo_evento as _novo
+    for feira in config.values():
+        texto_data = feira.get("data_texto")
+        if not texto_data:
+            continue
+        inicio_cfg, fim_cfg = _periodo(texto_data, hoje)
+        if not inicio_cfg or encerrado(fim_cfg, hoje):
+            continue
+        id_proxima = _chave(feira["nome"], inicio_cfg[:4])
+        if eventos_tab.obter(id_proxima) is not None:
+            continue
+        eventos_tab.upsert(_novo(
+            id=id_proxima, nome=feira["nome"], site=feira.get("site", ""),
+            pagina_expositores=feira.get("pagina_expositores", ""),
+            data_inicio=inicio_cfg, data_fim=fim_cfg, data_texto=texto_data,
+            local_nome=feira.get("local", ""), cidade=feira.get("cidade", ""),
+            uf=feira.get("uf", ""), setor=feira.get("setor", ""),
+            prioridade=feira.get("prioridade", 5),
+            densidade_china=feira.get("densidade_china", ""),
+            encerrado=False, fontes=["config/feiras_prioritarias.json"],
+        ))
+        novos += 1
+
     # Feiras curadas que não apareceram em nenhuma agenda entram assim mesmo.
     # A checagem tem que considerar os apelidos: a Intersolar aparece na agenda do
     # Expo Center Norte como "The smarter E South America", e sem isso criávamos um

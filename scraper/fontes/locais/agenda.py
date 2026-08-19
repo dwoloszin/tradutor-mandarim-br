@@ -13,6 +13,7 @@ permite esconder feira encerrada e priorizar o que está perto de acontecer.
 """
 from __future__ import annotations
 
+import re
 from datetime import date
 
 from bs4 import BeautifulSoup
@@ -117,9 +118,21 @@ def _parse_mec(html: str, local: str, cidade: str, uf: str, fonte: str,
         categorias = [normalizar_texto(a.get_text()) for a in artigo.select(".mec-categories a")]
         expirado_no_site = bool(artigo.select_one(".mec-expired-normal-label"))
 
+        data_texto = normalizar_texto(data_el.get_text()) if data_el else ""
+
+        # O site marcando "expirado" é mais confiável que nossa leitura da data: a
+        # agenda escreve "27 - 30 jan" sem ano, e nós chutamos o próximo janeiro.
+        # Se o site diz que já passou, o ano certo é o anterior. Corrigimos ANTES de
+        # montar o evento, senão o id nasce com um ano e a data com outro — e o id
+        # é a identidade do registro, não dá para consertar depois.
+        if expirado_no_site and data_texto and not re.search(r"(19|20)\d{2}", data_texto):
+            inicio_provisorio, _ = interpretar_periodo(data_texto, hoje)
+            if inicio_provisorio and inicio_provisorio > hoje_iso:
+                data_texto = f"{data_texto} {int(inicio_provisorio[:4]) - 1}"
+
         evento = _montar(
             nome, local, cidade, uf, fonte,
-            data_texto=data_el.get_text() if data_el else "",
+            data_texto=data_texto,
             pavilhao=local_el.get_text() if local_el else "",
             descricao=descricao_el.get_text() if descricao_el else "",
             categorias=categorias,
@@ -127,17 +140,9 @@ def _parse_mec(html: str, local: str, cidade: str, uf: str, fonte: str,
             site=link if dominio_de(link) != dominio_de(fonte) else "",
             hoje=hoje,
         )
-        # O site marcando "expirado" é mais confiável que nossa leitura da data: a
-        # agenda escreve "27 - 30 jan" sem ano, e nós chutamos o próximo janeiro.
-        # Se o site diz que já passou, o ano certo é o anterior — corrigimos a data,
-        # senão a feira reapareceria como futura na próxima rodada.
         if expirado_no_site:
             evento["encerrado"] = True
             evento["expirado_na_fonte"] = True
-            for campo in ("data_inicio", "data_fim"):
-                valor = evento.get(campo)
-                if valor and valor > hoje_iso:
-                    evento[campo] = f"{int(valor[:4]) - 1}{valor[4:]}"
         eventos.append(evento)
     return eventos
 

@@ -20,6 +20,25 @@ from ..deteccao import china as china_mod
 SAIDA = DATA_DIR.parent / "docs" / "data"
 
 
+def _renovar_versao_dos_assets() -> None:
+    """Carimba ?v=<data> no CSS e no JS a cada exportação.
+
+    Sem isso o navegador continua servindo o JavaScript antigo depois de publicarmos
+    uma correção: para o usuário, o bug simplesmente "não foi consertado" — e não há
+    como ele saber que precisa limpar o cache.
+    """
+    import re
+
+    indice = SAIDA.parent / "index.html"
+    if not indice.exists():
+        return
+    versao = datetime.now(timezone.utc).strftime("%Y%m%d%H%M")
+    html = indice.read_text(encoding="utf-8")
+    novo = re.sub(r"(assets/(?:estilo\.css|app\.js))(\?v=\d+)?", rf"\1?v={versao}", html)
+    if novo != html:
+        indice.write_text(novo, encoding="utf-8")
+
+
 def _agrupar_participacoes(participacoes: list[dict]) -> dict[str, list[dict]]:
     por_empresa: dict[str, list[dict]] = {}
     for p in participacoes:
@@ -156,6 +175,7 @@ def exportar(hoje: date | None = None) -> dict:
     eventos_saida.sort(key=lambda e: (e["encerrada"], e["inicio"] or "9999"))
 
     SAIDA.mkdir(parents=True, exist_ok=True)
+    _renovar_versao_dos_assets()
     escrever_json(SAIDA / "empresas.json", principais)
     escrever_json(SAIDA / "empresas_revisao.json", revisao)
     escrever_json(SAIDA / "feiras.json", eventos_saida)

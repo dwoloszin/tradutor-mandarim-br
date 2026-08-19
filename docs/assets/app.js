@@ -346,14 +346,38 @@ function desenharFeirasAba(filtros) {
   </table></div>`;
 }
 
+/* Filtro que nao se aplica a aba atual nao pode ficar clicavel: na aba de feiras,
+ * "so com contato" e "ocultar contatados" sao filtros de EMPRESA e nao mudam nada.
+ * Deixa-los ativos faz o usuario clicar, nada acontecer, e concluir que esta quebrado. */
+const FILTROS_SO_EMPRESAS = ['f-so-contato', 'f-ocultar-contatados', 'f-so-confirmadas',
+                             'f-setor', 'f-porte', 'f-origem', 'f-ordem', 'f-feira'];
+
+function ajustarFiltrosVisiveis() {
+  const naFeiras = estado.aba === 'feiras';
+  FILTROS_SO_EMPRESAS.forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.disabled = naFeiras;
+    const campo = el.closest('.campo') || el.closest('.alternador');
+    if (campo) {
+      campo.classList.toggle('inativo', naFeiras);
+      campo.title = naFeiras ? 'só vale na aba de empresas' : '';
+    }
+  });
+}
+
 function renderizar() {
   const filtros = lerFiltros();
   const conteudo = document.getElementById('conteudo');
   const contagem = document.getElementById('contagem');
+  ajustarFiltrosVisiveis();
 
   if (estado.aba === 'feiras') {
-    contagem.textContent = '';
+    const total = estado.feiras.length;
     conteudo.innerHTML = desenharFeirasAba(filtros);
+    const mostradas = (conteudo.querySelectorAll('tbody tr') || []).length;
+    contagem.textContent = `${mostradas} de ${total} feiras`
+      + (filtros.ocultarEncerradas ? ' · encerradas ocultas' : ' · incluindo encerradas');
     return;
   }
 
@@ -361,8 +385,12 @@ function renderizar() {
   const filtradas = ordenar(base.filter((e) => empresaPassa(e, filtros)), filtros.ordem);
 
   const comContato = filtradas.filter((e) => e.tem_contato).length;
-  contagem.textContent = `${filtradas.length} empresa(s) — ${comContato} com contato pronto`
-    + (filtros.ocultarEncerradas ? ' · feiras encerradas ocultas' : ' · incluindo feiras encerradas');
+  const totalBase = base.length;
+  const escondidas = totalBase - filtradas.length;
+  contagem.textContent =
+    `${filtradas.length} de ${totalBase} empresas`
+    + (escondidas ? ` (${escondidas} ocultas pelos filtros)` : ' (nenhum filtro ativo)')
+    + ` — ${comContato} com contato pronto`;
 
   conteudo.innerHTML = filtradas.length
     ? filtradas.map((e) => desenharCartao(e, filtros)).join('')
