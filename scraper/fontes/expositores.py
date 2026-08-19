@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from ..core.http import Bloqueado, FalhouDeVerdade, buscar
 from ..core.modelos import normalizar_texto
-from .plataformas import renderizado, rx, smarter_e, swapcard, tradechina
+from .plataformas import noomis, renderizado, rx, smarter_e, swapcard, tradechina
 from .plataformas.descoberta import descobrir
 from .plataformas.detectar import detectar_plataforma
 
@@ -160,6 +160,21 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
             return _resultado(BLOQUEADO, plataforma="smarter_e", detalhe=exc.motivo)
         except FalhouDeVerdade as exc:
             return _resultado(ERRO, plataforma="smarter_e", detalhe=exc.motivo)
+
+    # 0c) Noomis (plataforma da FEBRAVA/FEBRABAN): API publica com nome, pavilhao e
+    #     estande em campos proprios — bem melhor que raspar a pagina.
+    if config_feira.get("plataforma") == "noomis" and config_feira.get("slug_noomis"):
+        try:
+            dados = noomis.coletar(config_feira["slug_noomis"])
+            return _resultado(OK, plataforma="noomis",
+                              pagina=config_feira.get("pagina_expositores", ""),
+                              url_dados=config_feira["slug_noomis"],
+                              expositores=dados["expositores"],
+                              total_informado=dados["total_informado"])
+        except Bloqueado as exc:
+            return _resultado(BLOQUEADO, plataforma="noomis", detalhe=exc.motivo)
+        except FalhouDeVerdade as exc:
+            return _resultado(ERRO, plataforma="noomis", detalhe=exc.motivo)
 
     # 1) plataforma já conhecida e apontada à mão
     if url_fixada and "/exhibitors/" in url_fixada and "event/" in url_fixada:

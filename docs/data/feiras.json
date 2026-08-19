@@ -171,7 +171,7 @@
     "id": "ev:febraban:2026",
     "nome": "FEBRABAN TECH 2026",
     "site": "https://portal.febraban.org.br/FebrabanTech",
-    "pagina_expositores": "",
+    "pagina_expositores": "https://febrabantech.com/expositores",
     "inicio": "2026-08-24",
     "fim": "2026-08-26",
     "data_texto": "24 - 26 ago",
@@ -183,9 +183,9 @@
     "densidade_china": "baixa",
     "encerrada": false,
     "dias": 5,
-    "total_expositores": 0,
+    "total_expositores": 340,
     "total_chinesas": 0,
-    "plataforma": "",
+    "plataforma": "noomis",
     "prioridade": 3
   },
   {

@@ -368,7 +368,9 @@
       "apelidos": [
         "FEBRABAN TECH 2026"
       ],
-      "observacao": "Setor majoritariamente nacional; entra pela cobertura, não pela densidade."
+      "observacao": "Setor majoritariamente nacional; entra pela cobertura, não pela densidade.",
+      "plataforma": "noomis",
+      "slug_noomis": "febrabantech"
     },
     {
       "nome": "Web Summit Rio",
