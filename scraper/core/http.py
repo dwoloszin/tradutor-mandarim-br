@@ -198,6 +198,14 @@ def buscar(
     if em_cache is not None:
         return em_cache
 
+    # A checagem vem antes de qualquer requisição de conteúdo: é o que transforma
+    # "respeitamos robots.txt" de intenção em garantia.
+    from .robots import ProibidoPorRobots, exigir_permissao
+    try:
+        exigir_permissao(url)
+    except ProibidoPorRobots as exc:
+        raise FalhouDeVerdade(url, "proibido pelo robots.txt do site") from exc
+
     cabecalhos = dict(kwargs.pop("headers", {}) or {})
     if referer:
         cabecalhos["Referer"] = referer

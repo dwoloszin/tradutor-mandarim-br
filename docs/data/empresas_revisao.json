@@ -40,6 +40,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -52,7 +64,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
     "dias_para_proxima": 6,
@@ -226,6 +238,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R5.70",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -238,7 +262,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R5.70",
     "dias_para_proxima": 6,
@@ -286,6 +310,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -298,7 +334,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.80",
     "dias_para_proxima": 6,
@@ -346,6 +382,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G6.86",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -358,7 +406,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G6.86",
     "dias_para_proxima": 6,
@@ -406,6 +454,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.63",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -418,7 +478,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.63",
     "dias_para_proxima": 6,
@@ -466,6 +526,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G4.65",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -478,7 +550,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G4.65",
     "dias_para_proxima": 6,
@@ -587,6 +659,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W5.24",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -599,7 +683,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W5.24",
     "dias_para_proxima": 6,
@@ -647,6 +731,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B2.31",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -659,7 +755,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B2.31",
     "dias_para_proxima": 6,
@@ -834,6 +930,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R5.34",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -846,7 +954,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R5.34",
     "dias_para_proxima": 6,
@@ -955,6 +1063,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W3.17",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -967,7 +1087,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W3.17",
     "dias_para_proxima": 6,
@@ -1135,6 +1255,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.70",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1147,7 +1279,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.70",
     "dias_para_proxima": 6,
@@ -1198,6 +1330,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G074",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -1211,9 +1355,9 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "G074",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -1258,6 +1402,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R0.13",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1270,7 +1426,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R0.13",
     "dias_para_proxima": 6,
@@ -1318,6 +1474,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1330,7 +1498,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.80",
     "dias_para_proxima": 6,
@@ -1378,6 +1546,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R6.89",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1390,7 +1570,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.89",
     "dias_para_proxima": 6,
@@ -1438,6 +1618,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B5.31",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1450,7 +1642,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B5.31",
     "dias_para_proxima": 6,
@@ -1516,6 +1708,128 @@
     "dias_para_proxima": -127,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
+  },
+  {
+    "id": "emp:n:china-link",
+    "nome": "CHINA LINK",
+    "nome_zh": "",
+    "pais": "",
+    "origem": "china",
+    "cidade": "",
+    "provincia": "",
+    "setor": "eletroeletrônicos e eletrodomésticos",
+    "produtos": [],
+    "website": "",
+    "website_cn": "",
+    "emails": [],
+    "telefones": [],
+    "whatsapps": [],
+    "wechat": "",
+    "contato_nome": "",
+    "funcionarios": "",
+    "ano_fundacao": "",
+    "tipo_negocio": "",
+    "receita_anual": "",
+    "porte": "",
+    "perfis": {},
+    "score_china": 2,
+    "classificacao": "suspeita",
+    "motivos": [
+      "menção a China no texto: \"china\""
+    ],
+    "descricao": "",
+    "links_pesquisa": {
+      "google": "https://www.google.com/search?q=CHINA+LINK",
+      "baidu": "https://www.baidu.com/s?wd=CHINA+LINK",
+      "alibaba": "https://www.alibaba.com/trade/search?SearchText=CHINA+LINK",
+      "made_in_china": "https://www.made-in-china.com/productdirectory.do?word=CHINA+LINK",
+      "1688": "https://s.1688.com/selloffer/offer_search.htm?keywords=CHINA+LINK",
+      "qcc": "https://www.qcc.com/web/search?key=CHINA+LINK",
+      "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=CHINA+LINK"
+    },
+    "tem_contato": false,
+    "feiras": [
+      {
+        "evento_id": "ev:eletrolar-show",
+        "nome": "Eletrolar Show",
+        "inicio": "",
+        "fim": "",
+        "local": "Distrito Anhembi",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "",
+        "encerrada": false,
+        "dias": null
+      }
+    ],
+    "proxima_feira": "Eletrolar Show",
+    "proxima_data": "",
+    "proximo_stand": "",
+    "dias_para_proxima": null,
+    "tem_feira_futura": true,
+    "atualizado_em": "2026-08-19T17:12:02+00:00"
+  },
+  {
+    "id": "emp:n:china-link-do-brasil-consultoria-internacional",
+    "nome": "CHINA LINK DO BRASIL CONSULTORIA INTERNACIONAL LTDA",
+    "nome_zh": "",
+    "pais": "Brasil",
+    "origem": "china",
+    "cidade": "",
+    "provincia": "",
+    "setor": "construção civil e arquitetura",
+    "produtos": [],
+    "website": "",
+    "website_cn": "",
+    "emails": [
+      "relacionamento@chinalinktrading.com"
+    ],
+    "telefones": [],
+    "whatsapps": [],
+    "wechat": "",
+    "contato_nome": "",
+    "funcionarios": "",
+    "ano_fundacao": "",
+    "tipo_negocio": "",
+    "receita_anual": "",
+    "porte": "",
+    "perfis": {},
+    "score_china": 2,
+    "classificacao": "suspeita",
+    "motivos": [
+      "menção a China no texto: \"china\""
+    ],
+    "descricao": "",
+    "links_pesquisa": {
+      "google": "https://www.google.com/search?q=CHINA+LINK+DO+BRASIL+CONSULTORIA+INTERNACIONAL+LTDA",
+      "baidu": "https://www.baidu.com/s?wd=CHINA+LINK+DO+BRASIL+CONSULTORIA+INTERNACIONAL+LTDA",
+      "alibaba": "https://www.alibaba.com/trade/search?SearchText=CHINA+LINK+DO+BRASIL+CONSULTORIA+INTERNACIONAL+LTDA",
+      "made_in_china": "https://www.made-in-china.com/productdirectory.do?word=CHINA+LINK+DO+BRASIL+CONSULTORIA+INTERNACIONAL+LTDA",
+      "1688": "https://s.1688.com/selloffer/offer_search.htm?keywords=CHINA+LINK+DO+BRASIL+CONSULTORIA+INTERNACIONAL+LTDA",
+      "qcc": "https://www.qcc.com/web/search?key=CHINA+LINK+DO+BRASIL+CONSULTORIA+INTERNACIONAL+LTDA",
+      "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=CHINA+LINK+DO+BRASIL+CONSULTORIA+INTERNACIONAL+LTDA"
+    },
+    "tem_contato": true,
+    "feiras": [
+      {
+        "evento_id": "ev:feicon:2027",
+        "nome": "FEICON",
+        "inicio": "2027-04-06",
+        "fim": "2027-04-09",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "E306",
+        "encerrada": false,
+        "dias": 230
+      }
+    ],
+    "proxima_feira": "FEICON",
+    "proxima_data": "2027-04-06",
+    "proximo_stand": "E306",
+    "dias_para_proxima": 230,
+    "tem_feira_futura": true,
+    "atualizado_em": "2026-08-19T18:13:12+00:00"
   },
   {
     "id": "emp:n:china-transport-logistics",
@@ -1618,6 +1932,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R7.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1630,12 +1956,12 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R7.80",
     "dias_para_proxima": 6,
     "tem_feira_futura": true,
-    "atualizado_em": "2026-08-19T16:54:25+00:00"
+    "atualizado_em": "2026-08-19T18:13:27+00:00"
   },
   {
     "id": "emp:n:ckmne",
@@ -1678,6 +2004,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G1.101",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1690,7 +2028,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G1.101",
     "dias_para_proxima": 6,
@@ -1741,6 +2079,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "F025",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -1754,9 +2104,9 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "F025",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -1801,6 +2151,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "E100",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -1814,9 +2176,9 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "E100",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -1922,6 +2284,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B1.06",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1934,7 +2308,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.06",
     "dias_para_proxima": 6,
@@ -1982,6 +2356,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.44",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -1994,12 +2380,156 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.44",
     "dias_para_proxima": 6,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
+  },
+  {
+    "id": "emp:n:china-86",
+    "nome": "China (+86)",
+    "nome_zh": "",
+    "pais": "",
+    "origem": "china",
+    "cidade": "",
+    "provincia": "",
+    "setor": "",
+    "produtos": [],
+    "website": "",
+    "website_cn": "",
+    "emails": [],
+    "telefones": [],
+    "whatsapps": [],
+    "wechat": "",
+    "contato_nome": "",
+    "funcionarios": "",
+    "ano_fundacao": "",
+    "tipo_negocio": "",
+    "receita_anual": "",
+    "porte": "",
+    "perfis": {},
+    "score_china": 2,
+    "classificacao": "suspeita",
+    "motivos": [
+      "menção a China no texto: \"china\""
+    ],
+    "descricao": "",
+    "links_pesquisa": {
+      "google": "https://www.google.com/search?q=China+%28%2B86%29",
+      "baidu": "https://www.baidu.com/s?wd=China+%28%2B86%29",
+      "alibaba": "https://www.alibaba.com/trade/search?SearchText=China+%28%2B86%29",
+      "made_in_china": "https://www.made-in-china.com/productdirectory.do?word=China+%28%2B86%29",
+      "1688": "https://s.1688.com/selloffer/offer_search.htm?keywords=China+%28%2B86%29",
+      "qcc": "https://www.qcc.com/web/search?key=China+%28%2B86%29",
+      "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=China+%28%2B86%29"
+    },
+    "tem_contato": false,
+    "feiras": [
+      {
+        "evento_id": "ev:congresso-brasileiro-de-psiquiatria-cbp:2026",
+        "nome": "CONGRESSO BRASILEIRO DE PSIQUIATRIA – CBP",
+        "inicio": "2026-10-28",
+        "fim": "2026-10-31",
+        "local": "Distrito Anhembi",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "",
+        "encerrada": false,
+        "dias": 70
+      },
+      {
+        "evento_id": "ev:expo-abla:2026",
+        "nome": "EXPO ABLA",
+        "inicio": "2026-10-28",
+        "fim": "2026-10-29",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "",
+        "encerrada": false,
+        "dias": 70
+      }
+    ],
+    "proxima_feira": "CONGRESSO BRASILEIRO DE PSIQUIATRIA – CBP",
+    "proxima_data": "2026-10-28",
+    "proximo_stand": "",
+    "dias_para_proxima": 70,
+    "tem_feira_futura": true,
+    "atualizado_em": "2026-08-19T17:49:44+00:00"
+  },
+  {
+    "id": "emp:n:china-joy",
+    "nome": "China Joy",
+    "nome_zh": "",
+    "pais": "",
+    "origem": "china",
+    "cidade": "",
+    "provincia": "",
+    "setor": "games, periféricos e hardware",
+    "produtos": [],
+    "website": "",
+    "website_cn": "",
+    "emails": [],
+    "telefones": [],
+    "whatsapps": [],
+    "wechat": "",
+    "contato_nome": "",
+    "funcionarios": "",
+    "ano_fundacao": "",
+    "tipo_negocio": "",
+    "receita_anual": "",
+    "porte": "",
+    "perfis": {},
+    "score_china": 2,
+    "classificacao": "suspeita",
+    "motivos": [
+      "menção a China no texto: \"china\""
+    ],
+    "descricao": "",
+    "links_pesquisa": {
+      "google": "https://www.google.com/search?q=China+Joy",
+      "baidu": "https://www.baidu.com/s?wd=China+Joy",
+      "alibaba": "https://www.alibaba.com/trade/search?SearchText=China+Joy",
+      "made_in_china": "https://www.made-in-china.com/productdirectory.do?word=China+Joy",
+      "1688": "https://s.1688.com/selloffer/offer_search.htm?keywords=China+Joy",
+      "qcc": "https://www.qcc.com/web/search?key=China+Joy",
+      "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=China+Joy"
+    },
+    "tem_contato": false,
+    "feiras": [
+      {
+        "evento_id": "ev:brasil-game-show-bgs:2026",
+        "nome": "BRASIL GAME SHOW (BGS)",
+        "inicio": "2026-10-09",
+        "fim": "2026-10-12",
+        "local": "Distrito Anhembi",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "",
+        "encerrada": false,
+        "dias": 51
+      },
+      {
+        "evento_id": "ev:brasil-game-show",
+        "nome": "Brasil Game Show",
+        "inicio": "",
+        "fim": "",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "",
+        "encerrada": false,
+        "dias": null
+      }
+    ],
+    "proxima_feira": "BRASIL GAME SHOW (BGS)",
+    "proxima_data": "2026-10-09",
+    "proximo_stand": "",
+    "dias_para_proxima": 51,
+    "tem_feira_futura": true,
+    "atualizado_em": "2026-08-19T17:13:52+00:00"
   },
   {
     "id": "emp:d:cortenlogistics.com",
@@ -2168,6 +2698,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.33",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2180,7 +2722,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.33",
     "dias_para_proxima": 6,
@@ -2228,6 +2770,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.51",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2240,7 +2794,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.51",
     "dias_para_proxima": 6,
@@ -2288,6 +2842,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G3.35",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2300,7 +2866,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G3.35",
     "dias_para_proxima": 6,
@@ -2411,6 +2977,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G2.85",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2423,7 +3001,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G2.85",
     "dias_para_proxima": 6,
@@ -2471,6 +3049,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B5.97",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2483,7 +3073,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B5.97",
     "dias_para_proxima": 6,
@@ -2531,6 +3121,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.87",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2543,7 +3145,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.87",
     "dias_para_proxima": 6,
@@ -2591,6 +3193,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G1.101",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2603,7 +3217,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G1.101",
     "dias_para_proxima": 6,
@@ -2636,7 +3250,8 @@
     "score_china": 2,
     "classificacao": "suspeita",
     "motivos": [
-      "menção a China no texto: \"chinesa\""
+      "menção a China no texto: \"chinesa\"",
+      "menção a China no texto: \"china\""
     ],
     "descricao": "QUEM SOMOS A Vitch Moulds é uma empresa chinesa especializada no fornecimento de moldes para injeção plástica. Com mais de 10 anos de experiência no mercado, atendemos todo o território brasileiro, oferecendo moldes de qualidade, personalizados para a necessidade do seu projeto. Nossa empresa faz parte do grupo Lead International e se destaca no mercado Brasileiro como referência na produção de mo",
     "links_pesquisa": {
@@ -2652,6 +3267,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "H070",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -2665,11 +3292,11 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "H070",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
-    "atualizado_em": "2026-08-19T13:04:30+00:00"
+    "atualizado_em": "2026-08-19T18:14:05+00:00"
   },
   {
     "id": "emp:n:feeo",
@@ -2712,6 +3339,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2724,7 +3363,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
     "dias_para_proxima": 6,
@@ -2772,6 +3411,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2784,7 +3435,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.60",
     "dias_para_proxima": 6,
@@ -2832,6 +3483,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W6.85",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2844,7 +3507,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.85",
     "dias_para_proxima": 6,
@@ -2892,6 +3555,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G3.15",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2904,7 +3579,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G3.15",
     "dias_para_proxima": 6,
@@ -2952,6 +3627,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -2964,7 +3651,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.80",
     "dias_para_proxima": 6,
@@ -3012,6 +3699,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.100",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3024,7 +3723,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.100",
     "dias_para_proxima": 6,
@@ -3077,6 +3776,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "F069",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -3090,9 +3801,9 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "F069",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -3137,6 +3848,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R2.23",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3149,7 +3872,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R2.23",
     "dias_para_proxima": 6,
@@ -3197,6 +3920,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W5.20",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3209,12 +3944,75 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W5.20",
     "dias_para_proxima": 6,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
+  },
+  {
+    "id": "emp:d:goldwind.com",
+    "nome": "Goldwind",
+    "nome_zh": "",
+    "pais": "Brasil",
+    "origem": "china",
+    "cidade": "",
+    "provincia": "",
+    "setor": "",
+    "produtos": [],
+    "website": "https://www.goldwind.com/en",
+    "website_cn": "",
+    "emails": [],
+    "telefones": [],
+    "whatsapps": [],
+    "wechat": "",
+    "contato_nome": "",
+    "funcionarios": "",
+    "ano_fundacao": "",
+    "tipo_negocio": "",
+    "receita_anual": "",
+    "porte": "",
+    "perfis": {
+      "linkedin": "goldwind"
+    },
+    "score_china": 2,
+    "classificacao": "suspeita",
+    "motivos": [
+      "menção a China no texto: \"china\""
+    ],
+    "descricao": "Goldwind é líder global no desenvolvimento de produtos e serviços que promovem energia limpa, conservação de energia e proteção ambiental. Como empresa, estamos empenhados em promover a transformação energética para garantir o acesso a energia acessível, confiável e sustentável para todos - promovendo um futuro renovável. Especializada em energia eólica e proteção ambiental, a Goldwind alavanca su",
+    "links_pesquisa": {
+      "google": "https://www.google.com/search?q=Goldwind",
+      "baidu": "https://www.baidu.com/s?wd=Goldwind",
+      "alibaba": "https://www.alibaba.com/trade/search?SearchText=Goldwind",
+      "made_in_china": "https://www.made-in-china.com/productdirectory.do?word=Goldwind",
+      "1688": "https://s.1688.com/selloffer/offer_search.htm?keywords=Goldwind",
+      "qcc": "https://www.qcc.com/web/search?key=Goldwind",
+      "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=Goldwind",
+      "contato_no_site": "https://www.google.com/search?q=site:goldwind.com+(contact+OR+contato+OR+%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC)"
+    },
+    "tem_contato": false,
+    "feiras": [
+      {
+        "evento_id": "ev:brazil-windpower:2026",
+        "nome": "BRAZIL WINDPOWER",
+        "inicio": "2026-10-27",
+        "fim": "2026-10-29",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B-50",
+        "encerrada": false,
+        "dias": 69
+      }
+    ],
+    "proxima_feira": "BRAZIL WINDPOWER",
+    "proxima_data": "2026-10-27",
+    "proximo_stand": "B-50",
+    "dias_para_proxima": 69,
+    "tem_feira_futura": true,
+    "atualizado_em": "2026-08-19T17:53:05+00:00"
   },
   {
     "id": "emp:n:goomax",
@@ -3257,6 +4055,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R7.52",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3269,7 +4079,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R7.52",
     "dias_para_proxima": 6,
@@ -3381,6 +4191,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.96",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3393,7 +4215,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.96",
     "dias_para_proxima": 6,
@@ -3441,6 +4263,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G3.49",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3453,7 +4287,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G3.49",
     "dias_para_proxima": 6,
@@ -3562,6 +4396,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B2.63",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3574,7 +4420,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B2.63",
     "dias_para_proxima": 6,
@@ -3685,6 +4531,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.89",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3697,7 +4555,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.89",
     "dias_para_proxima": 6,
@@ -3745,6 +4603,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W2.31",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3757,7 +4627,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W2.31",
     "dias_para_proxima": 6,
@@ -3805,6 +4675,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W6.40",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3817,7 +4699,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.40",
     "dias_para_proxima": 6,
@@ -3926,6 +4808,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.90",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3938,7 +4832,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.90",
     "dias_para_proxima": 6,
@@ -3986,6 +4880,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G4.40",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -3998,7 +4904,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G4.40",
     "dias_para_proxima": 6,
@@ -4046,6 +4952,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.55",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4058,7 +4976,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.55",
     "dias_para_proxima": 6,
@@ -4106,6 +5024,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B068",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -4119,9 +5049,9 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "B068",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -4231,6 +5161,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.50",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4243,7 +5185,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.50",
     "dias_para_proxima": 6,
@@ -4430,6 +5372,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R2.25",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4442,7 +5396,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R2.25",
     "dias_para_proxima": 6,
@@ -4490,6 +5444,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R6.40",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4502,7 +5468,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.40",
     "dias_para_proxima": 6,
@@ -4550,6 +5516,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R6.40",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4562,7 +5540,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.40",
     "dias_para_proxima": 6,
@@ -4610,6 +5588,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4622,7 +5612,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
     "dias_para_proxima": 6,
@@ -4670,6 +5660,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.35",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4682,7 +5684,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.35",
     "dias_para_proxima": 6,
@@ -4794,6 +5796,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G5.81",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4806,7 +5820,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G5.81",
     "dias_para_proxima": 6,
@@ -4854,6 +5868,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R2.86",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4866,7 +5892,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R2.86",
     "dias_para_proxima": 6,
@@ -4914,6 +5940,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R6.63",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -4926,7 +5964,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.63",
     "dias_para_proxima": 6,
@@ -5035,6 +6073,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W6.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5047,7 +6097,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.80",
     "dias_para_proxima": 6,
@@ -5095,6 +6145,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.70",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5107,7 +6169,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.70",
     "dias_para_proxima": 6,
@@ -5216,6 +6278,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R6.55",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5228,7 +6302,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.55",
     "dias_para_proxima": 6,
@@ -5276,6 +6350,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5288,7 +6374,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.60",
     "dias_para_proxima": 6,
@@ -5336,6 +6422,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.70",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5348,7 +6446,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.70",
     "dias_para_proxima": 6,
@@ -5396,6 +6494,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B1.30",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5408,7 +6518,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.30",
     "dias_para_proxima": 6,
@@ -5456,6 +6566,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.117",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5468,7 +6590,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.117",
     "dias_para_proxima": 6,
@@ -5516,6 +6638,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.59",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5528,7 +6662,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.59",
     "dias_para_proxima": 6,
@@ -5637,6 +6771,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B054",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -5650,9 +6796,9 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "B054",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -5697,6 +6843,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5709,7 +6867,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.80",
     "dias_para_proxima": 6,
@@ -5757,6 +6915,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B2.110",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5769,7 +6939,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B2.110",
     "dias_para_proxima": 6,
@@ -5817,6 +6987,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W2.82",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5829,7 +7011,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W2.82",
     "dias_para_proxima": 6,
@@ -5877,6 +7059,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5889,7 +7083,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
     "dias_para_proxima": 6,
@@ -5937,6 +7131,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.70",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -5949,12 +7155,75 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.70",
     "dias_para_proxima": 6,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
+  },
+  {
+    "id": "emp:d:nordex-online.com",
+    "nome": "Nordex",
+    "nome_zh": "",
+    "pais": "Brasil",
+    "origem": "china",
+    "cidade": "",
+    "provincia": "",
+    "setor": "",
+    "produtos": [],
+    "website": "https://www.nordex-online.com/en/brazil",
+    "website_cn": "",
+    "emails": [],
+    "telefones": [],
+    "whatsapps": [],
+    "wechat": "",
+    "contato_nome": "",
+    "funcionarios": "",
+    "ano_fundacao": "",
+    "tipo_negocio": "",
+    "receita_anual": "",
+    "porte": "",
+    "perfis": {
+      "linkedin": "nordex"
+    },
+    "score_china": 2,
+    "classificacao": "suspeita",
+    "motivos": [
+      "menção a China no texto: \"china\""
+    ],
+    "descricao": "The development, manufacture, project management and servicing of wind turbines in the onshore segment has been the core competence and passion of the Nordex Group and its more than 10,900 employees worldwide for 40 years. As one of the world's largest wind turbine manufacturers, the Nordex Group offers high-yield, cost-efficient wind turbines that enable long-term and economical power generation ",
+    "links_pesquisa": {
+      "google": "https://www.google.com/search?q=Nordex",
+      "baidu": "https://www.baidu.com/s?wd=Nordex",
+      "alibaba": "https://www.alibaba.com/trade/search?SearchText=Nordex",
+      "made_in_china": "https://www.made-in-china.com/productdirectory.do?word=Nordex",
+      "1688": "https://s.1688.com/selloffer/offer_search.htm?keywords=Nordex",
+      "qcc": "https://www.qcc.com/web/search?key=Nordex",
+      "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=Nordex",
+      "contato_no_site": "https://www.google.com/search?q=site:nordex-online.com+(contact+OR+contato+OR+%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC)"
+    },
+    "tem_contato": false,
+    "feiras": [
+      {
+        "evento_id": "ev:brazil-windpower:2026",
+        "nome": "BRAZIL WINDPOWER",
+        "inicio": "2026-10-27",
+        "fim": "2026-10-29",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "C-50",
+        "encerrada": false,
+        "dias": 69
+      }
+    ],
+    "proxima_feira": "BRAZIL WINDPOWER",
+    "proxima_data": "2026-10-27",
+    "proximo_stand": "C-50",
+    "dias_para_proxima": 69,
+    "tem_feira_futura": true,
+    "atualizado_em": "2026-08-19T17:53:05+00:00"
   },
   {
     "id": "emp:n:oswell",
@@ -5997,6 +7266,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6009,7 +7290,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
     "dias_para_proxima": 6,
@@ -6057,6 +7338,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.79",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6069,7 +7362,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.79",
     "dias_para_proxima": 6,
@@ -6182,6 +7475,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.119",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6194,7 +7499,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.119",
     "dias_para_proxima": 6,
@@ -6303,6 +7608,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B1.04",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6315,7 +7632,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.04",
     "dias_para_proxima": 6,
@@ -6428,6 +7745,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6440,7 +7769,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
     "dias_para_proxima": 6,
@@ -6488,6 +7817,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.89",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6500,7 +7841,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.89",
     "dias_para_proxima": 6,
@@ -6548,6 +7889,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6560,7 +7913,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.80",
     "dias_para_proxima": 6,
@@ -6608,6 +7961,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "E120",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -6621,9 +7986,9 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "E120",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -6668,6 +8033,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.34",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6680,7 +8057,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.34",
     "dias_para_proxima": 6,
@@ -6728,6 +8105,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G5.85",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6740,7 +8129,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G5.85",
     "dias_para_proxima": 6,
@@ -6788,6 +8177,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G6.105",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6800,7 +8201,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G6.105",
     "dias_para_proxima": 6,
@@ -6848,6 +8249,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G1.70",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6860,7 +8273,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G1.70",
     "dias_para_proxima": 6,
@@ -6908,6 +8321,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.30",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6920,7 +8345,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.30",
     "dias_para_proxima": 6,
@@ -6968,6 +8393,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.51",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -6980,7 +8417,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.51",
     "dias_para_proxima": 6,
@@ -7028,6 +8465,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R6.53",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7040,7 +8489,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.53",
     "dias_para_proxima": 6,
@@ -7088,6 +8537,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.99",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7100,7 +8561,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.99",
     "dias_para_proxima": 6,
@@ -7148,6 +8609,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W5.40",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7160,7 +8633,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W5.40",
     "dias_para_proxima": 6,
@@ -7208,6 +8681,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W2.66",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7220,7 +8705,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W2.66",
     "dias_para_proxima": 6,
@@ -7268,6 +8753,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.41",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7280,7 +8777,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.41",
     "dias_para_proxima": 6,
@@ -7328,6 +8825,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7340,7 +8849,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.80",
     "dias_para_proxima": 6,
@@ -7517,6 +9026,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W6.20",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7529,7 +9050,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.20",
     "dias_para_proxima": 6,
@@ -7577,6 +9098,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W6.36",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7589,7 +9122,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.36",
     "dias_para_proxima": 6,
@@ -7637,6 +9170,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7649,7 +9194,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.80",
     "dias_para_proxima": 6,
@@ -7697,6 +9242,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B1.02",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7709,7 +9266,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.02",
     "dias_para_proxima": 6,
@@ -7817,6 +9374,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7829,7 +9398,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G4.60",
     "dias_para_proxima": 6,
@@ -7877,6 +9446,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B5.110",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -7889,7 +9470,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B5.110",
     "dias_para_proxima": 6,
@@ -8004,6 +9585,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "G3.17",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8016,7 +9609,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G3.17",
     "dias_para_proxima": 6,
@@ -8064,6 +9657,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B2.89",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8076,7 +9681,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B2.89",
     "dias_para_proxima": 6,
@@ -8124,6 +9729,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.10",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8136,7 +9753,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.10",
     "dias_para_proxima": 6,
@@ -8184,6 +9801,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W1.84",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8196,7 +9825,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W1.84",
     "dias_para_proxima": 6,
@@ -8244,6 +9873,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.70",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8256,7 +9897,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.70",
     "dias_para_proxima": 6,
@@ -8304,6 +9945,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8316,7 +9969,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
     "dias_para_proxima": 6,
@@ -8428,6 +10081,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W6.20",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8440,7 +10105,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.20",
     "dias_para_proxima": 6,
@@ -8488,6 +10153,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W1.30",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8500,7 +10177,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W1.30",
     "dias_para_proxima": 6,
@@ -8548,6 +10225,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.60",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8560,7 +10249,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
     "dias_para_proxima": 6,
@@ -8669,6 +10358,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B1.38",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8681,7 +10382,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.38",
     "dias_para_proxima": 6,
@@ -8791,6 +10492,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:pl-stico-brasil:2027",
+        "nome": "Plástico Brasil",
+        "inicio": "2027-03-15",
+        "fim": "2027-03-19",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "I006",
+        "encerrada": false,
+        "dias": 208
+      },
+      {
         "evento_id": "ev:pl-stico-brasil",
         "nome": "Plástico Brasil",
         "inicio": "",
@@ -8804,11 +10517,11 @@
       }
     ],
     "proxima_feira": "Plástico Brasil",
-    "proxima_data": "",
+    "proxima_data": "2027-03-15",
     "proximo_stand": "I006",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 208,
     "tem_feira_futura": true,
-    "atualizado_em": "2026-08-19T13:04:30+00:00"
+    "atualizado_em": "2026-08-19T18:14:05+00:00"
   },
   {
     "id": "emp:d:viemaq.com.br",
@@ -8979,6 +10692,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R6.40",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -8991,7 +10716,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.40",
     "dias_para_proxima": 6,
@@ -9074,7 +10799,7 @@
     "proximo_stand": "G18a",
     "dias_para_proxima": -114,
     "tem_feira_futura": true,
-    "atualizado_em": "2026-08-19T15:57:01+00:00"
+    "atualizado_em": "2026-08-19T18:45:38+00:00"
   },
   {
     "id": "emp:n:xhy-cable",
@@ -9117,6 +10842,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R6.81",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9129,7 +10866,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.81",
     "dias_para_proxima": 6,
@@ -9177,6 +10914,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B3.121",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9189,7 +10938,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.121",
     "dias_para_proxima": 6,
@@ -9237,6 +10986,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B4.80",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9249,7 +11010,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.80",
     "dias_para_proxima": 6,
@@ -9297,6 +11058,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R3.52",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9309,7 +11082,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R3.52",
     "dias_para_proxima": 6,
@@ -9422,6 +11195,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B6.70",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9434,7 +11219,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.70",
     "dias_para_proxima": 6,
@@ -9482,6 +11267,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "R2.19",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9494,7 +11291,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R2.19",
     "dias_para_proxima": 6,
@@ -9542,6 +11339,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W4.61",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9554,7 +11363,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.61",
     "dias_para_proxima": 6,
@@ -9602,6 +11411,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "W1.30",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9614,7 +11435,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W1.30",
     "dias_para_proxima": 6,
@@ -9662,6 +11483,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:intersolar-south-america:2026",
+        "nome": "Intersolar South America",
+        "inicio": "2026-08-25",
+        "fim": "2026-08-27",
+        "local": "Expo Center Norte",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "B1.05",
+        "encerrada": false,
+        "dias": 6
+      },
+      {
         "evento_id": "ev:the-smarter-e-south-america:2026",
         "nome": "The smarter E South America",
         "inicio": "2026-08-25",
@@ -9674,7 +11507,7 @@
         "dias": 6
       }
     ],
-    "proxima_feira": "The smarter E South America",
+    "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.05",
     "dias_para_proxima": 6,

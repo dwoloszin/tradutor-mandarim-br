@@ -27,7 +27,9 @@
       "observacao": "Feira 100% chinesa da Meorient. Um unico exhibition_id cobre todas as feiras irmas (Homelife, Machinex, AES, DeFu, BDE, INTEX): 1.934 expositores com porte, ano de fundacao e nome em chines.",
       "plataforma": "tradechina",
       "exhibition_id": "152996309411",
-      "data_texto": "16 a 18 de setembro de 2026"
+      "data_texto": "16 a 18 de setembro de 2026",
+      "permitir_apesar_do_robots": true,
+      "decisao_robots": "O host global-all-api.tradechina.com responde 'Disallow: /' para todo robô. Coleta autorizada explicitamente pelo dono do projeto em 19/08/2026, ciente de que contraria os termos da Meorient e pode levar a bloqueio de IP. Mitigação: 100 registros por requisição (20 chamadas para a feira inteira), pausa de 1,2s entre elas, uma coleta a cada 72h."
     },
     {
       "nome": "Intersolar South America",

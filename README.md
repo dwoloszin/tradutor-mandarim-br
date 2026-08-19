@@ -285,6 +285,29 @@ do próprio navegador — ninguém mais vê, nada é enviado para servidor. O bo
 ## Postura de coleta
 
 - Só lemos páginas públicas; não contornamos paywall nem quebramos proteção.
-- Respeitamos `robots.txt` e mantemos pausa entre requisições ao mesmo domínio.
+- **`robots.txt` é verificado pelo código**, não pela memória de quem escreve o
+  adaptador ([scraper/core/robots.py](scraper/core/robots.py)): toda requisição passa
+  pela checagem, e URL proibida falha na hora.
+- Pausa entre requisições ao mesmo domínio, sempre — inclusive com coleta em paralelo,
+  porque a pausa é por domínio, não global.
 - Onde há login, usamos a conta do próprio usuário, localmente, nunca no CI.
 - Se um site pedir para parar, o adaptador correspondente deve ser removido.
+
+### Uma exceção, assumida e registrada
+
+O host `global-all-api.tradechina.com` (China Homelife e feiras irmãs da Meorient)
+responde `Disallow: /` para todo robô. Essa é a maior fonte do projeto — 1.934
+empresas, cerca de 70% da base.
+
+A coleta dessa fonte foi **autorizada explicitamente pelo dono do projeto**, ciente de
+que contraria os termos da plataforma e pode levar a bloqueio de IP. A autorização não
+está no código: fica no campo `permitir_apesar_do_robots` da feira em
+[config/feiras_prioritarias.json](config/feiras_prioritarias.json), junto do motivo e da
+data. Sem esse campo, o adaptador se recusa a rodar.
+
+Mitigações em uso: 100 registros por requisição (20 chamadas para a feira inteira),
+1,2s de pausa entre elas e no máximo uma coleta a cada 72 horas.
+
+**O LinkedIn não é coletado.** O `robots.txt` deles é `Disallow: /` para robôs
+genéricos e a plataforma tem histórico de ação judicial contra scraping. Para vagas de
+intérprete, o site oferece link de busca pronto — o clique é seu, não do robô.

@@ -167,7 +167,21 @@ def _normalizar(item: dict, contexto: dict) -> dict:
 
 
 def coletar(exhibition_id: str, limite_paginas: int = PAGINAS_MAX) -> dict:
-    """Baixa todos os expositores de uma feira da Meorient."""
+    """Baixa todos os expositores de uma feira da Meorient.
+
+    ATENÇÃO — restrição conhecida: o host desta API responde
+
+        User-Agent: *
+        Disallow: /
+
+    ou seja, proíbe robôs em todo o site. Esta foi a maior fonte do projeto (1.934
+    empresas), mas coletá-la contraria o robots.txt e os termos da plataforma.
+
+    Por isso o adaptador vem **desligado por padrão**. Para usá-lo mesmo assim, é
+    preciso uma decisão explícita do dono do projeto, ligando `permitir: true` na
+    entrada da feira em config/feiras_prioritarias.json. A decisão fica registrada
+    no config, não escondida no código.
+    """
     if not exhibition_id:
         raise FalhouDeVerdade(BUSCA, "sem exhibitionId da feira")
 

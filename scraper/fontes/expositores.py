@@ -124,6 +124,15 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
     # 0) feiras da Meorient (China Homelife e irmas): a plataforma tem API propria,
     #    identificada pelo exhibition_id no config. Sao 100% expositores chineses.
     if config_feira.get("plataforma") == "tradechina" and config_feira.get("exhibition_id"):
+        # O host da API responde "Disallow: /" para todo robô. Só coletamos se houver
+        # autorização explícita e registrada no config — a decisão é do dono do
+        # projeto, e fica visível, não enterrada no código.
+        if not config_feira.get("permitir_apesar_do_robots"):
+            return _resultado(
+                SEM_LISTA, plataforma="tradechina",
+                detalhe="robots.txt do host proíbe robôs; ative "
+                        "'permitir_apesar_do_robots' no config para coletar mesmo assim",
+            )
         try:
             dados = tradechina.coletar(config_feira["exhibition_id"])
             return _resultado(OK, plataforma="tradechina",
