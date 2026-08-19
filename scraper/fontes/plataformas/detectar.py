@@ -49,7 +49,7 @@ PADRAO_LINK_NEGATIVO = re.compile(
     # Páginas de VENDA de estande. Elas falam de "expositor" o tempo todo e passam
     # pelo filtro positivo, mas não listam empresa nenhuma: raspar a "traga sua marca"
     # da FEBRAVA produziu 248 itens que não eram expositores.
-    r"traga-sua-marca|traga-sua-empresa|expor-na-|quero-expo|"
+    r"traga-sua-marca|traga-sua-empresa|expor-na-|quero-expo|torne-se|seja-um-expositor|"
     r"ja-sou-expositor|portal-do-expositor|exhibitor-hub|produtos-digitais|"
     r"midia-kit|midiakit|patrocin",
     re.IGNORECASE,
@@ -76,8 +76,33 @@ def detectar_plataforma(html: str) -> str | None:
     return None
 
 
+# "confirmados" e o sinal mais forte de que o link e a lista de verdade, e nao a
+# pagina de venda de estande.
+PADRAO_CONFIRMADOS = re.compile(
+    r"confirmad|lista-de-expositor|lista-expositor|catalogo|diretorio|"
+    r"quem-expoe|exhibitor-list",
+    re.IGNORECASE,
+)
+
+
+def _normalizar_agulha(href: str, texto: str) -> str:
+    """Junta URL e texto num formato unico para os padroes casarem.
+
+    Sem isto, "Torne-se um expositor" (com espacos) escapava do filtro que procurava
+    "torne-se-" (com hifen), e a pagina de VENDA de estande era escolhida como se
+    fosse a lista. Foi exatamente o que aconteceu na FEIPLAR: 15 itens raspados da
+    home, quando a lista real tinha centenas.
+    """
+    return re.sub(r"[^a-z0-9]+", "-", f"{href} {texto}".lower())
+
+
 def achar_pagina_expositores(site: str, html: str | None = None) -> str | None:
-    """Procura no site o link para o diretório de expositores confirmados."""
+    """Acha o link do diretorio de expositores, escolhendo por pontuacao.
+
+    Nao serve pegar o primeiro que casa: o mesmo site costuma ter "/expositores/"
+    (torne-se um) e "/expositores-confirmados-2026/" (a lista), e uma busca ingenua
+    acha os dois igualmente bons.
+    """
     try:
         sopa = buscar_sopa(site) if html is None else None
     except (Bloqueado, FalhouDeVerdade):
@@ -86,21 +111,36 @@ def achar_pagina_expositores(site: str, html: str | None = None) -> str | None:
         from bs4 import BeautifulSoup
         sopa = BeautifulSoup(html, "lxml")
 
-    reserva = None
+    candidatos: list[tuple[int, int, str]] = []
     for a in sopa.select("a[href]"):
         href = a.get("href", "")
-        texto = a.get_text(" ", strip=True)
-        agulha = f"{href} {texto}"
+        if not href or href.startswith(("#", "javascript:", "mailto:")):
+            continue
+        agulha = _normalizar_agulha(href, a.get_text(" ", strip=True))
+
         if PADRAO_LINK_NEGATIVO.search(agulha):
             continue
         if not PADRAO_LINK_EXPOSITOR.search(agulha):
             continue
-        url = urljoin(site, href)
-        if PADRAO_LINK_FORTE.search(agulha):
-            return url
-        if reserva is None:
-            reserva = url
-    return reserva
+
+        pontos = 2 if PADRAO_LINK_FORTE.search(agulha) else 1
+        if PADRAO_CONFIRMADOS.search(agulha):
+            pontos = 5
+
+        # O ano no link muda a cada edição ("expositores-confirmados-2026" vira 2027).
+        # Nunca fixamos a URL no config por isso: o ano entra como desempate, não como
+        # regra. Na virada, quando as duas páginas coexistem, a mais nova ganha; e se
+        # a feira parar de publicar a lista, a descoberta cai nos outros candidatos.
+        ano = re.search(r"(20\d{2})", agulha)
+        ano_valor = int(ano.group(1)) if ano else 0
+        if ano_valor:
+            pontos += 1
+        candidatos.append((pontos, ano_valor, urljoin(site, href)))
+
+    if not candidatos:
+        return None
+    candidatos.sort(key=lambda c: (-c[0], -c[1]))
+    return candidatos[0][2]
 
 
 def apis_candidatas(html: str, base: str) -> list[str]:

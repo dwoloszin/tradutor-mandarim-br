@@ -14,7 +14,7 @@ from __future__ import annotations
 from ..core.http import Bloqueado, FalhouDeVerdade, buscar
 from ..core.modelos import normalizar_texto
 from .plataformas import (
-    noomis, renderizado, rx, smarter_e, swapcard, tradechina, wordpress,
+    noomis, renderizado, rotulos, rx, smarter_e, swapcard, tradechina, wordpress,
 )
 from .plataformas.descoberta import descobrir
 from .plataformas.detectar import detectar_plataforma
@@ -237,6 +237,16 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
             return _resultado(BLOQUEADO, plataforma="rx", pagina=pagina, detalhe=exc.motivo)
         except FalhouDeVerdade as exc:
             plataforma = "rx"  # segue para o genérico, mas registra o que era
+
+    # 3a) Lista rotulada ("Empresa: X / Estande: Y"), comum em site Elementor.
+    #     Os rotulos dizem qual campo e qual — nao precisamos adivinhar como no generico.
+    try:
+        dados = rotulos.coletar(pagina, html)
+        return _resultado(OK, plataforma="rotulos", pagina=pagina, url_dados=pagina,
+                          expositores=dados["expositores"],
+                          total_informado=dados["total_informado"])
+    except FalhouDeVerdade:
+        pass  # não é uma lista rotulada; segue o fluxo
 
     # 3b) WordPress REST: muitas feiras medias publicam a lista num tipo de conteudo
     #     proprio e nem sabem. Vem limpo e paginado, e ganha do raspador.
