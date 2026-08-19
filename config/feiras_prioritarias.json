@@ -1,10 +1,18 @@
 {
   "_comentario": [
-    "Feiras onde vale gastar requisição: alta densidade de expositores chineses.",
-    "densidade_china: altissima = feira majoritariamente chinesa; alta = pavilhão chinês",
-    "consolidado; media = presença relevante mas dispersa.",
-    "prioridade 1 = coletar e enriquecer sempre; 3 = coletar quando sobrar orçamento.",
-    "Editar este arquivo à mão é esperado — é aqui que você direciona o robô."
+    "IMPORTANTE: esta lista NAO limita o que e coletado. O robo tenta TODAS as feiras",
+    "do calendario e deixa o detector achar as chinesas onde elas estiverem — empresa",
+    "chinesa aparece em feira que ninguem espera, e uma lista curada como filtro faria",
+    "perder justamente essas.",
+    "",
+    "O que esta lista faz: define PRIORIDADE (quem coletamos primeiro quando o tempo e",
+    "limitado), APELIDOS (o calendario do local usa outro nome: a Intersolar aparece",
+    "como 'The smarter E South America') e correcoes manuais de URL e data.",
+    "",
+    "densidade_china: altissima = feira majoritariamente chinesa; alta = pavilhao",
+    "chines consolidado; media = presenca relevante; baixa = entra por cobertura.",
+    "prioridade 1 = primeiro da fila; 3 = quando sobrar orcamento.",
+    "Feira que comeca em ate 14 dias fura a fila automaticamente, esteja aqui ou nao."
   ],
   "feiras": [
     {
@@ -25,13 +33,20 @@
       "nome": "Intersolar South America",
       "site": "https://www.intersolar.net.br/",
       "setor": "energia solar fotovoltaica",
-      "local": "São Paulo Expo",
+      "local": "Expo Center Norte",
       "cidade": "São Paulo",
       "uf": "SP",
       "densidade_china": "altissima",
       "prioridade": 1,
       "observacao": "Setor dominado por fabricantes chineses (Jinko, Trina, LONGi, Canadian, Growatt, Deye, Sungrow, Huawei). Roda junto com Power2Drive e EES South America.",
-      "data_texto": "25 a 27 de agosto de 2026"
+      "data_texto": "25 a 27 de agosto de 2026",
+      "apelidos": [
+        "The smarter E South America",
+        "Power2Drive South America",
+        "EES South America"
+      ],
+      "plataforma": "smarter_e",
+      "pagina_expositores": "https://www.intersolar.net.br/relacao-de-expositoras"
     },
     {
       "nome": "Eletrolar Show",
@@ -41,7 +56,10 @@
       "cidade": "São Paulo",
       "uf": "SP",
       "densidade_china": "alta",
-      "prioridade": 1
+      "prioridade": 1,
+      "apelidos": [
+        "Eletrolar Show & Latin American Electronics"
+      ]
     },
     {
       "nome": "FEICON",
@@ -115,7 +133,10 @@
       "uf": "SP",
       "densidade_china": "alta",
       "prioridade": 2,
-      "observacao": "Sany, XCMG, Zoomlion, LiuGong. Trienal."
+      "observacao": "Sany, XCMG, Zoomlion, LiuGong. Trienal.",
+      "apelidos": [
+        "M&T Expo - Feira Internacional de Equipamentos"
+      ]
     },
     {
       "nome": "FENATRAN",
@@ -188,7 +209,8 @@
       "uf": "SP",
       "densidade_china": "media",
       "prioridade": 3,
-      "observacao": "Huawei, ZTE e fornecedores de rede."
+      "observacao": "Huawei, ZTE e fornecedores de rede.",
+      "pagina_expositores": "https://futurecom.com.br/expositores"
     },
     {
       "nome": "ForMóbile",
@@ -242,6 +264,119 @@
       "uf": "SP",
       "densidade_china": "media",
       "prioridade": 3
+    },
+    {
+      "nome": "EXPOSEC",
+      "site": "https://www.exposec.tmp.br/",
+      "setor": "segurança eletrônica e vigilância",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "altissima",
+      "prioridade": 1,
+      "apelidos": [
+        "ISC Brasil",
+        "Exposec - Feira Internacional de Segurança"
+      ],
+      "observacao": "Câmeras e CFTV são dominados por Hikvision, Dahua, Uniview, TVT e dezenas de fabricantes menores de Shenzhen. Densidade comparável à solar."
+    },
+    {
+      "nome": "FIEE Smart Future",
+      "site": "https://www.fiee.com.br/",
+      "setor": "eletroeletrônica industrial e automação",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "apelidos": [
+        "FIEE"
+      ],
+      "observacao": "Componentes, cabos, painéis e automação — cadeia chinesa muito presente."
+    },
+    {
+      "nome": "Pet South America",
+      "site": "https://www.petsa.com.br/",
+      "setor": "produtos e serviços para animais de estimação",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 2,
+      "observacao": "Acessórios, brinquedos e petiscos importados da China em grande volume."
+    },
+    {
+      "nome": "Brasil Game Show",
+      "site": "https://www.brasilgameshow.com.br/",
+      "setor": "games, periféricos e hardware",
+      "local": "Expo Center Norte",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 2,
+      "apelidos": [
+        "BGS"
+      ],
+      "observacao": "Periféricos, cadeiras gamer e hardware — fabricantes de Shenzhen e Dongguan."
+    },
+    {
+      "nome": "Beauty Fair",
+      "site": "https://www.beautyfair.com.br/",
+      "setor": "beleza, estética e cosméticos",
+      "local": "Expo Center Norte",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 2,
+      "observacao": "Aparelhos de estética, embalagens e acessórios majoritariamente chineses."
+    },
+    {
+      "nome": "Movimat",
+      "site": "https://www.movimat.com.br/",
+      "setor": "intralogística e movimentação de materiais",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 2,
+      "observacao": "Empilhadeiras e estanterias chinesas (Hangcha, EP, Noblelift)."
+    },
+    {
+      "nome": "Fispal Tecnologia",
+      "site": "https://www.fispaltecnologia.com.br/",
+      "setor": "máquinas e embalagens para alimentos",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 3
+    },
+    {
+      "nome": "FEBRABAN TECH",
+      "site": "https://febrabantech.com/",
+      "setor": "tecnologia para o setor financeiro",
+      "local": "Distrito Anhembi",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "baixa",
+      "prioridade": 3,
+      "pagina_expositores": "https://febrabantech.com/expositores",
+      "apelidos": [
+        "FEBRABAN TECH 2026"
+      ],
+      "observacao": "Setor majoritariamente nacional; entra pela cobertura, não pela densidade."
+    },
+    {
+      "nome": "Web Summit Rio",
+      "site": "https://rio.websummit.com/",
+      "setor": "tecnologia e startups",
+      "local": "Riocentro",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "densidade_china": "baixa",
+      "prioridade": 3,
+      "pagina_expositores": "https://rio.websummit.com/pt-br/partners/event-partners/",
+      "observacao": "Parceiros globais, poucos chineses; útil para cobertura do Rio."
     }
   ]
 }

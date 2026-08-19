@@ -164,7 +164,9 @@ def novo_evento(**campos) -> dict:
         "setor": "", "categorias": [], "descricao": "",
         "prioridade": 5, "encerrado": False,
         "densidade_china": "", "plataforma": "",
-        "total_expositores": 0, "total_chinesas": 0,
+        # Contadores NAO entram aqui de proposito. Eles sao calculados pela etapa de
+        # expositores, e um zero padrao vindo da agenda sobrescreveria o valor real:
+        # para o mesclar, 0 e um numero legitimo, nao "campo vazio".
         "fontes": [],
     }
     base.update(campos)

@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from ..core.http import Bloqueado, FalhouDeVerdade, buscar
 from ..core.modelos import normalizar_texto
-from .plataformas import rx, swapcard, tradechina
+from .plataformas import renderizado, rx, smarter_e, swapcard, tradechina
 from .plataformas.descoberta import descobrir
 from .plataformas.detectar import detectar_plataforma
 
@@ -136,6 +136,22 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
         except FalhouDeVerdade as exc:
             return _resultado(ERRO, plataforma="tradechina", detalhe=exc.motivo)
 
+    # 0b) The smarter E (Intersolar): endpoint proprio, exige navegador pelo csrfToken
+    if config_feira.get("plataforma") == "smarter_e" and url_fixada:
+        from ..core.perfil import pode_executar
+        if not pode_executar(smarter_e.REQUER_RESIDENCIAL):
+            return _resultado(BLOQUEADO, plataforma="smarter_e",
+                              detalhe="exige navegador com JavaScript; roda no PC")
+        try:
+            dados = smarter_e.coletar(url_fixada)
+            return _resultado(OK, plataforma="smarter_e", pagina=url_fixada,
+                              url_dados=url_fixada, expositores=dados["expositores"],
+                              total_informado=dados["total_informado"])
+        except Bloqueado as exc:
+            return _resultado(BLOQUEADO, plataforma="smarter_e", detalhe=exc.motivo)
+        except FalhouDeVerdade as exc:
+            return _resultado(ERRO, plataforma="smarter_e", detalhe=exc.motivo)
+
     # 1) plataforma já conhecida e apontada à mão
     if url_fixada and "/exhibitors/" in url_fixada and "event/" in url_fixada:
         try:
@@ -196,12 +212,33 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
         except FalhouDeVerdade as exc:
             plataforma = "rx"  # segue para o genérico, mas registra o que era
 
-    # 4) genérico
+    # 4) genérico sobre o HTML servido
     empresas = _parse_generico(pagina)
     if empresas:
         return _resultado(OK, plataforma=plataforma or "generico", pagina=pagina,
                           url_dados=pagina, expositores=empresas,
                           total_informado=len(empresas))
+
+    # 5) último recurso: renderizar com navegador. A maioria das listas que sobram é
+    #    React/Webflow e só existe depois do JavaScript. Exige o PC (não roda na nuvem),
+    #    então na nuvem devolvemos "bloqueado" para a tarefa esperar a rodada local.
+    from ..core.perfil import pode_executar
+    if not pode_executar(renderizado.REQUER_RESIDENCIAL):
+        return _resultado(BLOQUEADO, plataforma=plataforma, pagina=pagina,
+                          detalhe="lista só existe com JavaScript; roda no PC")
+    try:
+        dados = renderizado.coletar(pagina)
+        return _resultado(OK, plataforma="renderizado", pagina=pagina, url_dados=pagina,
+                          expositores=dados["expositores"],
+                          total_informado=dados["total_informado"])
+    except Bloqueado as exc:
+        return _resultado(BLOQUEADO, plataforma=plataforma, pagina=pagina, detalhe=exc.motivo)
+    except FalhouDeVerdade as exc:
+        return _resultado(PLATAFORMA_NOVA, plataforma=plataforma, pagina=pagina,
+                          detalhe=exc.motivo)
+    except Exception as exc:  # noqa: BLE001 - navegador falha de muitas formas
+        return _resultado(ERRO, plataforma=plataforma, pagina=pagina,
+                          detalhe=f"{type(exc).__name__}: {exc}")
 
     return _resultado(PLATAFORMA_NOVA, plataforma=plataforma, pagina=pagina,
                       detalhe="lista existe mas nenhum adaptador soube ler")

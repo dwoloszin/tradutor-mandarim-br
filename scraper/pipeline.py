@@ -53,10 +53,21 @@ def _config_feiras() -> dict[str, dict]:
 
 
 def _casar_config(evento: dict, config: dict[str, dict]) -> dict:
-    """Liga o evento da agenda com a entrada curada, tolerando variação de nome."""
+    """Liga o evento da agenda com a entrada curada, tolerando variação de nome.
+
+    A agenda do local nem sempre usa o nome que conhecemos: a Intersolar aparece como
+    "The smarter E South America". Sem os apelidos, a feira mais chinesa do calendário
+    entrava como prioridade genérica e ficava no fim da fila.
+    """
     canonico = nome_canonico(evento.get("nome", ""))
     if canonico in config:
         return config[canonico]
+
+    for feira in config.values():
+        for apelido in feira.get("apelidos", []):
+            if nome_canonico(apelido) == canonico:
+                return feira
+
     for chave, feira in config.items():
         if chave and (chave in canonico or canonico in chave):
             return feira
@@ -87,10 +98,14 @@ def etapa_agenda(hoje: date | None = None) -> dict:
             novos += 1
         eventos_tab.upsert(evento)
 
-    # feiras curadas que não apareceram em nenhuma agenda entram assim mesmo
+    # Feiras curadas que não apareceram em nenhuma agenda entram assim mesmo.
+    # A checagem tem que considerar os apelidos: a Intersolar aparece na agenda do
+    # Expo Center Norte como "The smarter E South America", e sem isso criávamos um
+    # segundo evento para a mesma feira.
     nomes_vistos = {nome_canonico(e.get("nome", "")) for e in eventos_tab.todos()}
     for canonico, feira in config.items():
-        if canonico in nomes_vistos:
+        apelidos = {nome_canonico(a) for a in feira.get("apelidos", [])}
+        if canonico in nomes_vistos or (apelidos & nomes_vistos):
             continue
         from .core.datas import interpretar_periodo
         from .core.modelos import chave_evento, novo_evento
@@ -134,8 +149,15 @@ def etapa_agenda(hoje: date | None = None) -> dict:
         if not (evento.get("site") or evento.get("pagina_local")):
             continue
         prioridade = evento.get("prioridade", 5)
-        if faltam is not None and 0 <= faltam <= 60:
-            prioridade = max(1, prioridade - 2)  # feira próxima fura a fila
+        # Feira que abre em dias vale mais que feira daqui a um ano, independente do
+        # setor: depois que ela começa, o intérprete perdeu a janela de prospecção.
+        if faltam is not None and faltam >= 0:
+            if faltam <= 14:
+                prioridade = 0
+            elif faltam <= 45:
+                prioridade = max(1, prioridade - 3)
+            elif faltam <= 90:
+                prioridade = max(2, prioridade - 1)
         fila.adicionar("expositores", evento["id"], prioridade=prioridade)
         agendadas += 1
 
@@ -245,6 +267,21 @@ def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, f
         relevante = avaliacao["classificacao"] in (china_mod.CONFIRMADA, china_mod.PROVAVEL)
 
         identificador = chave_empresa(nome, bruto.get("website"))
+
+        # A mesma empresa aparece em varias feiras, e nem toda feira publica pais ou
+        # telefone. Se a feira mais pobre sobrescrevesse o score, uma empresa
+        # confirmada viraria "nao chinesa" e sumiria da lista. Fica a melhor evidencia.
+        ja_existente = empresas_tab.obter(identificador) or {}
+        if ja_existente.get("score_china", 0) > avaliacao["score"]:
+            avaliacao = {
+                "score": ja_existente["score_china"],
+                "classificacao": ja_existente.get("classificacao_china", ""),
+                "origem": ja_existente.get("origem", ""),
+                "motivos": ja_existente.get("motivos_deteccao", []),
+            }
+            relevante = avaliacao["classificacao"] in (china_mod.CONFIRMADA,
+                                                       china_mod.PROVAVEL)
+
         empresa = nova_empresa(
             id=identificador,
             nome=nome,
