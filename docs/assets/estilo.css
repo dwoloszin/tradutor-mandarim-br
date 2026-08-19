@@ -367,3 +367,29 @@ textarea.nota {
 .oportunidade .cabecalho { display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; }
 .oportunidade .data { font-size: .82rem; color: var(--texto-fraquissimo); }
 .oportunidade .resumo { font-size: .88rem; color: var(--texto-fraco); margin-top: .35rem; }
+
+/* Estado "estamos de olho, nada por enquanto": discreto, mas presente. Serve para o
+   intérprete confiar que o monitor está vivo, e não achar que quebrou em silêncio. */
+.aviso-monitor {
+  max-width: 1400px;
+  margin: 1rem auto 0;
+  padding: .5rem .9rem;
+  background: var(--superficie-2);
+  border: 1px dashed var(--borda);
+  border-radius: var(--raio);
+  font-size: .85rem;
+  color: var(--texto-fraco);
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.aviso-monitor .botao { margin-left: auto; }
+
+/* Aba com vaga aberta: piscar seria irritante, mas passar despercebido é pior. */
+.aba.com-alerta {
+  background: var(--primaria-clara);
+  color: var(--primaria);
+  border-color: var(--primaria);
+  font-weight: 700;
+}

@@ -396,15 +396,43 @@ function desenharOportunidades() {
 }
 
 /* A vaga do consulado é o item mais urgente que este site pode mostrar: é trabalho
- * direto, sem prospecção, e some rápido. Por isso vira faixa no topo, acima de tudo,
- * e só some quando envelhece — 90 dias, prazo em que ainda pode valer. */
+ * direto, sem prospecção, e some rápido. Ela NÃO pode ficar só numa aba — quem não
+ * clicar na aba nunca vê. Então vira faixa no topo, presente em todas as abas.
+ *
+ * E quando não há vaga, mostramos assim mesmo uma linha discreta dizendo que estamos
+ * vigiando. Sem isso o intérprete não tem como distinguir "nenhuma vaga aberta" de
+ * "o monitor quebrou e ninguém percebeu". */
 function desenharAlertaVaga() {
   const alvo = document.getElementById('alerta-vaga');
   if (!alvo) return;
+
   const vagas = estado.oportunidades.filter(
     (o) => o.tipo === 'vaga' && (o.dias_atras == null || o.dias_atras <= 90)
   );
-  if (!vagas.length) { alvo.innerHTML = ''; return; }
+
+  // marca a aba com o número de vagas, para o aviso existir mesmo se a faixa
+  // for fechada pelo usuário
+  const abaAvisos = document.querySelector('[data-aba="oportunidades"]');
+  if (abaAvisos) {
+    abaAvisos.textContent = vagas.length
+      ? `🔴 Vagas e avisos (${vagas.length})`
+      : 'Vagas e avisos';
+    abaAvisos.classList.toggle('com-alerta', vagas.length > 0);
+  }
+
+  if (!vagas.length) {
+    const checado = estado.meta.atualizado_em
+      ? new Date(estado.meta.atualizado_em).toLocaleDateString('pt-BR')
+      : '—';
+    alvo.innerHTML = `
+      <div class="aviso-monitor">
+        👁 Monitorando o Consulado da China em São Paulo — nenhuma vaga aberta.
+        Última verificação: ${escapar(checado)}.
+        <button class="botao pequeno" data-aba-ir="oportunidades">ver avisos</button>
+      </div>`;
+    return;
+  }
+
   const v = vagas[0];
   alvo.innerHTML = `
     <div class="alerta-vaga">
@@ -595,6 +623,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('f-ocultar-contatados').checked = false;
     document.getElementById('f-so-confirmadas').checked = false;
     renderizar();
+  });
+
+  // atalho da faixa de monitoramento para a aba de avisos
+  document.addEventListener('click', (evento) => {
+    const ir = evento.target.closest('[data-aba-ir]');
+    if (!ir) return;
+    const destino = document.querySelector(`[data-aba="${ir.dataset.abaIr}"]`);
+    if (destino) destino.click();
   });
 
   document.querySelectorAll('.aba').forEach((botao) => {
