@@ -549,7 +549,7 @@
     "id": "ev:cipro-expolab:2026",
     "nome": "CIPRO & EXPOLAB",
     "site": "https://ciproapdespbr.com.br/",
-    "pagina_expositores": "",
+    "pagina_expositores": "https://ciproapdespbr.com.br/expositores/",
     "inicio": "2026-09-17",
     "fim": "2026-09-19",
     "data_texto": "17 a 19 setembro",
@@ -563,7 +563,7 @@
     "dias": 29,
     "total_expositores": 0,
     "total_chinesas": 0,
-    "plataforma": "",
+    "plataforma": "wordpress",
     "prioridade": 5
   },
   {
@@ -591,7 +591,7 @@
     "id": "ev:paving-expo:2026",
     "nome": "PAVING EXPO",
     "site": "https://paving.com.br/",
-    "pagina_expositores": "",
+    "pagina_expositores": "https://paving.com.br/lista-expositores",
     "inicio": "2026-09-22",
     "fim": "2026-09-24",
     "data_texto": "22 - 24 set",
@@ -605,7 +605,7 @@
     "dias": 34,
     "total_expositores": 0,
     "total_chinesas": 0,
-    "plataforma": "",
+    "plataforma": "wordpress",
     "prioridade": 5
   },
   {
@@ -1401,8 +1401,8 @@
     "densidade_china": "media",
     "encerrada": false,
     "dias": 82,
-    "total_expositores": 267,
-    "total_chinesas": 30,
+    "total_expositores": 0,
+    "total_chinesas": 0,
     "plataforma": "rx",
     "prioridade": 2
   },
@@ -1741,6 +1741,27 @@
     "total_chinesas": 0,
     "plataforma": "",
     "prioridade": 5
+  },
+  {
+    "id": "ev:agrishow:2027",
+    "nome": "AGRISHOW",
+    "site": "https://www.agrishow.com.br/",
+    "pagina_expositores": "",
+    "inicio": "2027-04-26",
+    "fim": "2027-04-30",
+    "data_texto": "26 a 30 de abril de 2027",
+    "local": "Parque Zilo Bezerra de Sales",
+    "cidade": "Ribeirão Preto",
+    "uf": "SP",
+    "pavilhao": "",
+    "setor": "agronegócio e maquinário agrícola",
+    "densidade_china": "media",
+    "encerrada": false,
+    "dias": 250,
+    "total_expositores": 0,
+    "total_chinesas": 0,
+    "plataforma": "",
+    "prioridade": 2
   },
   {
     "id": "ev:abav-expo",

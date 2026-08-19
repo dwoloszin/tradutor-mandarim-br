@@ -1,12 +1,12 @@
 {
-  "atualizado_em": "2026-08-19T13:36:01+00:00",
-  "gerado_em_ambiente": "local",
+  "atualizado_em": "2026-08-19T13:56:12+00:00",
+  "gerado_em_ambiente": "nuvem",
   "total_empresas": 163,
   "empresas_com_contato": 12,
   "empresas_com_wechat": 0,
   "empresas_feira_futura": 104,
   "total_revisao": 22,
-  "total_feiras": 130,
-  "feiras_futuras": 96,
-  "feiras_com_lista": 4
+  "total_feiras": 131,
+  "feiras_futuras": 97,
+  "feiras_com_lista": 3
 }
