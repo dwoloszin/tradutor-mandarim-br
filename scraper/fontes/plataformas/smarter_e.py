@@ -22,6 +22,8 @@ from bs4 import BeautifulSoup
 from ...core.http import CABECALHOS_PADRAO, Bloqueado, FalhouDeVerdade, buscar
 from ...core.modelos import normalizar_texto, normalizar_url
 
+CHR_NL = chr(10)
+
 # <input type="hidden" id="menuPageId" ... value="606ebff0b3162c54d723c912" />
 PADRAO_MENU_PAGE = re.compile(
     r'id="menuPageId"[^>]*value="([a-f0-9]{24})"', re.IGNORECASE
@@ -206,8 +208,109 @@ def coletar(url_lista: str, limite_paginas: int = PAGINAS_MAX) -> dict:
             if len(vistos) == antes:
                 break  # a página repetiu o conteúdo anterior: fim da lista
 
+    # a lista dá nome e estande; a ficha dá contato e país — e é o país que decide
+    # se a empresa entra na lista do intérprete
+    enriquecer_com_fichas(empresas)
+
     return {
         "evento": {"plataforma": "smarter_e", "url_lista": url_lista},
         "expositores": empresas,
         "total_informado": len(empresas),
     }
+
+# ---------------------------------------------------------------- fichas
+
+# A ficha de cada expositora traz um bloco "Informações de contato" com telefone,
+# e-mail, site e endereço — inclusive o país, que é justamente o campo que decide a
+# detecção de empresa chinesa. A lista sozinha não tem nada disso.
+ROTULO_CONTATO = re.compile(r"informa[çc][õo]es de contato|contact information", re.I)
+EMAIL = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,12}")
+TELEFONE = re.compile(r"(?:\+|00)\s?\d{1,3}[\s\-.()]*\d[\d\s\-.()]{6,16}\d")
+SITE = re.compile(r"https?://[^\s<>\"']{4,120}")
+
+# "201112 Shanghai, China" / "Shanghai, China"
+LINHA_PAIS = re.compile(r"^(?:\d{4,8}\s+)?(.+?),\s*([A-Za-zÀ-ÿ .'-]{3,40})$")
+
+
+def _texto_da_ficha(url: str) -> str:
+    from bs4 import BeautifulSoup
+    html = buscar(url, ttl_horas=24 * 14, tentativas=1, timeout=25)
+    sopa = BeautifulSoup(html, "lxml")
+    for tag in sopa(["script", "style", "nav", "header", "footer"]):
+        tag.decompose()
+    return sopa.get_text(CHR_NL, strip=True)
+
+
+def _extrair_contato(texto: str) -> dict:
+    linhas = [l.strip() for l in texto.split(CHR_NL) if l.strip()]
+
+    inicio = next((i for i, l in enumerate(linhas) if ROTULO_CONTATO.search(l)), None)
+    bloco = linhas[inicio + 1: inicio + 12] if inicio is not None else linhas[:0]
+    junto = CHR_NL.join(bloco)
+
+    emails = [e.lower() for e in EMAIL.findall(junto)]
+    telefones = [re.sub(r"[^\d+]", "", t) for t in TELEFONE.findall(junto)]
+    sites = [s for s in SITE.findall(junto) if "intersolar" not in s]
+
+    # o país é a última parte da última linha com vírgula
+    pais = cidade = ""
+    for linha in reversed(bloco):
+        achado = LINHA_PAIS.match(linha)
+        if achado and "@" not in linha and not linha.startswith(("+", "http")):
+            cidade, pais = achado.group(1).strip(), achado.group(2).strip()
+            break
+
+    # o endereço termina na linha do país; depois dela vem navegação da página
+    fim = len(bloco)
+    for indice, linha in enumerate(bloco):
+        if pais and linha.rstrip().endswith(pais):
+            fim = indice + 1
+            break
+    endereco = " ".join(
+        l for l in bloco[:fim]
+        if not EMAIL.search(l) and not TELEFONE.search(l) and not l.startswith("http")
+    )[:200]
+
+    return {
+        "emails": emails[:3],
+        "telefones": telefones[:3],
+        "website": normalizar_url(sites[0]) if sites else "",
+        "pais": pais,
+        "cidade": cidade,
+        "endereco": endereco,
+    }
+
+
+def enriquecer_com_fichas(expositores: list[dict], paralelas: int = 6,
+                          limite: int | None = None) -> int:
+    """Visita a ficha de cada expositora e completa contato, país e endereço.
+
+    Vale a visita extra: é uma requisição por empresa, e traz e-mail direto e o país —
+    dado que a lista não tem e que muda a classificação de metade delas.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    alvos = [e for e in expositores if e.get("ficha_feira")]
+    if limite:
+        alvos = alvos[:limite]
+
+    def visitar(exp):
+        try:
+            return exp, _extrair_contato(_texto_da_ficha(exp["ficha_feira"]))
+        except Exception:  # noqa: BLE001 - ficha ruim não derruba a coleta
+            return exp, None
+
+    completados = 0
+    with ThreadPoolExecutor(max_workers=max(1, paralelas)) as executor:
+        for exp, dados in executor.map(visitar, alvos):
+            if not dados:
+                continue
+            for campo in ("pais", "cidade", "endereco", "website"):
+                if dados.get(campo) and not exp.get(campo):
+                    exp[campo] = dados[campo]
+            if dados.get("emails"):
+                exp["emails"] = list(dict.fromkeys(exp.get("emails", []) + dados["emails"]))
+            if dados.get("telefones"):
+                exp["telefones"] = dados["telefones"]
+            completados += 1
+    return completados
