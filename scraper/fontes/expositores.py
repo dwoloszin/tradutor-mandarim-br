@@ -121,7 +121,12 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
     if not site:
         return _resultado(SEM_LISTA, detalhe="evento sem site oficial conhecido")
 
-    url_fixada = config_feira.get("pagina_expositores") or evento.get("pagina_expositores")
+    # Só a URL fixada à mão no config é autoridade. A que o evento carrega foi
+    # DESCOBERTA por nós numa rodada anterior — tratá-la como entrada faz um palpite
+    # ruim se perpetuar: a FEIPLAR ficou com a home gravada como "página de
+    # expositores" e, a cada rodada, o roteador confiava nela e raspava 15 itens,
+    # enquanto a lista real com 156 nunca era procurada de novo.
+    url_fixada = config_feira.get("pagina_expositores")
 
     # 0) feiras da Meorient (China Homelife e irmas): a plataforma tem API propria,
     #    identificada pelo exhibition_id no config. Sao 100% expositores chineses.

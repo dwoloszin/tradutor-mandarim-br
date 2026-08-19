@@ -11,6 +11,8 @@ Uso típico:
   python -m scraper.cli enriquecer      # busca contato/WeChat das empresas chinesas
   python -m scraper.cli exportar        # regenera os JSON do site
   python -m scraper.cli situacao        # mostra o estado do banco e da fila
+  python -m scraper.cli progresso       # acompanha a rodada em andamento
+  python -m scraper.cli progresso -f    # idem, atualizando sozinho
   python -m scraper.cli investigar URL  # diagnostica a plataforma de uma feira nova
   python -m scraper.cli login           # abre o navegador para você logar no tradechina
 
@@ -49,7 +51,8 @@ def main(argv: list[str] | None = None) -> int:
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("comando", choices=[
         "tudo", "pendentes", "agenda", "radar", "oportunidades", "expositores",
-        "enriquecer", "vagas", "exportar", "situacao", "investigar", "login", "limpar-cache",
+        "enriquecer", "vagas", "exportar", "situacao", "progresso", "investigar", "login",
+        "limpar-cache",
     ])
     parser.add_argument("argumento", nargs="?", default="")
     parser.add_argument("--limite", type=int, default=None,
@@ -58,6 +61,19 @@ def main(argv: list[str] | None = None) -> int:
 
     from .core.perfil import ambiente_atual
     print(f"[ambiente: {ambiente_atual().value}]")
+
+    if args.comando == "progresso":
+        # acompanhamento de rodada em andamento; nao precisa de trava (so le)
+        import time as _tempo
+
+        from .core.progresso import formatar, ler
+        acompanhar_continuo = args.argumento in ("-f", "seguir", "acompanhar")
+        while True:
+            print("[2J[H" if acompanhar_continuo else "", end="")
+            print(formatar(ler()))
+            if not acompanhar_continuo:
+                return 0
+            _tempo.sleep(10)
 
     if args.comando == "situacao":
         from .pipeline import situacao_geral

@@ -234,7 +234,13 @@ def etapa_expositores(limite: int | None = None, hoje: date | None = None) -> di
     resumo = {"processadas": 0, "ok": 0, "bloqueadas": 0, "sem_lista": 0,
               "plataforma_nova": 0, "erro": 0, "expositores": 0, "chinesas": 0}
 
+    from .core.progresso import Acompanhamento
+    acompanhar = Acompanhamento("expositores", len(tarefas),
+                                "coletando listas de expositores")
+    acompanhar.__enter__()
+
     for tarefa in tarefas:
+        acompanhar.passo((eventos_tab.obter(tarefa["alvo"]) or {}).get("nome", "?"))
         evento = eventos_tab.obter(tarefa["alvo"])
         if evento is None:
             fila.marcar_sem_dados("expositores", tarefa["alvo"], motivo="evento sumiu do store")
@@ -295,6 +301,7 @@ def etapa_expositores(limite: int | None = None, hoje: date | None = None) -> di
                        resumo=f"{len(resultado['expositores'])} expositores, "
                               f"{chinesas_aqui} chinesas")
 
+    acompanhar.__exit__()
     eventos_tab.salvar()
     empresas_tab.salvar()
     participacoes_tab.salvar()
@@ -499,9 +506,12 @@ def etapa_enriquecer(limite: int | None = None, paralelas: int = 8) -> dict:
 
     # Só a rede vai em paralelo. A escrita no store acontece aqui, numa thread só —
     # as tabelas não são thread-safe e gravar de vários lugares corromperia o arquivo.
-    with ThreadPoolExecutor(max_workers=max(1, paralelas)) as executor:
+    from .core.progresso import Acompanhamento
+    with ThreadPoolExecutor(max_workers=max(1, paralelas)) as executor,             Acompanhamento("enriquecer", len(a_buscar),
+                           "visitando sites das empresas") as acompanhar:
         for tarefa, empresa, achado, erro in executor.map(visitar, a_buscar):
             resumo["processadas"] += 1
+            acompanhar.passo(empresa.get("nome", ""))
 
             if erro is not None:
                 if isinstance(erro, Bloqueado):
