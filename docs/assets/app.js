@@ -323,6 +323,9 @@ function desenharFeirasAba(filtros) {
     const prazo = textoPrazo(f.dias);
     const densidade = f.densidade_china
       ? `<span class="densidade ${escapar(f.densidade_china)}">${escapar(f.densidade_china)}</span>` : '';
+    const verEmpresas = f.total_chinesas
+      ? `<button class="botao pequeno primario" data-ver-feira="${escapar(f.id)}">ver ${f.total_chinesas} empresas</button>`
+      : '<span style="font-size:.8rem;color:var(--texto-fraquissimo)">lista ainda não publicada</span>';
     return `<tr class="${f.encerrada ? 'encerrada' : ''}">
       <td><strong>${escapar(f.nome)}</strong>${f.setor ? `<br><span style="font-size:.8rem;color:var(--texto-fraco)">${escapar(f.setor)}</span>` : ''}</td>
       <td>${f.inicio ? formatarData(f.inicio) : escapar(f.data_texto || '—')}${prazo ? `<br><span style="font-size:.8rem;color:var(--primaria)">${prazo}</span>` : ''}</td>
@@ -330,7 +333,7 @@ function desenharFeirasAba(filtros) {
       <td>${densidade}</td>
       <td style="text-align:right">${f.total_expositores || '—'}</td>
       <td style="text-align:right"><strong>${f.total_chinesas || '—'}</strong></td>
-      <td>${f.site ? `<a href="${escapar(f.site)}" target="_blank" rel="noopener">site</a>` : ''}</td>
+      <td>${verEmpresas}${f.site ? ` <a href="${escapar(f.site)}" target="_blank" rel="noopener">site</a>` : ''}</td>
     </tr>`;
   }).join('');
 
@@ -407,7 +410,11 @@ function preencherSeletores() {
   const seletorFeira = document.getElementById('f-feira');
   const comExpositores = estado.feiras
     .filter((f) => f.total_chinesas > 0)
-    .sort((a, b) => (a.inicio || '9999').localeCompare(b.inicio || '9999'));
+    .sort((a, b) => {
+      // futuras primeiro, por data; encerradas no fim
+      if (a.encerrada !== b.encerrada) return a.encerrada ? 1 : -1;
+      return (a.inicio || '9999').localeCompare(b.inicio || '9999');
+    });
   seletorFeira.innerHTML = '<option value="">todas as feiras</option>'
     + comExpositores.map((f) => `<option value="${escapar(f.id)}">${escapar(f.nome)}`
       + `${f.encerrada ? ' (encerrada)' : ''} — ${f.total_chinesas} chinesas</option>`).join('');
@@ -423,15 +430,21 @@ function preencherSeletores() {
 
 function desenharIndicadores() {
   const m = estado.meta;
-  const proxima = estado.feiras.find((f) => !f.encerrada && f.dias != null && f.dias >= 0);
+  // A "proxima feira" tem que ser a proxima COM empresas chinesas. Sem esse filtro
+  // o destaque cai em coisas como o Feirao Autoshow (venda de carro usado), que nao
+  // gera trabalho nenhum para o interprete e ainda parece um dado quebrado.
+  const proxima = estado.feiras.find(
+    (f) => !f.encerrada && f.dias != null && f.dias >= 0 && f.total_chinesas > 0
+  );
   const alvo = document.getElementById('indicadores');
   alvo.innerHTML = `
     <div class="indicador destaque"><div class="numero">${m.total_empresas || 0}</div><div class="rotulo">empresas chinesas</div></div>
     <div class="indicador"><div class="numero">${m.empresas_com_contato || 0}</div><div class="rotulo">com contato pronto</div></div>
     <div class="indicador"><div class="numero">${m.empresas_feira_futura || 0}</div><div class="rotulo">em feira que ainda vem</div></div>
     <div class="indicador"><div class="numero">${m.feiras_futuras || 0}</div><div class="rotulo">feiras futuras</div></div>
-    <div class="indicador"><div class="numero">${proxima ? textoPrazo(proxima.dias) || formatarData(proxima.inicio) : '—'}</div>
-      <div class="rotulo">próxima: ${escapar((proxima && proxima.nome ? proxima.nome : '—').slice(0, 22))}</div></div>`;
+    <div class="indicador ${proxima && proxima.dias <= 45 ? 'destaque' : ''}">
+      <div class="numero">${proxima ? textoPrazo(proxima.dias) || formatarData(proxima.inicio) : '—'}</div>
+      <div class="rotulo">próxima com chinesas: ${escapar((proxima && proxima.nome ? proxima.nome : '—').slice(0, 24))}</div></div>`;
 }
 
 async function carregarJSON(caminho, padrao) {
@@ -500,6 +513,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // delegação: os cartões são redesenhados o tempo todo
   document.getElementById('conteudo').addEventListener('click', (evento) => {
+    // da tabela de feiras direto para as empresas daquela feira
+    const verFeira = evento.target.closest('[data-ver-feira]');
+    if (verFeira) {
+      const id = verFeira.dataset.verFeira;
+      const seletor = document.getElementById('f-feira');
+      // a feira pode estar encerrada e, nesse caso, escondida pelo filtro padrão
+      const feira = estado.feiras.find((f) => f.id === id);
+      if (feira && feira.encerrada) {
+        document.getElementById('f-ocultar-encerradas').checked = false;
+      }
+      seletor.value = id;
+      document.querySelectorAll('.aba').forEach((b) => b.classList.remove('ativa'));
+      document.querySelector('[data-aba="empresas"]').classList.add('ativa');
+      estado.aba = 'empresas';
+      renderizar();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     const copiavel = evento.target.closest('[data-copiar]');
     if (copiavel) { copiar(copiavel.dataset.copiar, copiavel); return; }
     const todos = evento.target.closest('[data-copiar-todos]');

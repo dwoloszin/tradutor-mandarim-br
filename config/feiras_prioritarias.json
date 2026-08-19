@@ -30,7 +30,8 @@
       "uf": "SP",
       "densidade_china": "altissima",
       "prioridade": 1,
-      "observacao": "Setor dominado por fabricantes chineses (Jinko, Trina, LONGi, Canadian, Growatt, Deye, Sungrow, Huawei). Roda junto com Power2Drive e EES South America."
+      "observacao": "Setor dominado por fabricantes chineses (Jinko, Trina, LONGi, Canadian, Growatt, Deye, Sungrow, Huawei). Roda junto com Power2Drive e EES South America.",
+      "data_texto": "25 a 27 de agosto de 2026"
     },
     {
       "nome": "Eletrolar Show",
@@ -52,7 +53,8 @@
       "densidade_china": "alta",
       "prioridade": 1,
       "observacao": "Plataforma RX/Reed — exige adaptador de API. URL da lista ainda não localizada: a RX muda o caminho a cada edição.",
-      "plataforma": "rx"
+      "plataforma": "rx",
+      "data_texto": "6 a 9 de abril de 2027"
     },
     {
       "nome": "FEBRAVA",
@@ -75,7 +77,8 @@
       "uf": "SP",
       "densidade_china": "alta",
       "prioridade": 1,
-      "observacao": "Pavilhão chinês consolidado (CCCMHPIE). Mindray, Yuwell, Contec e dezenas de fabricantes menores."
+      "observacao": "Pavilhão chinês consolidado (CCCMHPIE). Mindray, Yuwell, Contec e dezenas de fabricantes menores.",
+      "data_texto": "19 a 22 de maio de 2026"
     },
     {
       "nome": "EXPOMAFE",
@@ -86,7 +89,8 @@
       "uf": "SP",
       "densidade_china": "alta",
       "prioridade": 1,
-      "observacao": "Bienal (anos pares). Forte presença de fabricantes chineses de máquinas CNC."
+      "observacao": "Bienal (anos pares). Forte presença de fabricantes chineses de máquinas CNC.",
+      "data_texto": "5 a 9 de maio de 2026"
     },
     {
       "nome": "Plástico Brasil",
@@ -99,7 +103,8 @@
       "prioridade": 1,
       "observacao": "Injetoras e extrusoras chinesas (Haitian, Chen Hsong, Borch). Bienal.",
       "pagina_expositores": "https://app.informamarkets.com.br/widget/event/plastico-brasil-xperience-2027/exhibitors/RXZlbnRWaWV3XzE0MzM3Njk=",
-      "plataforma": "swapcard"
+      "plataforma": "swapcard",
+      "data_texto": "15 a 19 de março de 2027"
     },
     {
       "nome": "M&T Expo",
@@ -149,7 +154,8 @@
       "prioridade": 2,
       "observacao": "Bienal. Cadeia de autopeças chinesa muito presente.",
       "pagina_expositores": "https://www.automecfeira.com.br/pt-br/expositores.html",
-      "plataforma": "rx"
+      "plataforma": "rx",
+      "data_texto": "20 a 24 de abril de 2027"
     },
     {
       "nome": "FESQUA",
