@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store
+*.log
+
+# Cache de páginas baixadas: acelera rodadas seguidas, mas é descartável e enorme.
+data/_cache_http/
+
+# Sessão do navegador (cookies do seu login no TradeChina, CAPTCHA resolvido).
+# NUNCA versionar: são credenciais suas. Sem isto no .gitignore, um `git add`
+# distraído publicaria sua sessão logada num repositório público.
+data/_sessao_navegador/
+
+# Investigações e scripts descartáveis usados para mapear plataformas novas.
+_scratch/

@@ -1,0 +1,329 @@
+/* Tradutor Mandarim BR — interface de prospecção
+   Densidade acima de decoração: o intérprete precisa varrer muitas empresas rápido,
+   achar quem tem contato e copiar o e-mail. Tudo é otimizado para essa varredura. */
+
+:root {
+  --fundo: #f6f7f9;
+  --superficie: #ffffff;
+  --superficie-2: #f0f2f5;
+  --borda: #dfe3e8;
+  --texto: #16191d;
+  --texto-fraco: #5b636d;
+  --texto-fraquissimo: #8a929c;
+  --primaria: #b8232f;      /* vermelho chinês, sóbrio */
+  --primaria-clara: #fdeced;
+  --sucesso: #1a7f4b;
+  --sucesso-claro: #e6f5ed;
+  --alerta: #b4690e;
+  --alerta-claro: #fdf3e3;
+  --info: #1f5fa9;
+  --info-claro: #e8f1fb;
+  --raio: 10px;
+  --sombra: 0 1px 2px rgba(16, 24, 40, .06), 0 1px 3px rgba(16, 24, 40, .1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #14161a;
+    --superficie: #1c1f24;
+    --superficie-2: #24282e;
+    --borda: #333941;
+    --texto: #e8eaed;
+    --texto-fraco: #a7aeb8;
+    --texto-fraquissimo: #7d858f;
+    --primaria: #e8636f;
+    --primaria-clara: #3a1f22;
+    --sucesso: #4ade80;
+    --sucesso-claro: #16301f;
+    --alerta: #f0b357;
+    --alerta-claro: #33280f;
+    --info: #7bb0f0;
+    --info-claro: #17273a;
+    --sombra: 0 1px 3px rgba(0, 0, 0, .4);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a { color: var(--info); }
+
+/* ---------------------------------------------------------------- cabeçalho */
+
+.topo {
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borda);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topo-interno {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: .75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.marca {
+  font-weight: 700;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-right: auto;
+}
+
+.marca span.zh { color: var(--primaria); }
+
+.abas { display: flex; gap: .25rem; }
+
+.aba {
+  background: none;
+  border: 1px solid transparent;
+  padding: .4rem .85rem;
+  border-radius: var(--raio);
+  cursor: pointer;
+  font: inherit;
+  color: var(--texto-fraco);
+}
+
+.aba:hover { background: var(--superficie-2); }
+
+.aba.ativa {
+  background: var(--primaria-clara);
+  color: var(--primaria);
+  border-color: var(--primaria);
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------- indicadores */
+
+.indicadores {
+  max-width: 1400px;
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: .75rem;
+}
+
+.indicador {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: .7rem .9rem;
+  box-shadow: var(--sombra);
+}
+
+.indicador .numero { font-size: 1.5rem; font-weight: 700; line-height: 1.15; }
+.indicador .rotulo { font-size: .78rem; color: var(--texto-fraco); text-transform: uppercase; letter-spacing: .03em; }
+.indicador.destaque .numero { color: var(--primaria); }
+
+/* ---------------------------------------------------------------- filtros */
+
+.filtros {
+  max-width: 1400px;
+  margin: 1rem auto;
+  padding: .9rem 1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.linha-filtros {
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.campo { display: flex; flex-direction: column; gap: .25rem; }
+.campo label { font-size: .74rem; color: var(--texto-fraco); text-transform: uppercase; letter-spacing: .03em; }
+
+.campo input[type="text"], .campo select {
+  padding: .45rem .6rem;
+  border: 1px solid var(--borda);
+  border-radius: 7px;
+  background: var(--superficie);
+  color: var(--texto);
+  font: inherit;
+  min-width: 150px;
+}
+
+.campo.busca input { min-width: 260px; }
+.campo input:focus, .campo select:focus { outline: 2px solid var(--info); outline-offset: -1px; }
+
+.alternadores { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: .7rem; padding-top: .7rem; border-top: 1px dashed var(--borda); }
+
+.alternador { display: flex; align-items: center; gap: .4rem; font-size: .9rem; cursor: pointer; user-select: none; }
+.alternador input { width: 16px; height: 16px; cursor: pointer; accent-color: var(--primaria); }
+
+.acoes-filtro { margin-left: auto; display: flex; gap: .5rem; }
+
+.botao {
+  padding: .45rem .8rem;
+  border: 1px solid var(--borda);
+  border-radius: 7px;
+  background: var(--superficie);
+  color: var(--texto);
+  font: inherit;
+  cursor: pointer;
+}
+.botao:hover { background: var(--superficie-2); }
+.botao.primario { background: var(--primaria); color: #fff; border-color: var(--primaria); }
+.botao.primario:hover { filter: brightness(1.08); }
+.botao.pequeno { padding: .25rem .55rem; font-size: .82rem; }
+
+/* ---------------------------------------------------------------- lista */
+
+.conteudo { max-width: 1400px; margin: 0 auto 3rem; padding: 0 1rem; }
+
+.contagem-resultado { font-size: .88rem; color: var(--texto-fraco); margin: .5rem 0 .75rem; }
+
+.cartao {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: .85rem 1rem;
+  margin-bottom: .6rem;
+  box-shadow: var(--sombra);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem 1rem;
+}
+
+.cartao.contatado { border-left: 3px solid var(--sucesso); }
+.cartao.contatado .nome-empresa::after {
+  content: "já contatei";
+  font-size: .7rem;
+  background: var(--sucesso-claro);
+  color: var(--sucesso);
+  padding: .1rem .4rem;
+  border-radius: 4px;
+  margin-left: .5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.cabecalho-cartao { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
+.nome-empresa { font-weight: 650; font-size: 1.02rem; }
+.nome-zh { color: var(--texto-fraco); font-size: .95rem; }
+
+.etiqueta {
+  font-size: .72rem;
+  padding: .12rem .45rem;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.etiqueta.confirmada { background: var(--primaria-clara); color: var(--primaria); }
+.etiqueta.provavel { background: var(--alerta-claro); color: var(--alerta); }
+.etiqueta.taiwan, .etiqueta.hong_kong { background: var(--info-claro); color: var(--info); }
+.etiqueta.porte { background: var(--superficie-2); color: var(--texto-fraco); }
+
+.meta-empresa { font-size: .86rem; color: var(--texto-fraco); display: flex; gap: .9rem; flex-wrap: wrap; margin-top: .15rem; }
+
+.feira-linha {
+  margin-top: .45rem;
+  font-size: .87rem;
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.pilula-feira {
+  background: var(--superficie-2);
+  border: 1px solid var(--borda);
+  border-radius: 20px;
+  padding: .12rem .6rem;
+  font-size: .8rem;
+}
+.pilula-feira.urgente { background: var(--primaria-clara); border-color: var(--primaria); color: var(--primaria); font-weight: 600; }
+.pilula-feira.encerrada { opacity: .55; text-decoration: line-through; }
+.pilula-feira .stand { font-weight: 700; }
+
+.contatos { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .5rem; }
+
+.contato {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--superficie-2);
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: .2rem .5rem;
+  font-size: .82rem;
+  cursor: pointer;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+.contato:hover { border-color: var(--info); }
+.contato.copiado { background: var(--sucesso-claro); border-color: var(--sucesso); color: var(--sucesso); }
+.contato.vazio { color: var(--texto-fraquissimo); font-style: italic; cursor: default; font-family: inherit; }
+
+.coluna-acoes { display: flex; flex-direction: column; gap: .35rem; align-items: stretch; min-width: 130px; }
+
+.links-pesquisa { display: flex; gap: .3rem; flex-wrap: wrap; margin-top: .4rem; }
+.links-pesquisa a {
+  font-size: .76rem;
+  padding: .12rem .45rem;
+  border: 1px solid var(--borda);
+  border-radius: 5px;
+  text-decoration: none;
+  color: var(--texto-fraco);
+}
+.links-pesquisa a:hover { border-color: var(--info); color: var(--info); }
+
+.motivos { font-size: .76rem; color: var(--texto-fraquissimo); margin-top: .35rem; }
+
+textarea.nota {
+  width: 100%;
+  margin-top: .4rem;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: .35rem .5rem;
+  font: inherit;
+  font-size: .85rem;
+  background: var(--superficie-2);
+  color: var(--texto);
+  resize: vertical;
+  min-height: 2.2rem;
+}
+
+/* ---------------------------------------------------------------- feiras */
+
+.tabela-feiras { width: 100%; border-collapse: collapse; font-size: .9rem; background: var(--superficie); border-radius: var(--raio); overflow: hidden; box-shadow: var(--sombra); }
+.tabela-feiras th { text-align: left; padding: .6rem .7rem; background: var(--superficie-2); font-size: .78rem; text-transform: uppercase; letter-spacing: .03em; color: var(--texto-fraco); border-bottom: 1px solid var(--borda); }
+.tabela-feiras td { padding: .55rem .7rem; border-bottom: 1px solid var(--borda); vertical-align: top; }
+.tabela-feiras tr.encerrada td { opacity: .5; }
+.tabela-feiras tr:hover td { background: var(--superficie-2); }
+.rolagem-tabela { overflow-x: auto; }
+
+.densidade { font-size: .74rem; padding: .1rem .4rem; border-radius: 4px; font-weight: 600; }
+.densidade.altissima { background: var(--primaria-clara); color: var(--primaria); }
+.densidade.alta { background: var(--alerta-claro); color: var(--alerta); }
+.densidade.media { background: var(--info-claro); color: var(--info); }
+
+.vazio { text-align: center; padding: 3rem 1rem; color: var(--texto-fraco); }
+
+.rodape { max-width: 1400px; margin: 2rem auto; padding: 1rem; font-size: .82rem; color: var(--texto-fraquissimo); border-top: 1px solid var(--borda); }
+
+@media (max-width: 720px) {
+  .cartao { grid-template-columns: 1fr; }
+  .coluna-acoes { flex-direction: row; flex-wrap: wrap; }
+  .campo.busca input { min-width: 100%; }
+  .campo, .campo select, .campo input { width: 100%; }
+}

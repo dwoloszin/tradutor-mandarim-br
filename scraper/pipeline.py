@@ -1,0 +1,381 @@
+"""Pipeline de coleta, em etapas independentes e reentrantes.
+
+Cada etapa lê e grava no store e conversa com a fila. Nenhuma etapa depende de a
+anterior ter rodado na mesma execução — é isso que permite a nuvem fazer metade do
+trabalho de madrugada e o seu PC completar o resto de dia, sem coordenação nenhuma
+além dos arquivos versionados no Git.
+
+Etapas:
+  agenda        varre os centros de exposição e atualiza o calendário
+  expositores   para cada feira que interessa, baixa a lista de empresas
+  enriquecer    para cada empresa chinesa, busca contato, WeChat e porte
+  exportar      gera os JSON que o site consome
+
+Regra que atravessa tudo: feira encerrada não consome requisição. O intérprete não
+pode oferecer serviço para um evento que já aconteceu, então gastar banda com isso
+seria tirar orçamento das feiras que ainda vão acontecer.
+"""
+from __future__ import annotations
+
+from datetime import date
+
+from .core import fila as fila_mod
+from .core.datas import dias_ate, encerrado
+from .core.http import Bloqueado, FalhouDeVerdade
+from .core.modelos import (
+    chave_empresa,
+    chave_participacao,
+    dominio_proprio,
+    nome_canonico,
+    nova_empresa,
+)
+from .core.perfil import ambiente_atual, na_nuvem
+from .core.store import DATA_DIR, Tabela, agora_iso, aplicar_overrides_manuais, ler_json
+from .deteccao import china as china_mod
+from .fontes import expositores as expositores_mod
+from .fontes.locais import agenda as agenda_mod
+
+RAIZ_CONFIG = DATA_DIR.parent / "config"
+
+# Quanto antes da feira vale a pena ter os dados prontos. Prospecção de intérprete
+# acontece nas semanas anteriores; depois que a feira começa, o valor despenca.
+JANELA_PROSPECCAO_DIAS = 240
+
+
+def _config_feiras() -> dict[str, dict]:
+    """Feiras priorizadas à mão, indexadas por nome canônico."""
+    dados = ler_json(RAIZ_CONFIG / "feiras_prioritarias.json", {"feiras": []})
+    indice = {}
+    for feira in dados.get("feiras", []):
+        indice[nome_canonico(feira["nome"])] = feira
+    return indice
+
+
+def _casar_config(evento: dict, config: dict[str, dict]) -> dict:
+    """Liga o evento da agenda com a entrada curada, tolerando variação de nome."""
+    canonico = nome_canonico(evento.get("nome", ""))
+    if canonico in config:
+        return config[canonico]
+    for chave, feira in config.items():
+        if chave and (chave in canonico or canonico in chave):
+            return feira
+    return {}
+
+
+# --------------------------------------------------------------------------- agenda
+
+def etapa_agenda(hoje: date | None = None) -> dict:
+    hoje = hoje or date.today()
+    eventos_tab = Tabela("eventos").carregar()
+    fila = fila_mod.Fila()
+    config = _config_feiras()
+
+    coletados, situacao = agenda_mod.coletar_todos(hoje)
+
+    novos = 0
+    for evento in coletados:
+        feira_config = _casar_config(evento, config)
+        if feira_config:
+            evento["prioridade"] = feira_config.get("prioridade", 5)
+            evento["densidade_china"] = feira_config.get("densidade_china", "")
+            evento["setor"] = feira_config.get("setor", "")
+            if feira_config.get("site") and not evento.get("site"):
+                evento["site"] = feira_config["site"]
+
+        if eventos_tab.obter(evento["id"]) is None:
+            novos += 1
+        eventos_tab.upsert(evento)
+
+    # feiras curadas que não apareceram em nenhuma agenda entram assim mesmo
+    nomes_vistos = {nome_canonico(e.get("nome", "")) for e in eventos_tab.todos()}
+    for canonico, feira in config.items():
+        if canonico in nomes_vistos:
+            continue
+        from .core.modelos import chave_evento, novo_evento
+        eventos_tab.upsert(novo_evento(
+            id=chave_evento(feira["nome"]),
+            nome=feira["nome"],
+            site=feira.get("site", ""),
+            local_nome=feira.get("local", ""),
+            cidade=feira.get("cidade", ""),
+            uf=feira.get("uf", ""),
+            setor=feira.get("setor", ""),
+            prioridade=feira.get("prioridade", 5),
+            densidade_china=feira.get("densidade_china", ""),
+            descricao=feira.get("observacao", ""),
+            fontes=["config/feiras_prioritarias.json"],
+        ))
+        novos += 1
+
+    # Reavalia "encerrado" a cada rodada: o tempo passa mesmo sem o site mudar.
+    # Quem a própria fonte marcou como expirado continua expirado — nossa data pode
+    # estar um ano à frente por falta de ano no texto original.
+    for evento in eventos_tab.todos():
+        if evento.get("expirado_na_fonte"):
+            evento["encerrado"] = True
+        elif evento.get("data_fim"):
+            evento["encerrado"] = encerrado(evento["data_fim"], hoje)
+
+    # agenda tarefas de expositores só para o que ainda vai acontecer
+    agendadas = 0
+    for evento in eventos_tab.todos():
+        if evento.get("encerrado"):
+            continue
+        faltam = dias_ate(evento.get("data_inicio", ""), hoje)
+        if faltam is not None and faltam > JANELA_PROSPECCAO_DIAS:
+            continue
+        if not (evento.get("site") or evento.get("pagina_local")):
+            continue
+        prioridade = evento.get("prioridade", 5)
+        if faltam is not None and 0 <= faltam <= 60:
+            prioridade = max(1, prioridade - 2)  # feira próxima fura a fila
+        fila.adicionar("expositores", evento["id"], prioridade=prioridade)
+        agendadas += 1
+
+    aplicar_overrides_manuais(eventos_tab, "eventos")
+    eventos_tab.salvar()
+    fila.salvar()
+
+    return {
+        "eventos_total": len(eventos_tab),
+        "eventos_novos": novos,
+        "encerrados": sum(1 for e in eventos_tab.todos() if e.get("encerrado")),
+        "tarefas_agendadas": agendadas,
+        "situacao_locais": situacao,
+    }
+
+
+# ---------------------------------------------------------------------- expositores
+
+def etapa_expositores(limite: int | None = None, hoje: date | None = None) -> dict:
+    hoje = hoje or date.today()
+    eventos_tab = Tabela("eventos").carregar()
+    empresas_tab = Tabela("empresas").carregar()
+    participacoes_tab = Tabela("participacoes").carregar()
+    fila = fila_mod.Fila()
+    config = _config_feiras()
+
+    tarefas = fila.proximas("expositores", limite)
+    resumo = {"processadas": 0, "ok": 0, "bloqueadas": 0, "sem_lista": 0,
+              "plataforma_nova": 0, "erro": 0, "expositores": 0, "chinesas": 0}
+
+    for tarefa in tarefas:
+        evento = eventos_tab.obter(tarefa["alvo"])
+        if evento is None:
+            fila.marcar_sem_dados("expositores", tarefa["alvo"], motivo="evento sumiu do store")
+            continue
+        if evento.get("encerrado"):
+            fila.marcar_sem_dados("expositores", tarefa["alvo"], motivo="feira encerrada")
+            continue
+
+        resumo["processadas"] += 1
+        feira_config = _casar_config(evento, config)
+        resultado = expositores_mod.coletar(evento, feira_config)
+
+        evento["plataforma"] = resultado.get("plataforma") or evento.get("plataforma", "")
+        if resultado.get("pagina"):
+            evento["pagina_expositores"] = resultado["pagina"]
+
+        # a plataforma sabe a data oficial melhor que a agenda do centro de exposições
+        datas = resultado.get("datas_evento") or {}
+        if datas.get("data_inicio"):
+            evento["data_inicio"] = datas["data_inicio"]
+            evento["data_fim"] = datas.get("data_fim") or datas["data_inicio"]
+            evento["encerrado"] = encerrado(evento["data_fim"], hoje)
+
+        if resultado["status"] == expositores_mod.BLOQUEADO:
+            resumo["bloqueadas"] += 1
+            fila.marcar_adiado_local("expositores", tarefa["alvo"],
+                                     motivo=resultado.get("detalhe", "bloqueado"))
+            continue
+        if resultado["status"] == expositores_mod.SEM_LISTA:
+            resumo["sem_lista"] += 1
+            fila.marcar_sem_dados("expositores", tarefa["alvo"],
+                                  motivo=resultado.get("detalhe", ""))
+            continue
+        if resultado["status"] == expositores_mod.PLATAFORMA_NOVA:
+            resumo["plataforma_nova"] += 1
+            # Falha com backoff, não "sem dados": pode ser plataforma que ainda não
+            # sabemos ler (aí precisa de adaptador), mas pode ser tropeço passageiro —
+            # e marcar como "sem dados" congelaria a feira por duas semanas.
+            fila.marcar_falha("expositores", tarefa["alvo"],
+                              motivo=resultado.get("detalhe", "precisa de adaptador"))
+            continue
+        if resultado["status"] == expositores_mod.ERRO:
+            resumo["erro"] += 1
+            fila.marcar_falha("expositores", tarefa["alvo"],
+                              motivo=resultado.get("detalhe", "erro"))
+            continue
+
+        chinesas_aqui = _guardar_expositores(
+            resultado["expositores"], evento, empresas_tab, participacoes_tab, fila
+        )
+        evento["total_expositores"] = len(resultado["expositores"])
+        evento["total_chinesas"] = chinesas_aqui
+        resumo["ok"] += 1
+        resumo["expositores"] += len(resultado["expositores"])
+        resumo["chinesas"] += chinesas_aqui
+        fila.marcar_ok("expositores", tarefa["alvo"],
+                       resumo=f"{len(resultado['expositores'])} expositores, "
+                              f"{chinesas_aqui} chinesas")
+
+    eventos_tab.salvar()
+    empresas_tab.salvar()
+    participacoes_tab.salvar()
+    fila.salvar()
+    return resumo
+
+
+def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, fila) -> int:
+    """Grava empresas e participações; devolve quantas são chinesas."""
+    chinesas = 0
+    for bruto in expositores:
+        nome = (bruto.get("nome") or "").strip()
+        if not nome:
+            continue
+
+        avaliacao = china_mod.avaliar(bruto)
+        relevante = avaliacao["classificacao"] in (china_mod.CONFIRMADA, china_mod.PROVAVEL)
+
+        identificador = chave_empresa(nome, bruto.get("website"))
+        empresa = nova_empresa(
+            id=identificador,
+            nome=nome,
+            nome_canonico=nome_canonico(nome),
+            pais=bruto.get("pais", ""),
+            cidade=bruto.get("cidade", ""),
+            provincia=bruto.get("provincia", ""),
+            endereco=bruto.get("endereco", ""),
+            website=bruto.get("website", ""),
+            emails=[e for e in bruto.get("emails", []) if e],
+            produtos=bruto.get("produtos", []),
+            setor=evento.get("setor", ""),
+            descricao=bruto.get("descricao", ""),
+            perfis=bruto.get("perfis", {}),
+            score_china=avaliacao["score"],
+            classificacao_china=avaliacao["classificacao"],
+            origem=avaliacao["origem"],
+            motivos_deteccao=avaliacao["motivos"],
+            fontes=[bruto.get("fonte_url") or bruto.get("fonte_plataforma", "")],
+        )
+        empresas_tab.upsert(empresa)
+
+        participacoes_tab.upsert({
+            "id": chave_participacao(identificador, evento["id"]),
+            "empresa_id": identificador,
+            "evento_id": evento["id"],
+            "evento_nome": evento.get("nome", ""),
+            "evento_inicio": evento.get("data_inicio", ""),
+            "evento_fim": evento.get("data_fim", ""),
+            "local_nome": evento.get("local_nome", ""),
+            "cidade": evento.get("cidade", ""),
+            "uf": evento.get("uf", ""),
+            "stand": bruto.get("stand", ""),
+            "ficha_feira": bruto.get("ficha_feira", ""),
+            "atualizado_em": agora_iso(),
+        })
+
+        if relevante:
+            chinesas += 1
+            prioridade = 2 if avaliacao["classificacao"] == china_mod.CONFIRMADA else 4
+            if bruto.get("website"):
+                fila.adicionar("site_empresa", identificador, prioridade=prioridade,
+                               dados={"website": bruto["website"]})
+            else:
+                # sem site não dá para visitar: procura porte e contato nas bases chinesas
+                fila.adicionar("enriquecer_empresa", identificador, prioridade=prioridade + 1,
+                               dados={"nome": nome})
+    return chinesas
+
+
+# ----------------------------------------------------------------------- enriquecer
+
+def etapa_enriquecer(limite: int | None = None) -> dict:
+    from .fontes.enriquecimento import site_empresa
+
+    empresas_tab = Tabela("empresas").carregar()
+    fila = fila_mod.Fila()
+
+    tarefas = fila.proximas("site_empresa", limite)
+    resumo = {"processadas": 0, "com_email": 0, "com_wechat": 0,
+              "adiadas": 0, "falhas": 0, "sem_dados": 0}
+
+    for tarefa in tarefas:
+        empresa = empresas_tab.obter(tarefa["alvo"])
+        if empresa is None:
+            fila.marcar_sem_dados("site_empresa", tarefa["alvo"], motivo="empresa sumiu")
+            continue
+
+        site = (tarefa.get("dados") or {}).get("website") or empresa.get("website")
+        if not site:
+            fila.marcar_sem_dados("site_empresa", tarefa["alvo"], motivo="sem site")
+            resumo["sem_dados"] += 1
+            continue
+
+        resumo["processadas"] += 1
+        try:
+            achado = site_empresa.enriquecer(site)
+        except Bloqueado as exc:
+            resumo["adiadas"] += 1
+            fila.marcar_adiado_local("site_empresa", tarefa["alvo"], motivo=exc.motivo)
+            continue
+        except FalhouDeVerdade as exc:
+            resumo["falhas"] += 1
+            fila.marcar_falha("site_empresa", tarefa["alvo"], motivo=exc.motivo)
+            continue
+        except Exception as exc:  # noqa: BLE001
+            resumo["falhas"] += 1
+            fila.marcar_falha("site_empresa", tarefa["alvo"],
+                              motivo=f"{type(exc).__name__}: {exc}")
+            continue
+
+        empresas_tab.upsert({
+            "id": empresa["id"],
+            "emails": achado["emails"],
+            "telefones": achado["telefones"],
+            "whatsapps": achado["whatsapps"],
+            "wechat": achado["wechat"] or empresa.get("wechat", ""),
+            "website_cn": achado["website_cn"] or empresa.get("website_cn", ""),
+            "enriquecida_em": agora_iso(),
+            "fontes": ["site_empresa"],
+        })
+        if achado["emails"]:
+            resumo["com_email"] += 1
+        if achado["wechat"]:
+            resumo["com_wechat"] += 1
+
+        fila.marcar_ok("site_empresa", tarefa["alvo"],
+                       resumo=f"{len(achado['emails'])} e-mails, "
+                              f"{len(achado['telefones'])} telefones")
+
+    aplicar_overrides_manuais(empresas_tab, "empresas")
+    empresas_tab.salvar()
+    fila.salvar()
+    return resumo
+
+
+# -------------------------------------------------------------------------- resumo
+
+def situacao_geral() -> dict:
+    eventos = Tabela("eventos").carregar()
+    empresas = Tabela("empresas").carregar()
+    participacoes = Tabela("participacoes").carregar()
+    fila = fila_mod.Fila()
+
+    relevantes = [
+        e for e in empresas.todos()
+        if e.get("classificacao_china") in (china_mod.CONFIRMADA, china_mod.PROVAVEL)
+    ]
+    return {
+        "ambiente": ambiente_atual().value,
+        "na_nuvem": na_nuvem(),
+        "eventos": len(eventos),
+        "eventos_futuros": sum(1 for e in eventos.todos() if not e.get("encerrado")),
+        "empresas": len(empresas),
+        "empresas_china": len(relevantes),
+        "com_email": sum(1 for e in relevantes if e.get("emails")),
+        "com_wechat": sum(1 for e in relevantes if e.get("wechat")),
+        "com_funcionarios": sum(1 for e in relevantes if e.get("funcionarios")),
+        "participacoes": len(participacoes),
+        "fila": fila.resumo(),
+    }

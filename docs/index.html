@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tradutor Mandarim BR — empresas chinesas em feiras no Brasil</title>
+<meta name="description" content="Empresas chinesas expondo em feiras no Brasil, com contato, WeChat e estande — para intérpretes de mandarim oferecerem serviço de tradução presencial." />
+<link rel="stylesheet" href="assets/estilo.css" />
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-interno">
+    <div class="marca">🇨🇳 Tradutor Mandarim BR <span class="zh">口译</span></div>
+    <nav class="abas">
+      <button class="aba ativa" data-aba="empresas">Empresas chinesas</button>
+      <button class="aba" data-aba="feiras">Calendário de feiras</button>
+      <button class="aba" data-aba="revisao">Revisar duvidosas</button>
+    </nav>
+  </div>
+</header>
+
+<div class="indicadores" id="indicadores"></div>
+
+<section class="filtros">
+  <div class="linha-filtros">
+    <div class="campo busca">
+      <label for="f-busca">Buscar</label>
+      <input type="text" id="f-busca" placeholder="nome, produto, cidade, e-mail, estande..." />
+    </div>
+    <div class="campo">
+      <label for="f-feira">Feira</label>
+      <select id="f-feira"></select>
+    </div>
+    <div class="campo">
+      <label for="f-uf">Estado</label>
+      <select id="f-uf"></select>
+    </div>
+    <div class="campo">
+      <label for="f-setor">Setor</label>
+      <select id="f-setor"></select>
+    </div>
+    <div class="campo">
+      <label for="f-origem">Origem</label>
+      <select id="f-origem">
+        <option value="">China, Taiwan e HK</option>
+        <option value="china">só China continental</option>
+        <option value="taiwan">só Taiwan</option>
+        <option value="hong_kong">só Hong Kong</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="f-ordem">Ordenar por</label>
+      <select id="f-ordem">
+        <option value="urgencia">feira mais próxima</option>
+        <option value="nome">nome da empresa</option>
+        <option value="porte">porte (funcionários)</option>
+      </select>
+    </div>
+    <div class="acoes-filtro">
+      <button class="botao" id="btn-limpar">limpar filtros</button>
+      <button class="botao primario" id="btn-csv">baixar CSV</button>
+    </div>
+  </div>
+
+  <div class="alternadores">
+    <label class="alternador" title="Feira que já aconteceu não serve para oferecer serviço">
+      <input type="checkbox" id="f-ocultar-encerradas" checked />
+      ocultar feiras encerradas
+    </label>
+    <label class="alternador">
+      <input type="checkbox" id="f-so-contato" />
+      só empresas com contato (e-mail, telefone ou WeChat)
+    </label>
+    <label class="alternador">
+      <input type="checkbox" id="f-ocultar-contatados" />
+      ocultar as que já contatei
+    </label>
+    <label class="alternador">
+      <input type="checkbox" id="f-so-confirmadas" />
+      só chinesas confirmadas
+    </label>
+  </div>
+</section>
+
+<main class="conteudo">
+  <div class="contagem-resultado" id="contagem"></div>
+  <div id="conteudo"><div class="vazio">Carregando dados...</div></div>
+</main>
+
+<footer class="rodape">
+  <p>
+    Dados coletados automaticamente das páginas públicas de expositores das feiras.
+    Última atualização: <strong id="atualizado">—</strong>.
+  </p>
+  <p>
+    Suas marcações de "já contatei" e suas anotações ficam salvas apenas <strong>neste
+    navegador</strong> — ninguém mais vê, e elas não são enviadas a lugar nenhum.
+    Use "baixar CSV" para levar sua lista para uma planilha.
+  </p>
+  <p>
+    Confirme sempre o contato antes de abordar: os dados são um ponto de partida, podem
+    estar desatualizados e a mesma empresa às vezes aparece com grafias diferentes.
+  </p>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

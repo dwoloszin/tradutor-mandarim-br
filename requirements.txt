@@ -1,0 +1,14 @@
+# Dependências do coletor.
+# Instalar:  python -m pip install -r requirements.txt
+#            python -m playwright install chromium
+
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=5.0.0
+python-dateutil>=2.8.2
+
+# Playwright é usado em dois lugares:
+#  - agendas que só carregam a lista completa via JavaScript (São Paulo Expo, Anhembi);
+#  - navegador com sessão salva para o TradeChina (CAPTCHA do Tencent EdgeOne).
+# Na nuvem, só o primeiro uso acontece.
+playwright>=1.44.0
