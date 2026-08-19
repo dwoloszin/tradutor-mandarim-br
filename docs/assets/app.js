@@ -12,6 +12,7 @@ const estado = {
   meta: {},
   revisao: [],
   revisaoCarregada: false,
+  oportunidades: [],
   aba: 'empresas',
   marcacoes: carregarMarcacoes(),
 };
@@ -353,7 +354,7 @@ const FILTROS_SO_EMPRESAS = ['f-so-contato', 'f-ocultar-contatados', 'f-so-confi
                              'f-setor', 'f-porte', 'f-origem', 'f-ordem', 'f-feira'];
 
 function ajustarFiltrosVisiveis() {
-  const naFeiras = estado.aba === 'feiras';
+  const naFeiras = estado.aba === 'feiras' || estado.aba === 'oportunidades';
   FILTROS_SO_EMPRESAS.forEach((id) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -366,11 +367,62 @@ function ajustarFiltrosVisiveis() {
   });
 }
 
+function desenharOportunidades() {
+  const lista = estado.oportunidades;
+  if (!lista.length) {
+    return '<div class="vazio">Nenhum aviso coletado ainda.</div>';
+  }
+  const rotulo = { vaga: '🔴 VAGA', missao: '🤝 missão/delegação', noticia: 'notícia' };
+  return '<div class="lista-oportunidades">' + lista.map((o) => `
+    <article class="oportunidade ${escapar(o.tipo)}">
+      <div class="cabecalho">
+        <span class="etiqueta ${o.tipo === 'vaga' ? 'confirmada' : 'provavel'}">${rotulo[o.tipo] || o.tipo}</span>
+        <a href="${escapar(o.url)}" target="_blank" rel="noopener"><strong>${escapar(o.titulo)}</strong></a>
+        <span class="data">${o.data ? formatarData(o.data) : ''}${
+          o.dias_atras != null && o.dias_atras >= 0 ? ` · há ${o.dias_atras} dias` : ''}</span>
+      </div>
+      <div class="data">${escapar(o.fonte)}</div>
+      ${o.resumo ? `<div class="resumo">${escapar(o.resumo)}</div>` : ''}
+    </article>`).join('') + '</div>';
+}
+
+/* A vaga do consulado é o item mais urgente que este site pode mostrar: é trabalho
+ * direto, sem prospecção, e some rápido. Por isso vira faixa no topo, acima de tudo,
+ * e só some quando envelhece — 90 dias, prazo em que ainda pode valer. */
+function desenharAlertaVaga() {
+  const alvo = document.getElementById('alerta-vaga');
+  if (!alvo) return;
+  const vagas = estado.oportunidades.filter(
+    (o) => o.tipo === 'vaga' && (o.dias_atras == null || o.dias_atras <= 90)
+  );
+  if (!vagas.length) { alvo.innerHTML = ''; return; }
+  const v = vagas[0];
+  alvo.innerHTML = `
+    <div class="alerta-vaga">
+      <div>
+        <div class="titulo">🔴 Vaga anunciada pelo Consulado da China em São Paulo</div>
+        <div>${escapar(v.titulo)}</div>
+        <div class="detalhe">${v.data ? formatarData(v.data) : ''}${
+          v.dias_atras != null ? ` · há ${v.dias_atras} dias` : ''}${
+          vagas.length > 1 ? ` · e mais ${vagas.length - 1} aviso(s)` : ''}</div>
+      </div>
+      <a class="botao primario" href="${escapar(v.url)}" target="_blank" rel="noopener">ver anúncio</a>
+    </div>`;
+}
+
 function renderizar() {
   const filtros = lerFiltros();
   const conteudo = document.getElementById('conteudo');
   const contagem = document.getElementById('contagem');
   ajustarFiltrosVisiveis();
+
+  if (estado.aba === 'oportunidades') {
+    const vagas = estado.oportunidades.filter((o) => o.tipo === 'vaga').length;
+    contagem.textContent = `${estado.oportunidades.length} avisos do consulado`
+      + (vagas ? ` — ${vagas} com vaga de emprego` : ' — nenhuma vaga aberta no momento');
+    conteudo.innerHTML = desenharOportunidades();
+    return;
+  }
 
   if (estado.aba === 'feiras') {
     const total = estado.feiras.length;
@@ -487,20 +539,23 @@ async function carregarJSON(caminho, padrao) {
 }
 
 async function iniciar() {
-  const [empresas, feiras, meta] = await Promise.all([
+  const [empresas, feiras, meta, oportunidades] = await Promise.all([
     carregarJSON('data/empresas.json', []),
     carregarJSON('data/feiras.json', []),
     carregarJSON('data/meta.json', {}),
+    carregarJSON('data/oportunidades.json', []),
   ]);
   estado.empresas = empresas;
   estado.feiras = feiras;
   estado.meta = meta;
+  estado.oportunidades = oportunidades;
 
   document.getElementById('atualizado').textContent = meta.atualizado_em
     ? new Date(meta.atualizado_em).toLocaleString('pt-BR')
     : 'ainda não gerado';
 
   preencherSeletores();
+  desenharAlertaVaga();
   desenharIndicadores();
   renderizar();
 }

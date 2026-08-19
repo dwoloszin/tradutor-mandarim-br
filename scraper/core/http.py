@@ -127,6 +127,32 @@ def _gravar_cache(url: str, conteudo: str, sufixo: str) -> None:
         pass  # cache é otimização, nunca motivo para quebrar a coleta
 
 
+def _corrigir_codificacao(resp: requests.Response) -> None:
+    """Descobre a codificação real quando o servidor não a declara.
+
+    Sem cabeçalho charset, o requests assume ISO-8859-1 e o texto vem corrompido:
+    "Notícias" vira "NotÃ­cias" e nomes chineses viram lixo. O erro é silencioso —
+    entra no banco parecendo dado bom. Aqui olhamos a declaração dentro do HTML e,
+    na falta dela, deixamos o requests farejar pelo conteúdo.
+    """
+    tipo = (resp.headers.get("Content-Type") or "").lower()
+    if "charset=" in tipo:
+        return
+
+    inicio = resp.content[:2048]
+    achado = re.search(
+        rb"""<meta[^>]+charset=["']?\s*([\w-]+)""", inicio, re.IGNORECASE
+    )
+    if achado:
+        try:
+            resp.encoding = achado.group(1).decode("ascii")
+            return
+        except (UnicodeDecodeError, LookupError):
+            pass
+    if resp.apparent_encoding:
+        resp.encoding = resp.apparent_encoding
+
+
 def _parece_desafio(texto: str) -> bool:
     if len(texto) >= 8000:
         return False
@@ -182,6 +208,7 @@ def buscar(
             time.sleep(2 * (tentativa + 1))
             continue
 
+        _corrigir_codificacao(resp)
         texto = resp.text
         # Página curta com cara de desafio anti-bot: 200 no status, bloqueio na prática.
         if _parece_desafio(texto):

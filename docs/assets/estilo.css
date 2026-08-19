@@ -334,3 +334,36 @@ textarea.nota {
 /* Filtro que não vale para a aba atual: visível, mas claramente fora de uso. */
 .campo.inativo, .alternador.inativo { opacity: .38; cursor: not-allowed; }
 .campo.inativo select, .alternador.inativo input { cursor: not-allowed; }
+
+/* Alerta de vaga do consulado: é o item mais urgente do site quando existe,
+   porque tem prazo curto e é trabalho direto, sem prospecção. */
+.alerta-vaga {
+  max-width: 1400px;
+  margin: 1rem auto 0;
+  padding: .85rem 1rem;
+  background: var(--primaria-clara);
+  border: 1px solid var(--primaria);
+  border-left: 4px solid var(--primaria);
+  border-radius: var(--raio);
+  display: flex;
+  gap: .75rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.alerta-vaga .titulo { font-weight: 700; color: var(--primaria); }
+.alerta-vaga .detalhe { font-size: .88rem; color: var(--texto-fraco); }
+.alerta-vaga a.botao { margin-left: auto; }
+
+.lista-oportunidades { display: flex; flex-direction: column; gap: .6rem; }
+.oportunidade {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: .8rem 1rem;
+  box-shadow: var(--sombra);
+}
+.oportunidade.vaga { border-left: 3px solid var(--primaria); }
+.oportunidade.missao { border-left: 3px solid var(--info); }
+.oportunidade .cabecalho { display: flex; gap: .5rem; align-items: baseline; flex-wrap: wrap; }
+.oportunidade .data { font-size: .82rem; color: var(--texto-fraquissimo); }
+.oportunidade .resumo { font-size: .88rem; color: var(--texto-fraco); margin-top: .35rem; }

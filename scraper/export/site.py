@@ -39,6 +39,16 @@ def _renovar_versao_dos_assets() -> None:
         indice.write_text(novo, encoding="utf-8")
 
 
+def _data_decrescente(iso: str) -> int:
+    """Chave de ordenação que põe a data mais recente primeiro (sem data vai para o fim)."""
+    if not iso:
+        return 0
+    try:
+        return -int(iso.replace("-", ""))
+    except ValueError:
+        return 0
+
+
 def _agrupar_participacoes(participacoes: list[dict]) -> dict[str, list[dict]]:
     por_empresa: dict[str, list[dict]] = {}
     for p in participacoes:
@@ -180,6 +190,31 @@ def exportar(hoje: date | None = None) -> dict:
     escrever_json(SAIDA / "empresas_revisao.json", revisao)
     escrever_json(SAIDA / "feiras.json", eventos_saida)
 
+    # Oportunidades: vagas anunciadas pelo consulado. Ficam em arquivo separado porque
+    # sao poucas e o site as destaca no topo — nao entram na lista de empresas.
+    oportunidades = []
+    for item in Tabela("oportunidades").carregar().todos():
+        dias = None
+        if item.get("data_publicacao"):
+            dias = -(dias_ate(item["data_publicacao"], hoje) or 0)
+        oportunidades.append({
+            "id": item["id"],
+            "titulo": item.get("titulo", ""),
+            "url": item.get("url", ""),
+            "fonte": item.get("fonte", ""),
+            "data": item.get("data_publicacao", ""),
+            "tipo": item.get("tipo", "noticia"),
+            "resumo": (item.get("resumo") or "")[:300],
+            "dias_atras": dias,
+        })
+    # vaga primeiro, depois missão, e dentro de cada grupo a mais recente no topo.
+    # A data vira negativa via chave invertida para ordenar decrescente sem gambiarra.
+    ordem_tipo = {"vaga": 0, "missao": 1, "noticia": 2}
+    oportunidades.sort(
+        key=lambda o: (ordem_tipo.get(o["tipo"], 3), _data_decrescente(o["data"]))
+    )
+    escrever_json(SAIDA / "oportunidades.json", oportunidades)
+
     from ..pipeline import situacao_geral
     meta = {
         "atualizado_em": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -192,6 +227,11 @@ def exportar(hoje: date | None = None) -> dict:
         "total_feiras": len(eventos_saida),
         "feiras_futuras": sum(1 for e in eventos_saida if not e["encerrada"]),
         "feiras_com_lista": sum(1 for e in eventos_saida if e["total_expositores"]),
+        "vagas_consulado": sum(1 for o in oportunidades if o["tipo"] == "vaga"),
+        "vagas_consulado_recentes": sum(
+            1 for o in oportunidades
+            if o["tipo"] == "vaga" and o["dias_atras"] is not None and o["dias_atras"] <= 90
+        ),
     }
     escrever_json(SAIDA / "meta.json", meta)
     return meta

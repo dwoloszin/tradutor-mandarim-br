@@ -366,6 +366,40 @@ def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, f
     return chinesas
 
 
+# -------------------------------------------------------------------- oportunidades
+
+def etapa_oportunidades(hoje: date | None = None) -> dict:
+    """Monitora canais que anunciam trabalho direto para quem fala mandarim.
+
+    Hoje: o Consulado-Geral da China em São Paulo. As vagas dele são raras — uma ou
+    duas por ano — mas são exatamente do perfil (assistente consular, tradutor) e têm
+    prazo curto. Quem não olha o site todo dia perde; o robô olha.
+    """
+    from .fontes.oportunidades import consulado
+
+    tabela = Tabela("oportunidades").carregar()
+    resumo = {"lidas": 0, "novas": 0, "vagas": 0, "missoes": 0, "erro": ""}
+
+    try:
+        itens = consulado.coletar(hoje)
+    except Exception as exc:  # noqa: BLE001 - um canal fora do ar não derruba a rodada
+        resumo["erro"] = f"{type(exc).__name__}: {exc}"
+        return resumo
+
+    for item in itens:
+        resumo["lidas"] += 1
+        if tabela.obter(item["id"]) is None:
+            resumo["novas"] += 1
+        tabela.upsert(item)
+        if item["tipo"] == "vaga":
+            resumo["vagas"] += 1
+        elif item["tipo"] == "missao":
+            resumo["missoes"] += 1
+
+    tabela.salvar()
+    return resumo
+
+
 # ----------------------------------------------------------------------- enriquecer
 
 def etapa_enriquecer(limite: int | None = None) -> dict:

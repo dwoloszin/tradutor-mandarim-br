@@ -6,6 +6,7 @@ Uso típico:
   python -m scraper.cli pendentes       # SÓ o que a nuvem não conseguiu — é o comando do seu PC
   python -m scraper.cli agenda          # atualiza só o calendário de feiras
   python -m scraper.cli radar           # procura feiras novas na imprensa do setor
+  python -m scraper.cli oportunidades   # vagas anunciadas pelo consulado chines
   python -m scraper.cli expositores     # baixa listas de expositores
   python -m scraper.cli enriquecer      # busca contato/WeChat das empresas chinesas
   python -m scraper.cli exportar        # regenera os JSON do site
@@ -47,8 +48,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="scraper.cli", description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("comando", choices=[
-        "tudo", "pendentes", "agenda", "radar", "expositores", "enriquecer",
-        "vagas", "exportar", "situacao", "investigar", "login", "limpar-cache",
+        "tudo", "pendentes", "agenda", "radar", "oportunidades", "expositores",
+        "enriquecer", "vagas", "exportar", "situacao", "investigar", "login", "limpar-cache",
     ])
     parser.add_argument("argumento", nargs="?", default="")
     parser.add_argument("--limite", type=int, default=None,
@@ -88,8 +89,8 @@ def main(argv: list[str] | None = None) -> int:
     from .core.store import RodadaEmAndamento, trava_de_escrita
 
     # comandos que so leem nao precisam de trava
-    if args.comando in ("tudo", "pendentes", "agenda", "radar", "expositores",
-                        "enriquecer", "vagas"):
+    if args.comando in ("tudo", "pendentes", "agenda", "radar", "oportunidades",
+                        "expositores", "enriquecer", "vagas"):
         try:
             with trava_de_escrita():
                 return _executar(args, pipeline)
@@ -111,6 +112,9 @@ def _executar(args, pipeline) -> int:
             _imprimir("1b) RADAR DE FEIRAS NOVAS", radar())
         except Exception as exc:  # noqa: BLE001
             _imprimir("1b) RADAR DE FEIRAS NOVAS", {"falhou": f"{type(exc).__name__}: {exc}"})
+    if args.comando in ("tudo", "oportunidades"):
+        _imprimir("1c) OPORTUNIDADES (consulado)", pipeline.etapa_oportunidades())
+
     if args.comando in ("tudo", "expositores"):
         _imprimir("2) EXPOSITORES", pipeline.etapa_expositores(args.limite))
     if args.comando in ("tudo", "enriquecer"):
@@ -133,6 +137,7 @@ def _executar(args, pipeline) -> int:
         from .core.perfil import na_nuvem
         if na_nuvem():
             print("aviso: 'pendentes' foi feito para rodar no seu computador, não na nuvem")
+        _imprimir("OPORTUNIDADES", pipeline.etapa_oportunidades())
         _imprimir("EXPOSITORES PENDENTES", pipeline.etapa_expositores(args.limite))
         _imprimir("ENRIQUECIMENTO PENDENTE", pipeline.etapa_enriquecer(args.limite))
 
