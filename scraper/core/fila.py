@@ -97,8 +97,20 @@ class Fila:
     def marcar_ok(self, tipo: str, alvo: str, *, resumo: str = "") -> None:
         self._atualizar(tipo, alvo, estado=OK, erro=None, resumo=resumo, zerar_tentativas=True)
 
-    def marcar_sem_dados(self, tipo: str, alvo: str, *, motivo: str = "") -> None:
+    def marcar_sem_dados(self, tipo: str, alvo: str, *, motivo: str = "",
+                         voltar_em_horas: float | None = None) -> None:
+        """A fonte não tinha o dado agora. Quem chama pode dizer quando vale reperguntar.
+
+        Feira que ainda não publicou a lista de expositores é o caso típico: se ela
+        acontece daqui a 10 dias, esperar o prazo padrão de 14 significa nunca mais
+        olhar antes do evento — e perder a feira inteira.
+        """
         self._atualizar(tipo, alvo, estado=SEM_DADOS, erro=motivo, zerar_tentativas=True)
+        if voltar_em_horas is not None:
+            registro = self._registro(tipo, alvo)
+            registro["proxima_apos"] = (
+                _agora() + timedelta(hours=voltar_em_horas)
+            ).isoformat(timespec="seconds")
 
     def marcar_adiado_local(self, tipo: str, alvo: str, *, motivo: str = "") -> None:
         """Bloqueado. Na nuvem, isso não é fracasso: a tarefa fica intacta esperando
@@ -169,6 +181,10 @@ class Fila:
             proxima = _parse(registro.get("proxima_apos"))
             return proxima is None or _agora() >= proxima
         if estado in (OK, SEM_DADOS):
+            # prazo explícito definido por quem marcou tem precedência sobre o TTL fixo
+            proxima = _parse(registro.get("proxima_apos"))
+            if proxima is not None:
+                return _agora() >= proxima
             ttl = TTL_PADRAO_HORAS.get(registro.get("tipo", ""), 24 * 7)
             if estado == SEM_DADOS:
                 ttl = max(ttl, 24 * 14)  # não insistir onde já não havia nada

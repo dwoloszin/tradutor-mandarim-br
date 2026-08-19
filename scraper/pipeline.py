@@ -260,7 +260,8 @@ def etapa_expositores(limite: int | None = None, hoje: date | None = None) -> di
         if resultado["status"] == expositores_mod.SEM_LISTA:
             resumo["sem_lista"] += 1
             fila.marcar_sem_dados("expositores", tarefa["alvo"],
-                                  motivo=resultado.get("detalhe", ""))
+                                  motivo=resultado.get("detalhe", ""),
+                                  voltar_em_horas=_quando_reperguntar(evento, hoje))
             continue
         if resultado["status"] == expositores_mod.PLATAFORMA_NOVA:
             resumo["plataforma_nova"] += 1
@@ -293,6 +294,29 @@ def etapa_expositores(limite: int | None = None, hoje: date | None = None) -> di
     participacoes_tab.salvar()
     fila.salvar()
     return resumo
+
+
+def _quando_reperguntar(evento: dict, hoje: date) -> float:
+    """De quanto em quanto tempo revisitar uma feira que ainda não publicou a lista.
+
+    A lista de expositores costuma aparecer nas semanas anteriores ao evento — quase
+    nunca com meses de antecedência. Então a cadência acompanha a proximidade: feira
+    da semana que vem é reconsultada todo dia; feira do ano que vem, uma vez por mês.
+    Com o prazo fixo de 14 dias que existia antes, uma feira a 10 dias de distância
+    nunca era reconsultada a tempo.
+    """
+    faltam = dias_ate(evento.get("data_inicio", ""), hoje)
+    if faltam is None:
+        return 24 * 7        # sem data: semanal, é o que dá para fazer
+    if faltam < 0:
+        return 24 * 30       # já começou; praticamente não interessa mais
+    if faltam <= 14:
+        return 24            # reta final: todo dia
+    if faltam <= 45:
+        return 24 * 3
+    if faltam <= 120:
+        return 24 * 7
+    return 24 * 30
 
 
 def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, fila) -> int:
