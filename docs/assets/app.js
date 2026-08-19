@@ -353,6 +353,15 @@ function desenharFeirasAba(filtros) {
 const FILTROS_SO_EMPRESAS = ['f-so-contato', 'f-ocultar-contatados', 'f-so-confirmadas',
                              'f-setor', 'f-porte', 'f-origem', 'f-ordem', 'f-feira'];
 
+function atualizarContadorContatados() {
+  const marcadas = Object.values(estado.marcacoes).filter((m) => m.contatado).length;
+  const rotulo = document.getElementById('rotulo-contatados');
+  if (!rotulo) return;
+  rotulo.textContent = marcadas
+    ? `ocultar as que já contatei (${marcadas})`
+    : 'ocultar as que já contatei (nenhuma marcada ainda)';
+}
+
 function ajustarFiltrosVisiveis() {
   const naFeiras = estado.aba === 'feiras' || estado.aba === 'oportunidades';
   FILTROS_SO_EMPRESAS.forEach((id) => {
@@ -415,6 +424,7 @@ function renderizar() {
   const conteudo = document.getElementById('conteudo');
   const contagem = document.getElementById('contagem');
   ajustarFiltrosVisiveis();
+  atualizarContadorContatados();
 
   if (estado.aba === 'oportunidades') {
     const vagas = estado.oportunidades.filter((o) => o.tipo === 'vaga').length;
@@ -553,6 +563,12 @@ async function iniciar() {
   document.getElementById('atualizado').textContent = meta.atualizado_em
     ? new Date(meta.atualizado_em).toLocaleString('pt-BR')
     : 'ainda não gerado';
+
+  // Versão do código carregado. Serve para saber, olhando a tela, se o navegador
+  // está com a versão nova ou com uma cópia velha em cache.
+  const versao = (document.querySelector('script[src*="app.js"]') || {}).src || '';
+  const marca = document.getElementById('versao-app');
+  if (marca) marca.textContent = (versao.split('?v=')[1] || 'sem versão');
 
   preencherSeletores();
   desenharAlertaVaga();

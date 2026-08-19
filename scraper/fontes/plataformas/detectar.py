@@ -45,7 +45,13 @@ PADRAO_LINK_EXPOSITOR = re.compile(
 PADRAO_LINK_NEGATIVO = re.compile(
     r"seja-expositor|quero-expor|area-do-expositor|por-que-|torne-se-|"
     r"become-an-exhibitor|why-exhibit|book-a-stand|reserve|manual-do-expositor|"
-    r"exhibitor-manual|credenciamento|vantagens",
+    r"exhibitor-manual|credenciamento|vantagens|"
+    # Páginas de VENDA de estande. Elas falam de "expositor" o tempo todo e passam
+    # pelo filtro positivo, mas não listam empresa nenhuma: raspar a "traga sua marca"
+    # da FEBRAVA produziu 248 itens que não eram expositores.
+    r"traga-sua-marca|traga-sua-empresa|expor-na-|quero-expo|"
+    r"ja-sou-expositor|portal-do-expositor|exhibitor-hub|produtos-digitais|"
+    r"midia-kit|midiakit|patrocin",
     re.IGNORECASE,
 )
 PADRAO_LINK_FORTE = re.compile(

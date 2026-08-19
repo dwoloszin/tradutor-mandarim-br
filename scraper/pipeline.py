@@ -111,7 +111,20 @@ def etapa_agenda(hoje: date | None = None) -> dict:
         if not inicio_cfg or encerrado(fim_cfg, hoje):
             continue
         id_proxima = _chave(feira["nome"], inicio_cfg[:4])
-        if eventos_tab.obter(id_proxima) is not None:
+        ja_existe = eventos_tab.obter(id_proxima)
+        if ja_existe is not None:
+            # O id pode estar ocupado por um registro com data errada: a agenda gera
+            # o id com o ano chutado e depois corrige a data para o ano anterior.
+            # Foi o caso da FEICON — id 2027, data 2026, marcada encerrada, e a
+            # edição real de 2027 nunca nascia. Corrigimos no lugar.
+            if ja_existe.get("data_inicio") != inicio_cfg:
+                ja_existe["data_inicio"] = inicio_cfg
+                ja_existe["data_fim"] = fim_cfg
+                ja_existe["data_texto"] = texto_data
+                ja_existe["encerrado"] = False
+                ja_existe.pop("expirado_na_fonte", None)
+                if feira.get("pagina_expositores"):
+                    ja_existe["pagina_expositores"] = feira["pagina_expositores"]
             continue
         eventos_tab.upsert(_novo(
             id=id_proxima, nome=feira["nome"], site=feira.get("site", ""),
@@ -402,7 +415,17 @@ def etapa_oportunidades(hoje: date | None = None) -> dict:
 
 # ----------------------------------------------------------------------- enriquecer
 
-def etapa_enriquecer(limite: int | None = None) -> dict:
+def etapa_enriquecer(limite: int | None = None, paralelas: int = 8) -> dict:
+    """Visita o site de cada empresa chinesa atrás de e-mail, telefone e WeChat.
+
+    Roda em paralelo porque cada empresa é um domínio diferente: esperar uma terminar
+    para começar a próxima não protege ninguém, só torna a fila inalcançável. Eram
+    ~20s por empresa e 1.500 na fila — 8 horas em série, menos de uma hora com 8
+    trabalhadores. A pausa entre requisições continua valendo POR DOMÍNIO, então
+    nenhum servidor recebe rajada.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
     from .fontes.enriquecimento import site_empresa
 
     empresas_tab = Tabela("empresas").carregar()
@@ -412,53 +435,65 @@ def etapa_enriquecer(limite: int | None = None) -> dict:
     resumo = {"processadas": 0, "com_email": 0, "com_wechat": 0,
               "adiadas": 0, "falhas": 0, "sem_dados": 0}
 
+    # separa o que dá para buscar do que já nasce sem site
+    a_buscar = []
     for tarefa in tarefas:
         empresa = empresas_tab.obter(tarefa["alvo"])
         if empresa is None:
             fila.marcar_sem_dados("site_empresa", tarefa["alvo"], motivo="empresa sumiu")
             continue
-
         site = (tarefa.get("dados") or {}).get("website") or empresa.get("website")
         if not site:
             fila.marcar_sem_dados("site_empresa", tarefa["alvo"], motivo="sem site")
             resumo["sem_dados"] += 1
             continue
+        a_buscar.append((tarefa, empresa, site))
 
-        resumo["processadas"] += 1
+    def visitar(item):
+        tarefa, empresa, site = item
         try:
-            achado = site_empresa.enriquecer(site)
-        except Bloqueado as exc:
-            resumo["adiadas"] += 1
-            fila.marcar_adiado_local("site_empresa", tarefa["alvo"], motivo=exc.motivo)
-            continue
-        except FalhouDeVerdade as exc:
-            resumo["falhas"] += 1
-            fila.marcar_falha("site_empresa", tarefa["alvo"], motivo=exc.motivo)
-            continue
-        except Exception as exc:  # noqa: BLE001
-            resumo["falhas"] += 1
-            fila.marcar_falha("site_empresa", tarefa["alvo"],
-                              motivo=f"{type(exc).__name__}: {exc}")
-            continue
+            return tarefa, empresa, site_empresa.enriquecer(site), None
+        except Exception as exc:  # noqa: BLE001 - classificado abaixo, na thread principal
+            return tarefa, empresa, None, exc
 
-        empresas_tab.upsert({
-            "id": empresa["id"],
-            "emails": achado["emails"],
-            "telefones": achado["telefones"],
-            "whatsapps": achado["whatsapps"],
-            "wechat": achado["wechat"] or empresa.get("wechat", ""),
-            "website_cn": achado["website_cn"] or empresa.get("website_cn", ""),
-            "enriquecida_em": agora_iso(),
-            "fontes": ["site_empresa"],
-        })
-        if achado["emails"]:
-            resumo["com_email"] += 1
-        if achado["wechat"]:
-            resumo["com_wechat"] += 1
+    # Só a rede vai em paralelo. A escrita no store acontece aqui, numa thread só —
+    # as tabelas não são thread-safe e gravar de vários lugares corromperia o arquivo.
+    with ThreadPoolExecutor(max_workers=max(1, paralelas)) as executor:
+        for tarefa, empresa, achado, erro in executor.map(visitar, a_buscar):
+            resumo["processadas"] += 1
 
-        fila.marcar_ok("site_empresa", tarefa["alvo"],
-                       resumo=f"{len(achado['emails'])} e-mails, "
-                              f"{len(achado['telefones'])} telefones")
+            if erro is not None:
+                if isinstance(erro, Bloqueado):
+                    resumo["adiadas"] += 1
+                    fila.marcar_adiado_local("site_empresa", tarefa["alvo"],
+                                             motivo=erro.motivo)
+                elif isinstance(erro, FalhouDeVerdade):
+                    resumo["falhas"] += 1
+                    fila.marcar_falha("site_empresa", tarefa["alvo"], motivo=erro.motivo)
+                else:
+                    resumo["falhas"] += 1
+                    fila.marcar_falha("site_empresa", tarefa["alvo"],
+                                      motivo=f"{type(erro).__name__}: {erro}")
+                continue
+
+            empresas_tab.upsert({
+                "id": empresa["id"],
+                "emails": achado["emails"],
+                "telefones": achado["telefones"],
+                "whatsapps": achado["whatsapps"],
+                "wechat": achado["wechat"] or empresa.get("wechat", ""),
+                "website_cn": achado["website_cn"] or empresa.get("website_cn", ""),
+                "enriquecida_em": agora_iso(),
+                "fontes": ["site_empresa"],
+            })
+            if achado["emails"]:
+                resumo["com_email"] += 1
+            if achado["wechat"]:
+                resumo["com_wechat"] += 1
+
+            fila.marcar_ok("site_empresa", tarefa["alvo"],
+                           resumo=f"{len(achado['emails'])} e-mails, "
+                                  f"{len(achado['telefones'])} telefones")
 
     resumo.update(_enriquecer_sem_site(empresas_tab, fila, limite))
 

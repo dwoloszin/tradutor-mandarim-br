@@ -12,6 +12,7 @@ import hashlib
 import json
 import random
 import re
+import threading
 import time
 from pathlib import Path
 from urllib.parse import urlparse
@@ -70,15 +71,23 @@ class FalhouDeVerdade(Exception):
 
 
 _ultimo_acesso: dict[str, float] = {}
-_sessao: requests.Session | None = None
+_trava_acesso = threading.Lock()
+_local_da_thread = threading.local()
 
 
 def _sessao_global() -> requests.Session:
-    global _sessao
-    if _sessao is None:
-        _sessao = requests.Session()
-        _sessao.headers.update(CABECALHOS_PADRAO)
-    return _sessao
+    """Uma sessão por thread.
+
+    O enriquecimento visita centenas de sites em paralelo — um por empresa. Um
+    requests.Session compartilhado entre threads corrompe o pool de conexões e
+    produz erros que parecem bloqueio do site, quando o problema é nosso.
+    """
+    sessao = getattr(_local_da_thread, "sessao", None)
+    if sessao is None:
+        sessao = requests.Session()
+        sessao.headers.update(CABECALHOS_PADRAO)
+        _local_da_thread.sessao = sessao
+    return sessao
 
 
 def dominio_de(url: str) -> str:
@@ -89,14 +98,24 @@ def dominio_de(url: str) -> str:
 
 
 def _aguardar_vez(dominio: str) -> None:
-    """Nunca bate duas vezes seguidas no mesmo domínio sem respirar."""
-    agora = time.monotonic()
-    ultimo = _ultimo_acesso.get(dominio)
-    if ultimo is not None:
-        espera = INTERVALO_MINIMO_POR_DOMINIO - (agora - ultimo)
-        if espera > 0:
-            time.sleep(espera + random.uniform(0, 0.4))
-    _ultimo_acesso[dominio] = time.monotonic()
+    """Nunca bate duas vezes seguidas no mesmo domínio sem respirar.
+
+    A pausa é POR DOMÍNIO, não global: visitar o site de 8 empresas diferentes ao
+    mesmo tempo não sobrecarrega ninguém, mas bater 8 vezes seguidas no mesmo
+    servidor sim. Com o enriquecimento em paralelo, essa distinção é o que separa
+    ser rápido de ser abusivo.
+    """
+    with _trava_acesso:
+        agora = time.monotonic()
+        ultimo = _ultimo_acesso.get(dominio)
+        espera = 0.0
+        if ultimo is not None:
+            espera = INTERVALO_MINIMO_POR_DOMINIO - (agora - ultimo)
+        # reserva o horário já dentro da trava, senão duas threads calculam a mesma
+        # janela livre e disparam juntas no mesmo servidor
+        _ultimo_acesso[dominio] = agora + max(espera, 0.0)
+    if espera > 0:
+        time.sleep(espera + random.uniform(0, 0.4))
 
 
 def _caminho_cache(url: str, sufixo: str) -> Path:
