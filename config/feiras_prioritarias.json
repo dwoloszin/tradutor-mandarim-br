@@ -8,26 +8,18 @@
   ],
   "feiras": [
     {
-      "nome": "China Homelife Brazil",
-      "site": "https://www.chinahomelife-br.com/",
-      "setor": "multissetorial (bens de consumo, casa, construção)",
+      "nome": "CHINA HOMELIFE MACHINEX",
+      "site": "https://www.tradechina.com/chinahomelifeBrazil_152996309411/",
+      "setor": "multissetorial (casa, construcao, maquinas, textil, eletronicos)",
       "local": "São Paulo Expo",
       "cidade": "São Paulo",
       "uf": "SP",
       "densidade_china": "altissima",
       "prioridade": 1,
-      "observacao": "Feira 100% de expositores chineses, organizada pela Meorient. Maior concentração de empresas chinesas do Brasil em um único evento — alvo número 1."
-    },
-    {
-      "nome": "China Machinery Fair Brazil",
-      "site": "https://www.chinamachinery-br.com/",
-      "setor": "máquinas e equipamentos industriais",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "altissima",
-      "prioridade": 1,
-      "observacao": "Também da Meorient, roda junto com a China Homelife. Só expositores chineses."
+      "observacao": "Feira 100% chinesa da Meorient. Um unico exhibition_id cobre todas as feiras irmas (Homelife, Machinex, AES, DeFu, BDE, INTEX): 1.934 expositores com porte, ano de fundacao e nome em chines.",
+      "plataforma": "tradechina",
+      "exhibition_id": "152996309411",
+      "data_texto": "16 a 18 de setembro de 2026"
     },
     {
       "nome": "Intersolar South America",

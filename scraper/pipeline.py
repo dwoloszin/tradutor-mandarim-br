@@ -91,10 +91,16 @@ def etapa_agenda(hoje: date | None = None) -> dict:
     for canonico, feira in config.items():
         if canonico in nomes_vistos:
             continue
+        from .core.datas import interpretar_periodo
         from .core.modelos import chave_evento, novo_evento
+        inicio, fim = interpretar_periodo(feira.get("data_texto", ""), hoje)
         eventos_tab.upsert(novo_evento(
-            id=chave_evento(feira["nome"]),
+            id=chave_evento(feira["nome"], inicio[:4] if inicio else None),
             nome=feira["nome"],
+            data_inicio=inicio,
+            data_fim=fim,
+            data_texto=feira.get("data_texto", ""),
+            encerrado=encerrado(fim, hoje) if fim else False,
             site=feira.get("site", ""),
             local_nome=feira.get("local", ""),
             cidade=feira.get("cidade", ""),
@@ -241,6 +247,7 @@ def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, f
         empresa = nova_empresa(
             id=identificador,
             nome=nome,
+            nome_zh=bruto.get("nome_zh", ""),
             nome_canonico=nome_canonico(nome),
             pais=bruto.get("pais", ""),
             cidade=bruto.get("cidade", ""),
@@ -252,6 +259,11 @@ def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, f
             setor=evento.get("setor", ""),
             descricao=bruto.get("descricao", ""),
             perfis=bruto.get("perfis", {}),
+            # porte vem preenchido quando a plataforma publica (TradeChina publica)
+            funcionarios=bruto.get("funcionarios", ""),
+            ano_fundacao=bruto.get("ano_fundacao", ""),
+            receita_anual=bruto.get("receita_anual", ""),
+            tipo_negocio=bruto.get("tipo_negocio", ""),
             score_china=avaliacao["score"],
             classificacao_china=avaliacao["classificacao"],
             origem=avaliacao["origem"],
@@ -348,9 +360,79 @@ def etapa_enriquecer(limite: int | None = None) -> dict:
                        resumo=f"{len(achado['emails'])} e-mails, "
                               f"{len(achado['telefones'])} telefones")
 
+    resumo.update(_enriquecer_sem_site(empresas_tab, fila, limite))
+
     aplicar_overrides_manuais(empresas_tab, "empresas")
     empresas_tab.salvar()
     fila.salvar()
+    return resumo
+
+
+def _enriquecer_sem_site(empresas_tab, fila, limite: int | None) -> dict:
+    """Empresas que a feira listou sem site: procura num diretório B2B chinês.
+
+    Só grava quando o nome bate exatamente. Um contato de empresa parecida seria pior
+    que nenhum — o intérprete abordaria a fábrica errada achando que é a expositora.
+    """
+    from .core.perfil import pode_executar
+    from .fontes.enriquecimento import diretorios_b2b
+
+    resumo = {"por_nome_processadas": 0, "por_nome_confirmadas": 0,
+              "por_nome_so_parecidos": 0, "por_nome_adiadas": 0}
+
+    tarefas = fila.proximas("enriquecer_empresa", limite)
+    if tarefas and not pode_executar(diretorios_b2b.REQUER_RESIDENCIAL):
+        # na nuvem esses diretórios barram: devolve tudo para a rodada local de uma vez
+        for tarefa in tarefas:
+            fila.marcar_adiado_local("enriquecer_empresa", tarefa["alvo"],
+                                     motivo="diretório B2B exige IP residencial")
+        resumo["por_nome_adiadas"] = len(tarefas)
+        return resumo
+
+    for tarefa in tarefas:
+        empresa = empresas_tab.obter(tarefa["alvo"])
+        if empresa is None:
+            fila.marcar_sem_dados("enriquecer_empresa", tarefa["alvo"], motivo="empresa sumiu")
+            continue
+
+        nome = empresa.get("nome", "")
+        resumo["por_nome_processadas"] += 1
+        try:
+            achado = diretorios_b2b.enriquecer_por_nome(nome)
+        except Bloqueado as exc:
+            resumo["por_nome_adiadas"] += 1
+            fila.marcar_adiado_local("enriquecer_empresa", tarefa["alvo"], motivo=exc.motivo)
+            continue
+        except FalhouDeVerdade as exc:
+            fila.marcar_falha("enriquecer_empresa", tarefa["alvo"], motivo=exc.motivo)
+            continue
+        except Exception as exc:  # noqa: BLE001
+            fila.marcar_falha("enriquecer_empresa", tarefa["alvo"],
+                              motivo=f"{type(exc).__name__}: {exc}")
+            continue
+
+        if not achado.get("encontrado"):
+            resumo["por_nome_so_parecidos"] += 1
+            fila.marcar_sem_dados("enriquecer_empresa", tarefa["alvo"],
+                                  motivo=achado.get("motivo", "sem correspondência exata"))
+            continue
+
+        empresas_tab.upsert({
+            "id": empresa["id"],
+            "funcionarios": achado.get("funcionarios", ""),
+            "ano_fundacao": achado.get("ano_fundacao", ""),
+            "tipo_negocio": achado.get("tipo_negocio", ""),
+            "provincia": achado.get("provincia", "") or empresa.get("provincia", ""),
+            "produtos": achado.get("produtos", []),
+            "perfis": {"made_in_china": achado.get("perfil_mic", "")},
+            "nome_confirmado_em": achado.get("fonte", ""),
+            "enriquecida_em": agora_iso(),
+            "fontes": ["made_in_china"],
+        })
+        resumo["por_nome_confirmadas"] += 1
+        fila.marcar_ok("enriquecer_empresa", tarefa["alvo"],
+                       resumo=f"confirmada em {achado.get('fonte')}: "
+                              f"{achado.get('funcionarios') or 'porte n/d'}")
     return resumo
 
 

@@ -172,6 +172,7 @@ lugar nenhum. A pontuação resolve os dois casos.
 
 | Plataforma | Como funciona | Feiras |
 |---|---|---|
+| **TradeChina / Meorient** | API de busca de fornecedores, por `exhibition_id` | China Homelife Machinex e irmãs — 1.934 empresas, todas chinesas |
 | **Swapcard** | GraphQL público em `/api/graphql` | Intermodal, Agrishow, Plástico Brasil, e o resto da Informa Markets |
 | **RX / Reed** | índice Algolia, chave lida da própria página | AUTOMEC, FENATRAN, FEICON, FEBRAVA |
 | genérico | listagem repetida em HTML | feiras em WordPress/Webflow |
@@ -202,8 +203,17 @@ Electronics Show, Decoration & Furniture, Building, INTEX — acontecem no São 
 são compostas **só por expositores chineses**. É a maior concentração de clientes
 possíveis num único lugar.
 
-A plataforma delas (tradechina.com) fica atrás do CAPTCHA do Tencent EdgeOne. O projeto
-lida com isso **sem burlar nada**:
+**A lista de expositores é coletada por API, sem navegador e sem login.** O site
+tradechina.com fica atrás do CAPTCHA do Tencent EdgeOne, mas a busca de fornecedores é
+servida por outro host (`global-all-api.tradechina.com`), que responde a requisição
+normal — inclusive da nuvem. Um único `exhibition_id` cobre todas as feiras irmãs.
+
+O que vem daí é o melhor conjunto de dados do projeto, porque é a própria plataforma que
+cadastra o fornecedor: **nome em chinês**, nome comercial, cidade, **faixa de
+funcionários**, ano de fundação, certificações e produtos em português.
+
+Para ler a *ficha individual* de um fornecedor (com capital registrado e faturamento),
+aí sim é preciso passar pelo CAPTCHA. O projeto lida com isso **sem burlar nada**:
 
 - `python -m scraper.cli login` abre um Chrome de verdade, visível;
 - você resolve o CAPTCHA e entra com a **sua** conta;
@@ -234,7 +244,7 @@ Página única em `docs/`, sem servidor e sem login, publicada de graça no GitH
 Filtros disponíveis:
 
 - busca livre (nome, produto, cidade, e-mail, estande)
-- feira, estado, setor, origem (China / Taiwan / Hong Kong)
+- feira, estado, setor, **porte** (grande / média / pequena), origem (China / Taiwan / HK)
 - **ocultar feiras encerradas** (ligado por padrão — feira que já passou não gera trabalho)
 - só empresas com contato pronto
 - ocultar as que você já contatou
@@ -261,9 +271,12 @@ do próprio navegador — ninguém mais vê, nada é enviado para servidor. O bo
 
 - **Nem toda feira publica a lista de expositores.** Muitas só divulgam perto da data;
   o robô volta a tentar sozinho conforme o evento se aproxima.
-- **A lista de expositores da China Homelife ainda não é enumerada automaticamente.**
-  A ficha individual já é lida (inclusive o porte), mas listar as ~1.000 empresas da
-  feira exige a sessão logada — é o próximo passo.
+- **Contato ainda é o elo mais fraco.** Temos 2.045 empresas, mas poucas com e-mail:
+  a maioria das feiras não publica contato, e o e-mail vem de visitar o site da empresa
+  (1.703 têm site próprio, e a coleta roda aos poucos, na fila).
+- **Busca por nome em diretório B2B rende pouco** (~3%): o Made-in-China raramente tem a
+  empresa exata, e quando tem, nem sempre publica o porte. Está implementado com
+  casamento estrito de nome — nunca aceita empresa parecida —, mas não é a via principal.
 - **A detecção erra às vezes.** Por isso cada empresa mostra por que foi marcada, e as
   duvidosas ficam numa aba separada.
 - **A agenda do Riocentro ainda retorna vazia** — o seletor do site mudou e precisa de ajuste.

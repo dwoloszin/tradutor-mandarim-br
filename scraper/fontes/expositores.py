@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from ..core.http import Bloqueado, FalhouDeVerdade, buscar
 from ..core.modelos import normalizar_texto
-from .plataformas import rx, swapcard
+from .plataformas import rx, swapcard, tradechina
 from .plataformas.descoberta import descobrir
 from .plataformas.detectar import detectar_plataforma
 
@@ -120,6 +120,21 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
         return _resultado(SEM_LISTA, detalhe="evento sem site oficial conhecido")
 
     url_fixada = config_feira.get("pagina_expositores") or evento.get("pagina_expositores")
+
+    # 0) feiras da Meorient (China Homelife e irmas): a plataforma tem API propria,
+    #    identificada pelo exhibition_id no config. Sao 100% expositores chineses.
+    if config_feira.get("plataforma") == "tradechina" and config_feira.get("exhibition_id"):
+        try:
+            dados = tradechina.coletar(config_feira["exhibition_id"])
+            return _resultado(OK, plataforma="tradechina",
+                              pagina="https://www.tradechina.com/search/supplier",
+                              url_dados=config_feira["exhibition_id"],
+                              expositores=dados["expositores"],
+                              total_informado=dados["total_informado"])
+        except Bloqueado as exc:
+            return _resultado(BLOQUEADO, plataforma="tradechina", detalhe=exc.motivo)
+        except FalhouDeVerdade as exc:
+            return _resultado(ERRO, plataforma="tradechina", detalhe=exc.motivo)
 
     # 1) plataforma já conhecida e apontada à mão
     if url_fixada and "/exhibitors/" in url_fixada and "event/" in url_fixada:

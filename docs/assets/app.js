@@ -109,12 +109,35 @@ function lerFiltros() {
     uf: v('f-uf'),
     setor: v('f-setor'),
     origem: v('f-origem'),
+    porte: v('f-porte'),
     ordem: v('f-ordem'),
     ocultarEncerradas: m('f-ocultar-encerradas'),
     soComContato: m('f-so-contato'),
     ocultarContatados: m('f-ocultar-contatados'),
     soConfirmadas: m('f-so-confirmadas'),
   };
+}
+
+/* Converte "51-100 pessoas", "mais de 1000 pessoas", "menos de 5 pessoas" no maior
+ * numero da faixa. Usamos o teto porque o interesse do interprete e saber ate onde a
+ * empresa chega de tamanho: quem tem "301-500" e um cliente diferente de quem tem "5-10".
+ */
+function tetoFuncionarios(texto) {
+  if (!texto) return null;
+  const numeros = String(texto).match(/\d+/g);
+  if (!numeros) return null;
+  return Math.max(...numeros.map(Number));
+}
+
+function portePassa(empresa, escolha) {
+  if (!escolha) return true;
+  const teto = tetoFuncionarios(empresa.funcionarios);
+  if (teto == null) return false;           // sem porte informado, fica fora de qualquer faixa
+  if (escolha === 'informado') return true;
+  if (escolha === 'grande') return teto > 300;
+  if (escolha === 'media') return teto > 50 && teto <= 300;
+  if (escolha === 'pequena') return teto <= 50;
+  return true;
 }
 
 function empresaPassa(empresa, filtros) {
@@ -126,6 +149,7 @@ function empresaPassa(empresa, filtros) {
   if (filtros.ocultarContatados && marcacao(empresa.id).contatado) return false;
   if (filtros.origem && empresa.origem !== filtros.origem) return false;
   if (filtros.setor && empresa.setor !== filtros.setor) return false;
+  if (!portePassa(empresa, filtros.porte)) return false;
 
   const feirasVisiveis = filtros.ocultarEncerradas
     ? empresa.feiras.filter((f) => !f.encerrada)
@@ -152,8 +176,8 @@ function ordenar(lista, ordem) {
     copia.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
   } else if (ordem === 'porte') {
     const peso = (e) => {
-      const n = parseInt(String(e.funcionarios).replace(/\D/g, ''), 10);
-      return Number.isFinite(n) ? -n : 1;
+      const teto = tetoFuncionarios(e.funcionarios);
+      return teto == null ? 1 : -teto;   // maiores primeiro; sem porte, por último
     };
     copia.sort((a, b) => peso(a) - peso(b));
   } else {
@@ -225,6 +249,8 @@ function desenharCartao(empresa, filtros) {
   const fundacao = empresa.ano_fundacao
     ? `<span class="etiqueta porte">desde ${escapar(empresa.ano_fundacao)}</span>` : '';
   const local = [empresa.cidade, empresa.provincia].filter(Boolean).join(', ');
+  const negocio = empresa.tipo_negocio
+    ? `<span class="etiqueta porte">${escapar(empresa.tipo_negocio)}</span>` : '';
 
   return `
   <article class="cartao ${marca.contatado ? 'contatado' : ''}" data-id="${escapar(empresa.id)}">
@@ -235,7 +261,7 @@ function desenharCartao(empresa, filtros) {
         <span class="etiqueta ${escapar(empresa.origem === 'china' ? empresa.classificacao : empresa.origem)}">
           ${empresa.origem === 'taiwan' ? 'Taiwan' : empresa.origem === 'hong_kong' ? 'Hong Kong' : empresa.classificacao}
         </span>
-        ${porte}${fundacao}
+        ${porte}${fundacao}${negocio}
       </div>
       <div class="meta-empresa">
         ${local ? `<span>📍 ${escapar(local)}</span>` : ''}
