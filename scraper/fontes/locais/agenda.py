@@ -260,11 +260,13 @@ def coletar_feiras_fixas(hoje: date | None = None) -> list[dict]:
     ]
 
 
+# Locais com parser dedicado: exigem clicar em "carregar mais" ou têm HTML próprio.
+# Os demais (Riocentro, Expoville, Fortaleza, Recife...) vêm de config/locais.json,
+# pelo coletor genérico — assim ampliar a cobertura não exige código novo.
 LOCAIS = {
     "sao_paulo_expo": coletar_sao_paulo_expo,
     "anhembi": coletar_anhembi,
     "expo_center_norte": coletar_expo_center_norte,
-    "riocentro": coletar_riocentro,
     "feiras_fixas": coletar_feiras_fixas,
 }
 
@@ -280,4 +282,14 @@ def coletar_todos(hoje: date | None = None) -> tuple[list[dict], dict[str, str]]
             situacao[nome] = f"ok: {len(achados)} eventos"
         except Exception as exc:  # noqa: BLE001 - resiliência é o ponto
             situacao[nome] = f"falhou: {type(exc).__name__}: {exc}"
+
+    # locais das outras capitais, lidos de config/locais.json
+    from .generico import coletar_todos_configurados
+    try:
+        extras, situacao_extras = coletar_todos_configurados(hoje)
+        eventos.extend(extras)
+        situacao.update(situacao_extras)
+    except Exception as exc:  # noqa: BLE001
+        situacao["config/locais.json"] = f"falhou: {type(exc).__name__}: {exc}"
+
     return eventos, situacao

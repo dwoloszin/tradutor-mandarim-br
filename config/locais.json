@@ -1,0 +1,55 @@
+{
+  "_comentario": [
+    "Centros de exposição monitorados. Adicionar um local aqui é o jeito de ampliar a",
+    "cobertura sem escrever código: o coletor genérico lê esta lista.",
+    "",
+    "seletor_item / seletor_titulo: quando o site tem estrutura clara (WordPress etc.).",
+    "Sem eles, o coletor tenta descobrir sozinho os cartões repetidos da página.",
+    "data_na_ficha: o calendário só lista nomes e a data está dentro de cada evento —",
+    "aí vale a visita extra; sem isso a feira entra sem data e some da ordenação.",
+    "navegador: a lista só existe depois do JavaScript (roda apenas no PC).",
+    "",
+    "São Paulo Expo, Distrito Anhembi e Expo Center Norte NÃO estão aqui: têm parser",
+    "dedicado em fontes/locais/agenda.py porque exigem clicar em 'carregar mais'.",
+    "",
+    "Não alcançáveis hoje (tentados): Expominas BH devolve HTTP 500 mesmo ignorando o",
+    "certificado; Centro de Eventos FIERGS recusa conexão; Expo Unimed Curitiba e",
+    "Centro de Convenções de Salvador não resolvem. Revisitar depois."
+  ],
+  "locais": [
+    {
+      "nome": "Riocentro",
+      "cidade": "Rio de Janeiro",
+      "uf": "RJ",
+      "url": "https://www.riocentro.com.br/agenda",
+      "seletor_item": "article.post",
+      "seletor_titulo": "h2.entry-title a",
+      "data_na_ficha": false,
+      "observacao": "Maior centro de eventos do Rio (Feicon Rio, Febrava Rio). O site lista só o nome do evento — não publica data nem na ficha, nem com JavaScript. A data vem depois, da plataforma de expositores da própria feira."
+    },
+    {
+      "nome": "Expoville",
+      "cidade": "Joinville",
+      "uf": "SC",
+      "url": "https://expoville.com.br/eventos/",
+      "data_na_ficha": true,
+      "observacao": "Polo industrial de SC — metalmecânica, com fornecedores chineses. Descoberta automática não achou a lista; precisa de seletor no config."
+    },
+    {
+      "nome": "Centro de Eventos do Ceará",
+      "cidade": "Fortaleza",
+      "uf": "CE",
+      "url": "https://centrodeeventos.ce.gov.br/",
+      "data_na_ficha": true,
+      "observacao": "Maior centro de eventos do Norte/Nordeste."
+    },
+    {
+      "nome": "Centro de Convenções de Pernambuco",
+      "cidade": "Recife",
+      "uf": "PE",
+      "url": "https://www.ccpe.com.br/",
+      "data_na_ficha": true,
+      "observacao": "Descoberta automática não achou a lista; precisa de seletor no config."
+    }
+  ]
+}
