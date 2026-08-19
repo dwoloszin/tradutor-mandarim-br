@@ -173,10 +173,16 @@ def etapa_agenda(hoje: date | None = None) -> dict:
     # Quem a própria fonte marcou como expirado continua expirado — nossa data pode
     # estar um ano à frente por falta de ano no texto original.
     for evento in eventos_tab.todos():
-        if evento.get("expirado_na_fonte"):
-            evento["encerrado"] = True
-        elif evento.get("data_fim"):
+        # "expirado na fonte" descreve a EDIÇÃO que estava no calendário quando lemos.
+        # Quando a próxima edição é publicada, o mesmo registro passa a ter data futura
+        # — e manter a marca antiga faria a feira nova nascer encerrada, sumindo do
+        # radar para sempre. A marca só vale enquanto a data ainda for passada.
+        if evento.get("data_fim"):
             evento["encerrado"] = encerrado(evento["data_fim"], hoje)
+            if not evento["encerrado"]:
+                evento.pop("expirado_na_fonte", None)
+        elif evento.get("expirado_na_fonte"):
+            evento["encerrado"] = True
 
     # agenda tarefas de expositores só para o que ainda vai acontecer
     agendadas = 0

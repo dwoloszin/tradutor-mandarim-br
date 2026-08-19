@@ -6710,6 +6710,18 @@
     "tem_contato": false,
     "feiras": [
       {
+        "evento_id": "ev:automec:2027",
+        "nome": "AUTOMEC",
+        "inicio": "2027-04-20",
+        "fim": "2027-04-24",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "H67",
+        "encerrada": false,
+        "dias": 244
+      },
+      {
         "evento_id": "ev:automec",
         "nome": "AUTOMEC",
         "inicio": "",
@@ -6723,9 +6735,9 @@
       }
     ],
     "proxima_feira": "AUTOMEC",
-    "proxima_data": "",
+    "proxima_data": "2027-04-20",
     "proximo_stand": "H67",
-    "dias_para_proxima": null,
+    "dias_para_proxima": 244,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:26:52+00:00"
   },
