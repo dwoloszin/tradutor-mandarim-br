@@ -50,12 +50,49 @@ EMAIL_LIXO = re.compile(
 
 MAX_PAGINAS = 4
 
+# O texto ao redor de "WeChat" quase nunca é o ID: é "WeChat public account",
+# "WeChat official", "WeChat: scan the QR code". Capturar essas palavras enche a
+# lista de IDs falsos, e um WeChat errado faz o intérprete perder a abordagem.
+PALAVRAS_NAO_WECHAT = {
+    "public", "official", "account", "accounts", "channel", "number", "contact",
+    "service", "customer", "copyright", "copyrignt", "wechat", "weixin", "scan",
+    "code", "qrcode", "follow", "subscribe", "app", "online", "chat", "message",
+    "email", "mobile", "phone", "whatsapp", "https", "http", "www", "com",
+    "and", "the", "for", "our", "your", "please", "here", "click", "add",
+}
+
+
+def _wechat_plausivel(candidato: str) -> bool:
+    """Um ID de WeChat tem 6–20 caracteres e não é uma palavra genérica em inglês."""
+    limpo = (candidato or "").strip()
+    if not (5 <= len(limpo) <= 20):
+        return False
+    if limpo.lower() in PALAVRAS_NAO_WECHAT:
+        return False
+    if not re.match(r"^[A-Za-z][A-Za-z0-9_-]{4,19}$", limpo):
+        return False
+    return True
+
+
+# Um número chinês tem no máximo 13 dígitos com o país (86 + DDD + assinante).
+# As páginas costumam listar vários seguidos ("0576-82726888 82726503"), e um regex
+# que atravessa o espaço gruda os dois num telefone inexistente. Cortamos no limite.
+MAX_DIGITOS = 13
+MIN_DIGITOS = 8
+
 
 def _limpar_telefone(bruto: str) -> str:
     numero = re.sub(r"[^\d+]", "", bruto)
     if numero.startswith("00"):
         numero = "+" + numero[2:]
-    return numero
+
+    digitos = numero.lstrip("+")
+    if len(digitos) < MIN_DIGITOS:
+        return ""
+    if len(digitos) > MAX_DIGITOS:
+        # veio mais de um número grudado: fica só o primeiro, que é o principal
+        digitos = digitos[:MAX_DIGITOS]
+    return ("+" if numero.startswith("+") else "") + digitos
 
 
 def _emails_validos(texto: str, dominio: str = "") -> list[str]:
@@ -135,12 +172,11 @@ def _extrair(html: str, url: str, dominio: str) -> dict:
                 whatsapps.append(numero)
 
     wechat = ""
-    achado = WECHAT.search(texto)
-    if achado:
+    for achado in WECHAT.finditer(texto):
         candidato = achado.group(1)
-        # evita capturar palavra solta tipo "WeChat official"
-        if not candidato.lower() in ("official", "account", "channel", "number", "contact"):
+        if _wechat_plausivel(candidato):
             wechat = candidato
+            break
 
     return {
         "emails": emails[:8],

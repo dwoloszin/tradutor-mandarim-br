@@ -24,6 +24,7 @@ from .core.datas import dias_ate, encerrado
 from .core.http import Bloqueado, FalhouDeVerdade
 from .core.modelos import (
     chave_empresa,
+    normalizar_url,
     chave_participacao,
     dominio_proprio,
     nome_canonico,
@@ -253,7 +254,8 @@ def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, f
             cidade=bruto.get("cidade", ""),
             provincia=bruto.get("provincia", ""),
             endereco=bruto.get("endereco", ""),
-            website=bruto.get("website", ""),
+            website=normalizar_url(bruto.get("website", "")),
+            contato_nome=bruto.get("contato_nome", ""),
             emails=[e for e in bruto.get("emails", []) if e],
             produtos=bruto.get("produtos", []),
             setor=evento.get("setor", ""),

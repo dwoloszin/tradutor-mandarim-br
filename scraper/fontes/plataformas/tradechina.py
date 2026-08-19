@@ -26,7 +26,7 @@ import time
 import requests
 
 from ...core.http import Bloqueado, FalhouDeVerdade
-from ...core.modelos import normalizar_texto, tem_chines
+from ...core.modelos import normalizar_texto, normalizar_url, tem_chines
 
 BUSCA = "https://global-all-api.tradechina.com/search/v2/searchSupplier.json"
 
@@ -137,10 +137,14 @@ def _normalizar(item: dict, contexto: dict) -> dict:
     ano = item.get("yearFounded")
     modelo = _texto(item.get("businessModel"))
 
+    # a plataforma publica o nome de quem atende — abrir a conversa chamando a pessoa
+    # pelo nome muda a taxa de resposta, ainda mais em mandarim
+    contato = (item.get("supplierContactDto") or {}).get("name") or ""
+
     return {
         "nome": nome,
         "nome_zh": nome_zh if tem_chines(nome_zh) else "",
-        "website": _texto(item.get("webSite")),
+        "website": normalizar_url(_texto(item.get("webSite"))),
         "emails": [],
         "pais": _texto(item.get("countryName")) or "China",
         "cidade": _texto(item.get("cityName")),
@@ -150,6 +154,7 @@ def _normalizar(item: dict, contexto: dict) -> dict:
         "categorias": certificacoes,
         "produtos": produtos[:15],
         "descricao": "",
+        "contato_nome": _texto(contato),
         "funcionarios": _padronizar_porte(item.get("employees")),
         "ano_fundacao": str(ano) if ano else "",
         "receita_anual": _texto(item.get("annualRevenue")),

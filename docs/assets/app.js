@@ -60,6 +60,18 @@ function escapar(texto) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+/* Um endereco sem "https://" vira link relativo e o navegador abre
+ * "https://nosso-site/www.empresa.com". Blindamos aqui tambem, para o site nao
+ * depender de o coletor ter gravado certo. */
+function urlAbsoluta(url) {
+  const limpo = String(url || '').trim();
+  if (!limpo) return '';
+  if (/^https?:\/\//i.test(limpo)) return limpo;
+  if (limpo.startsWith('//')) return 'https:' + limpo;
+  if (limpo.includes('@') || !limpo.includes('.')) return '';
+  return 'https://' + limpo.replace(/^\/+/, '');
+}
+
 function formatarData(iso) {
   if (!iso) return 'data a confirmar';
   const [ano, mes, dia] = iso.split('-');
@@ -198,6 +210,12 @@ function ordenar(lista, ordem) {
 
 function desenharContatos(empresa) {
   const itens = [];
+
+  // A pessoa de contato vem do cadastro da feira. Abrir a conversa chamando
+  // alguem pelo nome, em mandarim, muda a taxa de resposta.
+  if (empresa.contato_nome) {
+    itens.push(`<span class="contato pessoa" data-copiar="${escapar(empresa.contato_nome)}">👤 ${escapar(empresa.contato_nome)}</span>`);
+  }
   (empresa.emails || []).slice(0, 3).forEach((e) => {
     itens.push(`<span class="contato" data-copiar="${escapar(e)}">✉ ${escapar(e)}</span>`);
   });
@@ -209,16 +227,21 @@ function desenharContatos(empresa) {
     itens.push(`<a class="contato" href="https://wa.me/${limpo}" target="_blank" rel="noopener">WhatsApp ${escapar(w)}</a>`);
   });
   if (empresa.wechat) {
-    itens.push(`<span class="contato" data-copiar="${escapar(empresa.wechat)}">微信 ${escapar(empresa.wechat)}</span>`);
+    itens.push(`<span class="contato wechat" data-copiar="${escapar(empresa.wechat)}">微信 ${escapar(empresa.wechat)}</span>`);
   }
-  if (empresa.website) {
-    itens.push(`<a class="contato" href="${escapar(empresa.website)}" target="_blank" rel="noopener">🌐 site</a>`);
+  const site = urlAbsoluta(empresa.website);
+  if (site) {
+    itens.push(`<a class="contato" href="${escapar(site)}" target="_blank" rel="noopener">🌐 site</a>`);
   }
-  if (empresa.website_cn) {
-    itens.push(`<a class="contato" href="${escapar(empresa.website_cn)}" target="_blank" rel="noopener">🇨🇳 site chinês</a>`);
+  const siteCn = urlAbsoluta(empresa.website_cn);
+  if (siteCn) {
+    itens.push(`<a class="contato" href="${escapar(siteCn)}" target="_blank" rel="noopener">🇨🇳 site chinês</a>`);
   }
   if (!itens.length) {
-    itens.push('<span class="contato vazio">contato ainda não coletado — use os links de pesquisa</span>');
+    itens.push('<span class="contato vazio">sem e-mail/WeChat ainda — abra o site ou os links de pesquisa abaixo</span>');
+  } else if (!empresa.wechat) {
+    // deixa explicito o que ainda falta, para o interprete saber onde procurar
+    itens.push('<span class="contato vazio">WeChat não encontrado</span>');
   }
   return itens.join('');
 }

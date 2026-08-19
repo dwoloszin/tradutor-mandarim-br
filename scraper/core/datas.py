@@ -89,10 +89,22 @@ def interpretar_periodo(texto: str, referencia: date | None = None) -> tuple[str
     if achado:
         g = achado.groupdict()
         mes = MESES[g["mes"].lower()]
-        ano = int(g["ano"]) if g["ano"] else _ano_provavel(mes, int(g["d1"]), referencia)
+        dia1, dia2 = int(g["d1"]), int(g["d2"])
+        ano = int(g["ano"]) if g["ano"] else _ano_provavel(mes, dia1, referencia)
+
+        # "27 a 01 de maio": o mês escrito é o do FIM, e o início ficou no mês anterior.
+        # Sem isso o evento nasce com fim antes do começo e a conta de "já encerrou"
+        # dá qualquer coisa.
+        if dia2 < dia1:
+            mes_inicio = mes - 1 or 12
+            ano_inicio = ano - 1 if mes_inicio == 12 else ano
+            return (
+                f"{ano_inicio:04d}-{mes_inicio:02d}-{dia1:02d}",
+                f"{ano:04d}-{mes:02d}-{dia2:02d}",
+            )
         return (
-            f"{ano:04d}-{mes:02d}-{int(g['d1']):02d}",
-            f"{ano:04d}-{mes:02d}-{int(g['d2']):02d}",
+            f"{ano:04d}-{mes:02d}-{dia1:02d}",
+            f"{ano:04d}-{mes:02d}-{dia2:02d}",
         )
 
     achado = DATA_UNICA.search(texto)

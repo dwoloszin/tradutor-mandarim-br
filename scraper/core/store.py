@@ -11,6 +11,7 @@ preenchido nunca é apagado por campo vazio.
 """
 from __future__ import annotations
 
+import contextlib
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -33,6 +34,71 @@ PREFIXO_MANUAL = "manual_"
 
 def agora_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+
+class RodadaEmAndamento(Exception):
+    """Já existe uma coleta escrevendo no banco."""
+
+
+@contextlib.contextmanager
+def trava_de_escrita(nome: str = "coleta", esperar_segundos: int = 0):
+    """Impede que duas rodadas escrevam no store ao mesmo tempo.
+
+    Cada tabela é carregada na memória no início da rodada e regravada inteira no fim.
+    Se duas rodadas correm juntas, a que terminar por último apaga o trabalho da outra —
+    aconteceu de verdade aqui: uma correção de 413 endereços foi sobrescrita por um
+    enriquecimento que havia carregado o arquivo antes.
+
+    A trava é um arquivo com o PID. Se o processo dono morreu, ela é considerada órfã
+    e liberada, para um Ctrl+C não deixar o projeto travado para sempre.
+    """
+    import os
+    import time
+
+    caminho = DATA_DIR / f".trava-{nome}"
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    limite = time.monotonic() + esperar_segundos
+
+    while True:
+        try:
+            descritor = os.open(caminho, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            os.write(descritor, f"{os.getpid()}\n{agora_iso()}".encode())
+            os.close(descritor)
+            break
+        except FileExistsError:
+            if _trava_orfa(caminho):
+                caminho.unlink(missing_ok=True)
+                continue
+            if time.monotonic() >= limite:
+                dono = caminho.read_text(encoding="utf-8", errors="replace").split("\n")[0]
+                raise RodadaEmAndamento(
+                    f"outra rodada (PID {dono}) está escrevendo em data/. "
+                    f"Espere ela terminar ou remova {caminho} se sobrou de um processo morto."
+                ) from None
+            time.sleep(2)
+
+    try:
+        yield
+    finally:
+        caminho.unlink(missing_ok=True)
+
+
+def _trava_orfa(caminho: Path) -> bool:
+    """A trava ficou para trás de um processo que já morreu?"""
+    import os
+    try:
+        pid = int(caminho.read_text(encoding="utf-8").split("\n")[0].strip())
+    except (OSError, ValueError):
+        return True
+    if pid == os.getpid():
+        return True
+    try:
+        os.kill(pid, 0)  # sinal 0: só testa se o processo existe
+    except OSError:
+        return True
+    except Exception:
+        return False
+    return False
 
 
 def _sem_vazios(valor) -> bool:

@@ -16,3 +16,4 @@ data/_sessao_navegador/
 
 # Investigações e scripts descartáveis usados para mapear plataformas novas.
 _scratch/
+.trava-*

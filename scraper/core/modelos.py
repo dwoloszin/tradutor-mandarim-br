@@ -65,6 +65,26 @@ def nome_canonico(nome: str) -> str:
     return re.sub(r"\s+", " ", texto).strip()
 
 
+def normalizar_url(url: str | None) -> str:
+    """Garante que o endereço tenha esquema.
+
+    Muitas fontes gravam o site como "www.empresa.com", sem http. No HTML isso vira
+    link relativo: o navegador abre "https://nosso-site/www.empresa.com" e dá 404.
+    É um erro invisível nos dados e escancarado para quem clica.
+    """
+    endereco = (url or "").strip()
+    if not endereco:
+        return ""
+    if endereco.startswith(("http://", "https://")):
+        return endereco
+    if endereco.startswith("//"):
+        return "https:" + endereco
+    # descarta o que claramente não é endereço web
+    if "@" in endereco or " " in endereco or "." not in endereco:
+        return ""
+    return "https://" + endereco.lstrip("/")
+
+
 def dominio_raiz(url: str | None) -> str:
     """Domínio sem www e sem subdomínio de terceiro nível comum."""
     if not url:

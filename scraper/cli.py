@@ -85,6 +85,21 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     from . import pipeline
+    from .core.store import RodadaEmAndamento, trava_de_escrita
+
+    # comandos que so leem nao precisam de trava
+    if args.comando in ("tudo", "pendentes", "agenda", "radar", "expositores",
+                        "enriquecer", "vagas"):
+        try:
+            with trava_de_escrita():
+                return _executar(args, pipeline)
+        except RodadaEmAndamento as exc:
+            print(f"\n{exc}")
+            return 1
+    return _executar(args, pipeline)
+
+
+def _executar(args, pipeline) -> int:
 
     if args.comando in ("tudo", "agenda"):
         _imprimir("1) AGENDA DE FEIRAS", pipeline.etapa_agenda())

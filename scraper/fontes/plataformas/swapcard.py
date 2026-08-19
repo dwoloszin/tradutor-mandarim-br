@@ -28,7 +28,7 @@ from ...core.http import (
     buscar,
     dominio_de,
 )
-from ...core.modelos import normalizar_texto
+from ...core.modelos import normalizar_texto, normalizar_url
 
 # Hosts já confirmados como Swapcard white-label. A detecção também é automática:
 # basta a página conter um iframe/link para /widget/event/.../exhibitors/.
@@ -144,7 +144,7 @@ def _normalizar(node: dict, contexto: dict) -> dict:
     partes_endereco = [endereco.get(c) or "" for c in ("street", "city", "state", "zipCode")]
     return {
         "nome": normalizar_texto(node.get("name")),
-        "website": node.get("websiteUrl") or "",
+        "website": normalizar_url(node.get("websiteUrl")),
         "emails": [node["email"]] if node.get("email") else [],
         "pais": normalizar_texto(endereco.get("country")),
         "cidade": normalizar_texto(endereco.get("city")),

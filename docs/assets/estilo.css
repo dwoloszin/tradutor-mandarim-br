@@ -272,6 +272,9 @@ a { color: var(--info); }
 }
 .contato:hover { border-color: var(--info); }
 .contato.copiado { background: var(--sucesso-claro); border-color: var(--sucesso); color: var(--sucesso); }
+.contato.wechat { background: var(--sucesso-claro); border-color: var(--sucesso); color: var(--sucesso); font-weight: 600; }
+.contato.pessoa { background: var(--info-claro); border-color: var(--info); color: var(--info); font-family: inherit; }
+
 .contato.vazio { color: var(--texto-fraquissimo); font-style: italic; cursor: default; font-family: inherit; }
 
 .coluna-acoes { display: flex; flex-direction: column; gap: .35rem; align-items: stretch; min-width: 130px; }

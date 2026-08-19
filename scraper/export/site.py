@@ -49,6 +49,7 @@ def _linha_empresa(empresa: dict, participacoes: list[dict], hoje: date) -> dict
         "telefones": empresa.get("telefones", []),
         "whatsapps": empresa.get("whatsapps", []),
         "wechat": empresa.get("wechat", ""),
+        "contato_nome": empresa.get("contato_nome", ""),
         "funcionarios": empresa.get("funcionarios", ""),
         "ano_fundacao": empresa.get("ano_fundacao", ""),
         "tipo_negocio": empresa.get("tipo_negocio", ""),
