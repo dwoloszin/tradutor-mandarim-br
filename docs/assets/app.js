@@ -381,11 +381,17 @@ function desenharOportunidades() {
   if (!lista.length) {
     return '<div class="vazio">Nenhum aviso coletado ainda.</div>';
   }
-  const rotulo = { vaga: '🔴 VAGA', missao: '🤝 missão/delegação', noticia: 'notícia' };
+  const rotulo = {
+    vaga: '🔴 VAGA (consulado)',
+    vaga_portal: '💼 vaga de intérprete',
+    vaga_exige_mandarim: '🈶 exige mandarim (não é vaga de tradução)',
+    missao: '🤝 missão/delegação',
+    noticia: 'notícia',
+  };
   return '<div class="lista-oportunidades">' + lista.map((o) => `
     <article class="oportunidade ${escapar(o.tipo)}">
       <div class="cabecalho">
-        <span class="etiqueta ${o.tipo === 'vaga' ? 'confirmada' : 'provavel'}">${rotulo[o.tipo] || o.tipo}</span>
+        <span class="etiqueta ${['vaga','vaga_portal'].includes(o.tipo) ? 'confirmada' : 'provavel'}">${rotulo[o.tipo] || o.tipo}</span>
         <a href="${escapar(o.url)}" target="_blank" rel="noopener"><strong>${escapar(o.titulo)}</strong></a>
         <span class="data">${o.data ? formatarData(o.data) : ''}${
           o.dias_atras != null && o.dias_atras >= 0 ? ` · há ${o.dias_atras} dias` : ''}</span>
@@ -407,7 +413,8 @@ function desenharAlertaVaga() {
   if (!alvo) return;
 
   const vagas = estado.oportunidades.filter(
-    (o) => o.tipo === 'vaga' && (o.dias_atras == null || o.dias_atras <= 90)
+    (o) => ['vaga', 'vaga_portal'].includes(o.tipo)
+        && (o.dias_atras == null || o.dias_atras <= 90)
   );
 
   // marca a aba com o número de vagas, para o aviso existir mesmo se a faixa
@@ -455,7 +462,8 @@ function renderizar() {
   atualizarContadorContatados();
 
   if (estado.aba === 'oportunidades') {
-    const vagas = estado.oportunidades.filter((o) => o.tipo === 'vaga').length;
+    const vagas = estado.oportunidades.filter(
+      (o) => ['vaga', 'vaga_portal'].includes(o.tipo)).length;
     contagem.textContent = `${estado.oportunidades.length} avisos do consulado`
       + (vagas ? ` — ${vagas} com vaga de emprego` : ' — nenhuma vaga aberta no momento');
     conteudo.innerHTML = desenharOportunidades();

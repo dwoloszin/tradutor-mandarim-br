@@ -388,23 +388,34 @@ def etapa_oportunidades(hoje: date | None = None) -> dict:
     duas por ano — mas são exatamente do perfil (assistente consular, tradutor) e têm
     prazo curto. Quem não olha o site todo dia perde; o robô olha.
     """
-    from .fontes.oportunidades import consulado
+    from .fontes.oportunidades import consulado, vagas_portais
 
     tabela = Tabela("oportunidades").carregar()
-    resumo = {"lidas": 0, "novas": 0, "vagas": 0, "missoes": 0, "erro": ""}
+    resumo = {"lidas": 0, "novas": 0, "vagas": 0, "missoes": 0,
+              "vagas_portais": 0, "erro": ""}
 
+    itens = []
     try:
-        itens = consulado.coletar(hoje)
+        itens.extend(consulado.coletar(hoje))
     except Exception as exc:  # noqa: BLE001 - um canal fora do ar não derruba a rodada
-        resumo["erro"] = f"{type(exc).__name__}: {exc}"
-        return resumo
+        resumo["erro"] = f"consulado: {type(exc).__name__}: {exc}"
+
+    # Portais de emprego (só os que o robots.txt permite). São vagas CLT/PJ, perfil
+    # diferente do freelance de feira — entram como complemento, e porque empresa que
+    # contrata intérprete fixo também é cliente possível para trabalho pontual.
+    try:
+        das_vagas = vagas_portais.coletar()
+        resumo["vagas_portais"] = len(das_vagas)
+        itens.extend(das_vagas)
+    except Exception as exc:  # noqa: BLE001
+        resumo["erro"] = (resumo["erro"] + f" | portais: {type(exc).__name__}").strip(" |")
 
     for item in itens:
         resumo["lidas"] += 1
         if tabela.obter(item["id"]) is None:
             resumo["novas"] += 1
         tabela.upsert(item)
-        if item["tipo"] == "vaga":
+        if item["tipo"] in ("vaga", "vaga_portal"):
             resumo["vagas"] += 1
         elif item["tipo"] == "missao":
             resumo["missoes"] += 1

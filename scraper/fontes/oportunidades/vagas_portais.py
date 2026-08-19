@@ -62,6 +62,17 @@ LINKS_PRONTOS = {
 # Uma vaga só interessa se for de mandarim: "tradutor" sozinho traz inglês e espanhol.
 RELEVANTE = re.compile(r"mandarim|chin[êe]s|chinesa|中文|汉语|普通话", re.IGNORECASE)
 
+# Duas coisas bem diferentes aparecem na mesma busca, e misturá-las engana o intérprete:
+#   - vaga DE intérprete/tradutor (é o trabalho dele)
+#   - vaga que apenas EXIGE mandarim (engenheiro, trainee, analista numa empresa chinesa)
+# A segunda não é trabalho de tradução, mas ainda é um sinal útil: quem contrata pedindo
+# mandarim costuma precisar de interpretação pontual também. Marcamos e separamos.
+CARGO_INTERPRETE = re.compile(
+    r"(tradutor|tradutora|tradu[çc][ãa]o|int[ée]rprete|interpreta[çc][ãa]o|"
+    r"translator|interpreter)",
+    re.IGNORECASE,
+)
+
 
 def _extrair(html: str, portal: dict, base: str) -> list[dict]:
     sopa = BeautifulSoup(html, "lxml")
@@ -84,6 +95,7 @@ def _extrair(html: str, portal: dict, base: str) -> list[dict]:
         href = link_el.get("href") if link_el else ""
 
         achados.append({
+            "e_interprete": bool(CARGO_INTERPRETE.search(titulo)),
             "titulo": titulo[:160],
             "empresa": normalizar_texto(empresa_el.get_text(" "))[:80] if empresa_el else "",
             "url": urljoin(base, href) if href else base,
@@ -117,7 +129,7 @@ def coletar() -> list[dict]:
                     "titulo": vaga["titulo"],
                     "url": vaga["url"],
                     "data_publicacao": "",
-                    "tipo": "vaga_portal",
+                    "tipo": "vaga_portal" if vaga["e_interprete"] else "vaga_exige_mandarim",
                     "termos_encontrados": [termo],
                     "resumo": (f"{vaga['empresa']} — " if vaga["empresa"] else "") + vaga["resumo"],
                     "visto_em": agora_iso(),
