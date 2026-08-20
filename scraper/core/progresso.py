@@ -55,10 +55,16 @@ class Acompanhamento:
     # ----------------------------------------------------------------
 
     def _previsao(self) -> tuple[float, str]:
-        """Segundos restantes e horário previsto, pelo ritmo observado até aqui."""
+        """Segundos restantes e horário previsto, pelo ritmo observado até aqui.
+
+        Só estima depois de dois itens concluídos e meio minuto de rodada. Antes disso
+        o ritmo medido é ruído — e uma previsão inventada é pior que nenhuma, porque a
+        pessoa organiza a espera em cima dela.
+        """
         decorrido = time.time() - self.inicio
-        if self.feitos <= 0 or self.total <= 0:
+        if self.feitos < 2 or self.total <= 0 or decorrido < 30:
             return 0.0, ""
+        # o item em andamento ainda não terminou; medimos pelos que fecharam
         por_item = decorrido / self.feitos
         restantes = max(self.total - self.feitos, 0)
         faltam = por_item * restantes
@@ -122,6 +128,8 @@ def formatar(dados: dict | None) -> str:
     if dados.get("previsao_termino"):
         linha += (f"  ·  faltam {_duracao(dados['faltam_s'])}, "
                   f"termina ~{dados['previsao_termino']}")
+    else:
+        linha += f"  ·  rodando há {_duracao(dados['decorrido_s'])} (calculando ritmo)"
     if dados.get("item_atual"):
         linha += f"\n    agora: {dados['item_atual']}"
     if dados.get("parece_travada"):
