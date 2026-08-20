@@ -15,6 +15,7 @@ from ..core.http import Bloqueado, FalhouDeVerdade, buscar
 from ..core.modelos import normalizar_texto
 from .plataformas import (
     astro, noomis, renderizado, rotulos, rx, smarter_e, swapcard, tradechina,
+    planilha,
     wordpress,
 )
 from .plataformas.descoberta import descobrir
@@ -328,6 +329,18 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
         except Bloqueado as exc:
             return _resultado(BLOQUEADO, plataforma="wordpress_node", pagina=pagina,
                               detalhe=exc.motivo)
+        except FalhouDeVerdade:
+            pass
+
+    # 2d) Planilha colada na pagina (data-sheets-root): sinal exato, entao decide cedo.
+    #     Na FESQUA o raspador generico e o navegador viam 24 das 314 empresas, porque
+    #     tabela crua sem classe nem link nao se parece com lista de expositores.
+    if "data-sheets-root" in html or "data-sheets-baot" in html:
+        try:
+            dados = planilha.coletar(pagina, html)
+            return _resultado(OK, plataforma="planilha", pagina=pagina, url_dados=pagina,
+                              expositores=dados["expositores"],
+                              total_informado=dados["total_informado"])
         except FalhouDeVerdade:
             pass
 
