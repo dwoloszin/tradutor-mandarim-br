@@ -310,20 +310,14 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
     except FalhouDeVerdade:
         pass
 
-    # 3a) Lista rotulada ("Empresa: X / Estande: Y"), comum em site Elementor.
-    #     Os rotulos dizem qual campo e qual — nao precisamos adivinhar como no generico.
-    try:
-        dados = rotulos.coletar(pagina, html)
-        return _resultado(OK, plataforma="rotulos", pagina=pagina, url_dados=pagina,
-                          expositores=dados["expositores"],
-                          total_informado=dados["total_informado"])
-    except FalhouDeVerdade:
-        pass  # não é uma lista rotulada; segue o fluxo
-
-    # 3a2) WordPress headless: o CMS fica noutro dominio e os endpoints padrao estao
-    #      fechados, mas a pagina publica revela o endpoint proprio. Tem que vir ANTES
-    #      do WordPress comum, senao o /wp/v2/ da 404 e caimos no raspador generico,
-    #      que so enxergaria os 15 itens da primeira pagina de 27.
+    # 2c) WordPress headless: o CMS fica noutro dominio e os endpoints padrao estao
+    #     fechados, mas a pagina publica revela o endpoint proprio.
+    #
+    #     Vem antes de qualquer adaptador que leia o HTML servido, e nao por gosto:
+    #     na Beauty Fair o leitor de rotulos casava com os 14 itens da primeira pagina
+    #     e devolvia com sucesso, encerrando o roteamento. A lista tem 391 em 27
+    #     paginas. Um adaptador que le a pagina renderizada nunca vai ver alem da
+    #     primeira; quem tem o endpoint paginado tem que decidir antes dele.
     if "custom/v1/node" in html:
         try:
             dados = wordpress.coletar_node(pagina, html)
@@ -336,6 +330,16 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
                               detalhe=exc.motivo)
         except FalhouDeVerdade:
             pass
+
+    # 3a) Lista rotulada ("Empresa: X / Estande: Y"), comum em site Elementor.
+    #     Os rotulos dizem qual campo e qual — nao precisamos adivinhar como no generico.
+    try:
+        dados = rotulos.coletar(pagina, html)
+        return _resultado(OK, plataforma="rotulos", pagina=pagina, url_dados=pagina,
+                          expositores=dados["expositores"],
+                          total_informado=dados["total_informado"])
+    except FalhouDeVerdade:
+        pass  # não é uma lista rotulada; segue o fluxo
 
     # 3b) WordPress REST: muitas feiras medias publicam a lista num tipo de conteudo
     #     proprio e nem sabem. Vem limpo e paginado, e ganha do raspador.
