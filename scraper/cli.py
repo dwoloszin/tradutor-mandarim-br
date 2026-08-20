@@ -57,6 +57,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("argumento", nargs="?", default="")
     parser.add_argument("--limite", type=int, default=None,
                         help="máximo de tarefas nesta rodada")
+    parser.add_argument("--esperar", type=int, default=0, metavar="SEGUNDOS",
+                        help="espera a rodada em andamento terminar, em vez de recusar")
     args = parser.parse_args(argv)
 
     from .core.perfil import ambiente_atual
@@ -108,7 +110,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.comando in ("tudo", "pendentes", "agenda", "radar", "oportunidades",
                         "expositores", "enriquecer", "vagas"):
         try:
-            with trava_de_escrita():
+            with trava_de_escrita(esperar_segundos=args.esperar):
                 return _executar(args, pipeline)
         except RodadaEmAndamento as exc:
             print(f"\n{exc}")

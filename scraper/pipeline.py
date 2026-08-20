@@ -251,7 +251,16 @@ def etapa_expositores(limite: int | None = None, hoje: date | None = None) -> di
 
         resumo["processadas"] += 1
         feira_config = _casar_config(evento, config)
-        resultado = expositores_mod.coletar(evento, feira_config)
+        try:
+            resultado = expositores_mod.coletar(evento, feira_config)
+        except Exception as exc:  # noqa: BLE001
+            # O navegador do Playwright morre de vez em quando (EPIPE) e levava a etapa
+            # inteira junto — perdendo tudo que já tinha sido coletado na rodada, porque
+            # o store só grava no fim. Agora a feira problemática cai sozinha.
+            resumo["erro"] += 1
+            fila.marcar_falha("expositores", tarefa["alvo"],
+                              motivo=f"{type(exc).__name__}: {str(exc)[:160]}")
+            continue
 
         evento["plataforma"] = resultado.get("plataforma") or evento.get("plataforma", "")
         if resultado.get("pagina"):
