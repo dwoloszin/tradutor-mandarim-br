@@ -159,6 +159,23 @@ def exportar(hoje: date | None = None) -> dict:
     principais.sort(key=ordem)
     revisao.sort(key=lambda x: x["nome"])
 
+    # Quantas chinesas por feira, contadas AGORA e não quando a feira foi coletada.
+    #
+    # O evento guarda um total_chinesas escrito no momento da coleta, e ele envelhece
+    # mal: o enriquecimento reclassifica empresa o tempo todo (chinesa de nome
+    # ocidental só se revela quando alguém vai buscar o telefone +86), mas a feira só
+    # é recoletada semanas depois. A Beauty Fair ficou anunciando 3 chinesas no
+    # calendário enquanto já tinha 39 na base — e quem olhasse a lista não teria como
+    # saber que o número estava velho.
+    chinesas_por_evento: dict[str, int] = {}
+    for p in participacoes:
+        empresa = empresas_tab.obter(p["empresa_id"]) or {}
+        if empresa.get("classificacao_china") in (china_mod.CONFIRMADA,
+                                                  china_mod.PROVAVEL):
+            chinesas_por_evento[p["evento_id"]] = (
+                chinesas_por_evento.get(p["evento_id"], 0) + 1
+            )
+
     eventos_saida = []
     for evento in eventos_tab.todos():
         eventos_saida.append({
@@ -178,7 +195,9 @@ def exportar(hoje: date | None = None) -> dict:
             "encerrada": bool(evento.get("encerrado")),
             "dias": dias_ate(evento.get("data_inicio", ""), hoje),
             "total_expositores": evento.get("total_expositores", 0),
-            "total_chinesas": evento.get("total_chinesas", 0),
+            "total_chinesas": chinesas_por_evento.get(
+                evento["id"], evento.get("total_chinesas", 0)
+            ),
             "plataforma": evento.get("plataforma", ""),
             "prioridade": evento.get("prioridade", 5),
         })

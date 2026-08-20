@@ -226,7 +226,7 @@
     "encerrada": false,
     "dias": 5,
     "total_expositores": 488,
-    "total_chinesas": 248,
+    "total_chinesas": 367,
     "plataforma": "smarter_e",
     "prioridade": 1
   },
@@ -331,7 +331,7 @@
     "encerrada": false,
     "dias": 15,
     "total_expositores": 391,
-    "total_chinesas": 3,
+    "total_chinesas": 39,
     "plataforma": "wordpress_node",
     "prioridade": 2
   },
@@ -373,7 +373,7 @@
     "encerrada": false,
     "dias": 19,
     "total_expositores": 197,
-    "total_chinesas": 4,
+    "total_chinesas": 5,
     "plataforma": "astro",
     "prioridade": 5
   },
@@ -2221,7 +2221,7 @@
     "encerrada": false,
     "dias": null,
     "total_expositores": 416,
-    "total_chinesas": 228,
+    "total_chinesas": 225,
     "plataforma": "rx",
     "prioridade": 1
   },
