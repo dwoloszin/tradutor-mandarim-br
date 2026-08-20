@@ -1458,6 +1458,66 @@
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
   {
+    "id": "emp:n:china-glass",
+    "nome": "CHINA GLASS",
+    "nome_zh": "",
+    "pais": "",
+    "origem": "china",
+    "cidade": "",
+    "provincia": "",
+    "setor": "esquadrias, ferragens, vidro e portas",
+    "produtos": [],
+    "website": "",
+    "website_cn": "",
+    "emails": [],
+    "telefones": [],
+    "whatsapps": [],
+    "wechat": "",
+    "contato_nome": "",
+    "funcionarios": "",
+    "ano_fundacao": "",
+    "tipo_negocio": "",
+    "receita_anual": "",
+    "porte": "",
+    "perfis": {},
+    "score_china": 2,
+    "classificacao": "suspeita",
+    "motivos": [
+      "menção a China no texto: \"china\""
+    ],
+    "descricao": "",
+    "links_pesquisa": {
+      "google": "https://www.google.com/search?q=CHINA+GLASS",
+      "baidu": "https://www.baidu.com/s?wd=CHINA+GLASS",
+      "alibaba": "https://www.alibaba.com/trade/search?SearchText=CHINA+GLASS",
+      "made_in_china": "https://www.made-in-china.com/productdirectory.do?word=CHINA+GLASS",
+      "1688": "https://s.1688.com/selloffer/offer_search.htm?keywords=CHINA+GLASS",
+      "qcc": "https://www.qcc.com/web/search?key=CHINA+GLASS",
+      "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=CHINA+GLASS"
+    },
+    "tem_contato": false,
+    "feiras": [
+      {
+        "evento_id": "ev:fesqua:2026",
+        "nome": "FESQUA",
+        "inicio": "2026-09-09",
+        "fim": "2026-09-12",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "",
+        "encerrada": false,
+        "dias": 20
+      }
+    ],
+    "proxima_feira": "FESQUA",
+    "proxima_data": "2026-09-09",
+    "proximo_stand": "",
+    "dias_para_proxima": 20,
+    "tem_feira_futura": true,
+    "atualizado_em": "2026-08-20T13:49:06+00:00"
+  },
+  {
     "id": "emp:n:china-global-logistics",
     "nome": "CHINA GLOBAL LOGISTICS",
     "nome_zh": "",
@@ -4214,6 +4274,66 @@
     "dias_para_proxima": 5,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
+  },
+  {
+    "id": "emp:n:ieg-china",
+    "nome": "IEG CHINA",
+    "nome_zh": "",
+    "pais": "",
+    "origem": "china",
+    "cidade": "",
+    "provincia": "",
+    "setor": "esquadrias, ferragens, vidro e portas",
+    "produtos": [],
+    "website": "",
+    "website_cn": "",
+    "emails": [],
+    "telefones": [],
+    "whatsapps": [],
+    "wechat": "",
+    "contato_nome": "",
+    "funcionarios": "",
+    "ano_fundacao": "",
+    "tipo_negocio": "",
+    "receita_anual": "",
+    "porte": "",
+    "perfis": {},
+    "score_china": 2,
+    "classificacao": "suspeita",
+    "motivos": [
+      "menção a China no texto: \"china\""
+    ],
+    "descricao": "",
+    "links_pesquisa": {
+      "google": "https://www.google.com/search?q=IEG+CHINA",
+      "baidu": "https://www.baidu.com/s?wd=IEG+CHINA",
+      "alibaba": "https://www.alibaba.com/trade/search?SearchText=IEG+CHINA",
+      "made_in_china": "https://www.made-in-china.com/productdirectory.do?word=IEG+CHINA",
+      "1688": "https://s.1688.com/selloffer/offer_search.htm?keywords=IEG+CHINA",
+      "qcc": "https://www.qcc.com/web/search?key=IEG+CHINA",
+      "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=IEG+CHINA"
+    },
+    "tem_contato": false,
+    "feiras": [
+      {
+        "evento_id": "ev:fesqua:2026",
+        "nome": "FESQUA",
+        "inicio": "2026-09-09",
+        "fim": "2026-09-12",
+        "local": "São Paulo Expo",
+        "cidade": "São Paulo",
+        "uf": "SP",
+        "stand": "",
+        "encerrada": false,
+        "dias": 20
+      }
+    ],
+    "proxima_feira": "FESQUA",
+    "proxima_data": "2026-09-09",
+    "proximo_stand": "",
+    "dias_para_proxima": 20,
+    "tem_feira_futura": true,
+    "atualizado_em": "2026-08-20T13:49:06+00:00"
   },
   {
     "id": "emp:n:infinite-carregador-ev",

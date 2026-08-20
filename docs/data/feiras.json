@@ -381,7 +381,7 @@
     "id": "ev:fesqua:2026",
     "nome": "FESQUA",
     "site": "https://fesqua.com.br/",
-    "pagina_expositores": "https://www.fesqua.com.br/lista-de-expositores",
+    "pagina_expositores": "https://fesqua.com.br/lista-de-expositores/",
     "inicio": "2026-09-09",
     "fim": "2026-09-12",
     "data_texto": "09 - 12 set",
@@ -393,9 +393,9 @@
     "densidade_china": "alta",
     "encerrada": false,
     "dias": 20,
-    "total_expositores": 24,
-    "total_chinesas": 0,
-    "plataforma": "renderizado",
+    "total_expositores": 314,
+    "total_chinesas": 10,
+    "plataforma": "planilha",
     "prioridade": 1
   },
   {
