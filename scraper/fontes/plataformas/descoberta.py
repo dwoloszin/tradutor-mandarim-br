@@ -83,9 +83,16 @@ def descobrir(site: str, url_fixada: str | None = None) -> dict:
             return resultado
 
         plataforma = detectar_plataforma(html)
-        if plataforma and resultado["plataforma"] is None:
-            # guarda como pista, mas continua procurando algo com dados de verdade
+
+        # Guardar a página mesmo sem reconhecer plataforma. Antes só registrávamos
+        # quando havia assinatura conhecida, e uma página de expositores perfeitamente
+        # válida — mas feita em algo que não conhecemos — era jogada fora como se não
+        # existisse. Era o caso do Expopostos: a descoberta achava a URL certa e o
+        # roteador recebia "nenhuma página encontrada".
+        if resultado["pagina"] is None:
             resultado.update({"pagina": url, "plataforma": plataforma})
+        elif plataforma and not resultado["plataforma"]:
+            resultado["plataforma"] = plataforma
 
     if resultado["pagina"] is None:
         resultado["erro"] = "nenhuma página de expositores encontrada"

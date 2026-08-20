@@ -35,6 +35,8 @@ ASSINATURAS = {
     "__NEXT_DATA__": "nextjs",
     "wixstatic.com": "wix",
     "webflow": "webflow",
+    "framer.com": "framer",
+    "data-framer-": "framer",
 }
 
 PADRAO_LINK_EXPOSITOR = re.compile(

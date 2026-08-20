@@ -14,7 +14,8 @@ from __future__ import annotations
 from ..core.http import Bloqueado, FalhouDeVerdade, buscar
 from ..core.modelos import normalizar_texto
 from .plataformas import (
-    noomis, renderizado, rotulos, rx, smarter_e, swapcard, tradechina, wordpress,
+    astro, noomis, renderizado, rotulos, rx, smarter_e, swapcard, tradechina,
+    wordpress,
 )
 from .plataformas.descoberta import descobrir
 from .plataformas.detectar import detectar_plataforma
@@ -110,6 +111,62 @@ def _parse_generico(url: str) -> list[dict]:
             "fonte_plataforma": "generico",
             "fonte_url": url,
             "id_plataforma": "",
+        })
+    return empresas
+
+
+def _parse_cartoes_estatico(html: str, url: str) -> list[dict]:
+    """Cartões repetidos no HTML já servido — sem precisar de navegador.
+
+    Sites em Framer, Wix e afins montam a lista como blocos com a mesma classe gerada
+    ("framer-1luz2do"). O nome da classe muda de site para site, então procuramos a
+    classe MAIS repetida e tratamos cada ocorrência como um expositor.
+
+    Isto rodava só no adaptador com navegador. Mas essas páginas vêm inteiras no HTML:
+    gastar um Chrome nelas era desperdício, e na nuvem simplesmente não rodava.
+    """
+    from collections import Counter
+
+    from bs4 import BeautifulSoup
+
+    sopa = BeautifulSoup(html, "lxml")
+    for tag in sopa(["script", "style", "nav", "header", "footer"]):
+        tag.decompose()
+
+    contagem = Counter()
+    for elemento in sopa.select("div, li, article"):
+        classe = " ".join(elemento.get("class") or [])
+        if classe and len(classe) < 120:
+            contagem[classe] += 1
+    if not contagem:
+        return []
+
+    classe, repeticoes = contagem.most_common(1)[0]
+    if repeticoes < 15:
+        return []
+
+    seletor = "." + ".".join(c for c in classe.split() if c)
+    empresas, vistos = [], set()
+    for bloco in sopa.select(seletor):
+        textos = [normalizar_texto(x) for x in bloco.stripped_strings]
+        textos = [x for x in textos if x]
+        if not textos:
+            continue
+        nome = textos[0]
+        # descarta chamada de marketing, texto de preenchimento e pergunta de seção
+        if len(nome) > 70 or nome.endswith("?") or "lorem ipsum" in nome.lower():
+            continue
+        if len(nome) < 3 or nome.lower() in vistos:
+            continue
+        vistos.add(nome.lower())
+
+        link = bloco.select_one("a[href]")
+        empresas.append({
+            "nome": nome,
+            "website": "", "emails": [], "pais": "", "cidade": "", "endereco": "",
+            "stand": "", "categorias": [], "descricao": "",
+            "ficha_feira": link.get("href") if link else "",
+            "fonte_plataforma": "cartoes", "fonte_url": url, "id_plataforma": "",
         })
     return empresas
 
@@ -243,6 +300,16 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
         except FalhouDeVerdade as exc:
             plataforma = "rx"  # segue para o genérico, mas registra o que era
 
+    # 2b) Astro com dados embutidos (e API paginada atras): pega a lista INTEIRA,
+    #     nao so a primeira pagina que o botao "ver mais" revela.
+    try:
+        dados = astro.coletar(pagina, html)
+        return _resultado(OK, plataforma="astro", pagina=pagina, url_dados=pagina,
+                          expositores=dados["expositores"],
+                          total_informado=dados["total_informado"])
+    except FalhouDeVerdade:
+        pass
+
     # 3a) Lista rotulada ("Empresa: X / Estande: Y"), comum em site Elementor.
     #     Os rotulos dizem qual campo e qual — nao precisamos adivinhar como no generico.
     try:
@@ -252,6 +319,23 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
                           total_informado=dados["total_informado"])
     except FalhouDeVerdade:
         pass  # não é uma lista rotulada; segue o fluxo
+
+    # 3a2) WordPress headless: o CMS fica noutro dominio e os endpoints padrao estao
+    #      fechados, mas a pagina publica revela o endpoint proprio. Tem que vir ANTES
+    #      do WordPress comum, senao o /wp/v2/ da 404 e caimos no raspador generico,
+    #      que so enxergaria os 15 itens da primeira pagina de 27.
+    if "custom/v1/node" in html:
+        try:
+            dados = wordpress.coletar_node(pagina, html)
+            if dados["expositores"]:
+                return _resultado(OK, plataforma="wordpress_node", pagina=pagina,
+                                  url_dados=pagina, expositores=dados["expositores"],
+                                  total_informado=dados["total_informado"])
+        except Bloqueado as exc:
+            return _resultado(BLOQUEADO, plataforma="wordpress_node", pagina=pagina,
+                              detalhe=exc.motivo)
+        except FalhouDeVerdade:
+            pass
 
     # 3b) WordPress REST: muitas feiras medias publicam a lista num tipo de conteudo
     #     proprio e nem sabem. Vem limpo e paginado, e ganha do raspador.
@@ -274,6 +358,12 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
         return _resultado(OK, plataforma=plataforma or "generico", pagina=pagina,
                           url_dados=pagina, expositores=empresas,
                           total_informado=len(empresas))
+
+    # 4b) cartões repetidos no HTML servido (Framer, Wix): não precisa de navegador
+    empresas = _parse_cartoes_estatico(html, pagina)
+    if empresas:
+        return _resultado(OK, plataforma="cartoes", pagina=pagina, url_dados=pagina,
+                          expositores=empresas, total_informado=len(empresas))
 
     # 5) último recurso: renderizar com navegador. A maioria das listas que sobram é
     #    React/Webflow e só existe depois do JavaScript. Exige o PC (não roda na nuvem),

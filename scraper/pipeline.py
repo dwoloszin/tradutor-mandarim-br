@@ -414,11 +414,28 @@ def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, f
 
         if relevante:
             chinesas += 1
-            prioridade = 2 if avaliacao["classificacao"] == china_mod.CONFIRMADA else 4
+
+        # Quem visitar depende de mais que a classificação atual. Uma chinesa com nome
+        # ocidental e site .com — "ABOLAND", em gzaboland.com — não é detectada na
+        # coleta, e se só enfileirássemos as já classificadas ela nunca seria visitada,
+        # nunca revelaria o telefone +86 e ficaria invisível para sempre. Domínio
+        # estrangeiro é barato de checar e vale a visita.
+        dominio = dominio_proprio(bruto.get("website"))
+        site_estrangeiro = bool(dominio) and not dominio.endswith(".br")
+        vale_investigar = (
+            relevante
+            or avaliacao["classificacao"] == china_mod.SUSPEITA
+            or site_estrangeiro
+        )
+
+        if vale_investigar:
+            prioridade = 2 if avaliacao["classificacao"] == china_mod.CONFIRMADA else (
+                4 if relevante else 6
+            )
             if bruto.get("website"):
                 fila.adicionar("site_empresa", identificador, prioridade=prioridade,
                                dados={"website": bruto["website"]})
-            else:
+            elif relevante:
                 # sem site não dá para visitar: procura porte e contato nas bases chinesas
                 fila.adicionar("enriquecer_empresa", identificador, prioridade=prioridade + 1,
                                dados={"nome": nome})
@@ -490,7 +507,7 @@ def etapa_enriquecer(limite: int | None = None, paralelas: int = 8) -> dict:
 
     tarefas = fila.proximas("site_empresa", limite)
     resumo = {"processadas": 0, "com_email": 0, "com_wechat": 0,
-              "adiadas": 0, "falhas": 0, "sem_dados": 0}
+              "adiadas": 0, "falhas": 0, "sem_dados": 0, "reclassificadas": 0}
 
     # separa o que dá para buscar do que já nasce sem site
     a_buscar = []
@@ -536,7 +553,7 @@ def etapa_enriquecer(limite: int | None = None, paralelas: int = 8) -> dict:
                                       motivo=f"{type(erro).__name__}: {erro}")
                 continue
 
-            empresas_tab.upsert({
+            atualizacao = {
                 "id": empresa["id"],
                 "emails": achado["emails"],
                 "telefones": achado["telefones"],
@@ -545,7 +562,26 @@ def etapa_enriquecer(limite: int | None = None, paralelas: int = 8) -> dict:
                 "website_cn": achado["website_cn"] or empresa.get("website_cn", ""),
                 "enriquecida_em": agora_iso(),
                 "fontes": ["site_empresa"],
-            })
+            }
+
+            # O enriquecimento traz justamente as provas mais fortes de origem chinesa:
+            # telefone +86, e-mail em 163/QQ/.cn, site .cn. Se a classificação não for
+            # refeita, a empresa continua fora da lista mesmo com a prova no registro —
+            # e foi assim que empresas como a ABOLAND (gzaboland.com) ficavam de fora.
+            reavaliacao = china_mod.avaliar({**empresa, **atualizacao})
+            if reavaliacao["score"] > empresa.get("score_china", 0):
+                atualizacao.update({
+                    "score_china": reavaliacao["score"],
+                    "classificacao_china": reavaliacao["classificacao"],
+                    "origem": reavaliacao["origem"],
+                    "motivos_deteccao": reavaliacao["motivos"],
+                })
+                if (reavaliacao["classificacao"] in (china_mod.CONFIRMADA, china_mod.PROVAVEL)
+                        and empresa.get("classificacao_china") not in
+                        (china_mod.CONFIRMADA, china_mod.PROVAVEL)):
+                    resumo["reclassificadas"] = resumo.get("reclassificadas", 0) + 1
+
+            empresas_tab.upsert(atualizacao)
             if achado["emails"]:
                 resumo["com_email"] += 1
             if achado["wechat"]:

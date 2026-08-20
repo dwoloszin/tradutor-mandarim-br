@@ -16,6 +16,58 @@
   ],
   "feiras": [
     {
+      "nome": "AUTOMEC",
+      "site": "https://www.automecfeira.com.br/",
+      "setor": "autopeças e serviços automotivos",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 2,
+      "observacao": "Bienal. Cadeia de autopeças chinesa muito presente.",
+      "pagina_expositores": "https://www.automecfeira.com.br/pt-br/expositores.html",
+      "plataforma": "rx",
+      "data_texto": "20 a 24 de abril de 2027"
+    },
+    {
+      "nome": "Agrishow",
+      "site": "https://www.agrishow.com.br/",
+      "setor": "agronegócio e maquinário agrícola",
+      "local": "Parque Zilo Bezerra de Sales",
+      "cidade": "Ribeirão Preto",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 2,
+      "pagina_expositores": "https://app.agrishow.com.br/event/agrishow-experience-2026/exhibitors/RXZlbnRWaWV3XzEyMzgwOTI=",
+      "plataforma": "swapcard"
+    },
+    {
+      "nome": "Beauty Fair",
+      "site": "https://www.beautyfair.com.br/",
+      "setor": "beleza, estética e cosméticos",
+      "local": "Expo Center Norte",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 2,
+      "observacao": "Aparelhos de estética, embalagens e acessórios majoritariamente chineses. WordPress headless: a lista vem de custom/v1/node, 391 empresas em 27 páginas. Muita chinesa com nome ocidental e site .com — só o enriquecimento revela a origem.",
+      "pagina_expositores": "https://beautyfair.com.br/expositores/"
+    },
+    {
+      "nome": "Brasil Game Show",
+      "site": "https://www.brasilgameshow.com.br/",
+      "setor": "games, periféricos e hardware",
+      "local": "Expo Center Norte",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 2,
+      "apelidos": [
+        "BGS"
+      ],
+      "observacao": "Periféricos, cadeiras gamer e hardware — fabricantes de Shenzhen e Dongguan."
+    },
+    {
       "nome": "CHINA HOMELIFE MACHINEX",
       "site": "https://www.tradechina.com/chinahomelifeBrazil_152996309411/",
       "setor": "multissetorial (casa, construcao, maquinas, textil, eletronicos)",
@@ -30,6 +82,228 @@
       "data_texto": "16 a 18 de setembro de 2026",
       "permitir_apesar_do_robots": true,
       "decisao_robots": "O host global-all-api.tradechina.com responde 'Disallow: /' para todo robô. Coleta autorizada explicitamente pelo dono do projeto em 19/08/2026, ciente de que contraria os termos da Meorient e pode levar a bloqueio de IP. Mitigação: 100 registros por requisição (20 chamadas para a feira inteira), pausa de 1,2s entre elas, uma coleta a cada 72h."
+    },
+    {
+      "nome": "Couromoda",
+      "site": "https://www.couromoda.com/",
+      "setor": "calçados, bolsas e acessórios",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 3
+    },
+    {
+      "nome": "EXPOMAFE",
+      "site": "https://www.expomafe.com.br/",
+      "setor": "máquinas-ferramenta e automação industrial",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "observacao": "Bienal (anos pares). Forte presença de fabricantes chineses de máquinas CNC.",
+      "data_texto": "5 a 9 de maio de 2026"
+    },
+    {
+      "nome": "EXPOSEC",
+      "site": "https://www.exposec.tmp.br/",
+      "setor": "segurança eletrônica e vigilância",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "altissima",
+      "prioridade": 1,
+      "apelidos": [
+        "ISC Brasil",
+        "Exposec - Feira Internacional de Segurança"
+      ],
+      "observacao": "Câmeras e CFTV são dominados por Hikvision, Dahua, Uniview, TVT e dezenas de fabricantes menores de Shenzhen. Densidade comparável à solar."
+    },
+    {
+      "nome": "Eletrolar Show",
+      "site": "https://eletrolarshow.com.br/",
+      "setor": "eletroeletrônicos e eletrodomésticos",
+      "local": "Distrito Anhembi",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "apelidos": [
+        "Eletrolar Show & Latin American Electronics"
+      ]
+    },
+    {
+      "nome": "Expo Revestir",
+      "site": "https://www.exporevestir.com.br/",
+      "setor": "revestimentos cerâmicos e acabamentos",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 3
+    },
+    {
+      "nome": "Expopostos & Conveniência",
+      "site": "https://expopostos.com.br/",
+      "pagina_expositores": "https://expopostos.com.br/expositores-marcas",
+      "setor": "postos de combustível e conveniência",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "baixa",
+      "prioridade": 5,
+      "observacao": "Site em Astro: a página mostra 50 cartões com botão 'ver mais', mas a API entrega 197. Densidade chinesa baixa (3), cadastrada para não reaparecer como feira desconhecida a cada rodada."
+    },
+    {
+      "nome": "FEBRABAN TECH",
+      "site": "https://febrabantech.com/",
+      "setor": "tecnologia para o setor financeiro",
+      "local": "Distrito Anhembi",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "baixa",
+      "prioridade": 3,
+      "pagina_expositores": "https://febrabantech.com/expositores",
+      "apelidos": [
+        "FEBRABAN TECH 2026"
+      ],
+      "observacao": "Setor majoritariamente nacional; entra pela cobertura, não pela densidade.",
+      "plataforma": "noomis",
+      "slug_noomis": "febrabantech"
+    },
+    {
+      "nome": "FEBRAVA",
+      "site": "https://www.febrava.com.br/",
+      "setor": "refrigeração, ar-condicionado e ventilação",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "observacao": "Midea, Gree, Haier, TCL e cadeia de componentes chinesa. Bienal (anos ímpares). URL da lista ainda não localizada: a RX muda o caminho a cada edição.",
+      "plataforma": "rx",
+      "pagina_expositores": "https://www.febrava.com.br/pt-br/Expositores.html"
+    },
+    {
+      "nome": "FEICON",
+      "site": "https://www.feicon.com.br/",
+      "setor": "construção civil e arquitetura",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "observacao": "Plataforma RX/Reed — exige adaptador de API. URL da lista ainda não localizada: a RX muda o caminho a cada edição.",
+      "plataforma": "rx",
+      "data_texto": "6 a 9 de abril de 2027",
+      "pagina_expositores": "https://www.feicon.com.br/pt-br/Expositores.html"
+    },
+    {
+      "nome": "FENATRAN",
+      "site": "https://www.fenatran.com.br/",
+      "setor": "transporte rodoviário de carga",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 2,
+      "observacao": "Bienal. Fabricantes chineses de caminhões elétricos crescendo.",
+      "pagina_expositores": "https://www.fenatran.com.br/pt-br/expositores.html",
+      "plataforma": "rx"
+    },
+    {
+      "nome": "FESPA Brasil",
+      "site": "https://www.fespabrasil.com.br/",
+      "setor": "impressão digital, serigrafia e comunicação visual",
+      "local": "Expo Center Norte",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 2,
+      "observacao": "Impressoras e insumos chineses dominam o segmento de entrada."
+    },
+    {
+      "nome": "FESQUA",
+      "site": "https://www.fesqua.com.br/",
+      "setor": "esquadrias, ferragens, vidro e portas",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "observacao": "Já rendeu chinesas na coleta atual (Guangdong, Cixi, Chongqing, Changzhou)."
+    },
+    {
+      "nome": "FIEE Smart Future",
+      "site": "https://www.fiee.com.br/",
+      "setor": "eletroeletrônica industrial e automação",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "apelidos": [
+        "FIEE"
+      ],
+      "observacao": "Componentes, cabos, painéis e automação — cadeia chinesa muito presente."
+    },
+    {
+      "nome": "Fispal Tecnologia",
+      "site": "https://www.fispaltecnologia.com.br/",
+      "setor": "máquinas e embalagens para alimentos",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 3
+    },
+    {
+      "nome": "ForMóbile",
+      "site": "https://www.formobile.com.br/",
+      "setor": "máquinas e insumos para móveis",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 3
+    },
+    {
+      "nome": "Futurecom",
+      "site": "https://futurecom.com.br/",
+      "setor": "telecomunicações e TI",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "media",
+      "prioridade": 3,
+      "observacao": "Huawei, ZTE e fornecedores de rede.",
+      "pagina_expositores": "https://futurecom.com.br/expositores"
+    },
+    {
+      "nome": "Hospitalar",
+      "site": "https://www.hospitalar.com/",
+      "setor": "equipamentos e produtos médico-hospitalares",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "observacao": "Pavilhão chinês consolidado (CCCMHPIE). Mindray, Yuwell, Contec e dezenas de fabricantes menores.",
+      "data_texto": "19 a 22 de maio de 2026"
+    },
+    {
+      "nome": "Intermodal South America",
+      "site": "https://www.intermodal.com.br/",
+      "setor": "logística, transporte e comércio exterior",
+      "local": "São Paulo Expo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 1,
+      "observacao": "Armadores, freight forwarders e portos chineses — muitos com escritório em SP.",
+      "pagina_expositores": "https://app.informamarkets.com.br/widget/event/intermodal-2026/exhibitors/RXZlbnRWaWV3XzEyMTg5MTI=",
+      "plataforma": "swapcard"
     },
     {
       "nome": "Intersolar South America",
@@ -51,68 +325,51 @@
       "pagina_expositores": "https://www.intersolar.net.br/relacao-de-expositoras"
     },
     {
-      "nome": "Eletrolar Show",
-      "site": "https://eletrolarshow.com.br/",
-      "setor": "eletroeletrônicos e eletrodomésticos",
-      "local": "Distrito Anhembi",
+      "nome": "M&T Expo",
+      "site": "https://www.mtexpo.com.br/",
+      "setor": "equipamentos para construção e mineração",
+      "local": "São Paulo Expo",
       "cidade": "São Paulo",
       "uf": "SP",
       "densidade_china": "alta",
-      "prioridade": 1,
+      "prioridade": 2,
+      "observacao": "Sany, XCMG, Zoomlion, LiuGong. Trienal.",
       "apelidos": [
-        "Eletrolar Show & Latin American Electronics"
+        "M&T Expo - Feira Internacional de Equipamentos"
       ]
     },
     {
-      "nome": "FEICON",
-      "site": "https://www.feicon.com.br/",
-      "setor": "construção civil e arquitetura",
+      "nome": "Movimat",
+      "site": "https://www.movimat.com.br/",
+      "setor": "intralogística e movimentação de materiais",
       "local": "São Paulo Expo",
       "cidade": "São Paulo",
       "uf": "SP",
       "densidade_china": "alta",
-      "prioridade": 1,
-      "observacao": "Plataforma RX/Reed — exige adaptador de API. URL da lista ainda não localizada: a RX muda o caminho a cada edição.",
-      "plataforma": "rx",
-      "data_texto": "6 a 9 de abril de 2027",
-      "pagina_expositores": "https://www.feicon.com.br/pt-br/Expositores.html"
+      "prioridade": 2,
+      "observacao": "Empilhadeiras e estanterias chinesas (Hangcha, EP, Noblelift)."
     },
     {
-      "nome": "FEBRAVA",
-      "site": "https://www.febrava.com.br/",
-      "setor": "refrigeração, ar-condicionado e ventilação",
-      "local": "São Paulo Expo",
+      "nome": "PL Connection",
+      "site": "https://plconnection.com.br/",
+      "pagina_expositores": "https://plconnection.com.br/expositores",
+      "setor": "marca própria e private label",
       "cidade": "São Paulo",
       "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 1,
-      "observacao": "Midea, Gree, Haier, TCL e cadeia de componentes chinesa. Bienal (anos ímpares). URL da lista ainda não localizada: a RX muda o caminho a cada edição.",
-      "plataforma": "rx",
-      "pagina_expositores": "https://www.febrava.com.br/pt-br/Expositores.html"
+      "densidade_china": "baixa",
+      "prioridade": 6,
+      "observacao": "Marca própria nacional: nenhuma chinesa na edição lida."
     },
     {
-      "nome": "Hospitalar",
-      "site": "https://www.hospitalar.com/",
-      "setor": "equipamentos e produtos médico-hospitalares",
+      "nome": "Pet South America",
+      "site": "https://www.petsa.com.br/",
+      "setor": "produtos e serviços para animais de estimação",
       "local": "São Paulo Expo",
       "cidade": "São Paulo",
       "uf": "SP",
       "densidade_china": "alta",
-      "prioridade": 1,
-      "observacao": "Pavilhão chinês consolidado (CCCMHPIE). Mindray, Yuwell, Contec e dezenas de fabricantes menores.",
-      "data_texto": "19 a 22 de maio de 2026"
-    },
-    {
-      "nome": "EXPOMAFE",
-      "site": "https://www.expomafe.com.br/",
-      "setor": "máquinas-ferramenta e automação industrial",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 1,
-      "observacao": "Bienal (anos pares). Forte presença de fabricantes chineses de máquinas CNC.",
-      "data_texto": "5 a 9 de maio de 2026"
+      "prioridade": 2,
+      "observacao": "Acessórios, brinquedos e petiscos importados da China em grande volume."
     },
     {
       "nome": "Plástico Brasil",
@@ -129,126 +386,6 @@
       "data_texto": "15 a 19 de março de 2027"
     },
     {
-      "nome": "M&T Expo",
-      "site": "https://www.mtexpo.com.br/",
-      "setor": "equipamentos para construção e mineração",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 2,
-      "observacao": "Sany, XCMG, Zoomlion, LiuGong. Trienal.",
-      "apelidos": [
-        "M&T Expo - Feira Internacional de Equipamentos"
-      ]
-    },
-    {
-      "nome": "FENATRAN",
-      "site": "https://www.fenatran.com.br/",
-      "setor": "transporte rodoviário de carga",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 2,
-      "observacao": "Bienal. Fabricantes chineses de caminhões elétricos crescendo.",
-      "pagina_expositores": "https://www.fenatran.com.br/pt-br/expositores.html",
-      "plataforma": "rx"
-    },
-    {
-      "nome": "Intermodal South America",
-      "site": "https://www.intermodal.com.br/",
-      "setor": "logística, transporte e comércio exterior",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 1,
-      "observacao": "Armadores, freight forwarders e portos chineses — muitos com escritório em SP.",
-      "pagina_expositores": "https://app.informamarkets.com.br/widget/event/intermodal-2026/exhibitors/RXZlbnRWaWV3XzEyMTg5MTI=",
-      "plataforma": "swapcard"
-    },
-    {
-      "nome": "AUTOMEC",
-      "site": "https://www.automecfeira.com.br/",
-      "setor": "autopeças e serviços automotivos",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 2,
-      "observacao": "Bienal. Cadeia de autopeças chinesa muito presente.",
-      "pagina_expositores": "https://www.automecfeira.com.br/pt-br/expositores.html",
-      "plataforma": "rx",
-      "data_texto": "20 a 24 de abril de 2027"
-    },
-    {
-      "nome": "FESQUA",
-      "site": "https://www.fesqua.com.br/",
-      "setor": "esquadrias, ferragens, vidro e portas",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 1,
-      "observacao": "Já rendeu chinesas na coleta atual (Guangdong, Cixi, Chongqing, Changzhou)."
-    },
-    {
-      "nome": "FESPA Brasil",
-      "site": "https://www.fespabrasil.com.br/",
-      "setor": "impressão digital, serigrafia e comunicação visual",
-      "local": "Expo Center Norte",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 2,
-      "observacao": "Impressoras e insumos chineses dominam o segmento de entrada."
-    },
-    {
-      "nome": "Futurecom",
-      "site": "https://futurecom.com.br/",
-      "setor": "telecomunicações e TI",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 3,
-      "observacao": "Huawei, ZTE e fornecedores de rede.",
-      "pagina_expositores": "https://futurecom.com.br/expositores"
-    },
-    {
-      "nome": "ForMóbile",
-      "site": "https://www.formobile.com.br/",
-      "setor": "máquinas e insumos para móveis",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 3
-    },
-    {
-      "nome": "Expo Revestir",
-      "site": "https://www.exporevestir.com.br/",
-      "setor": "revestimentos cerâmicos e acabamentos",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 3
-    },
-    {
-      "nome": "Agrishow",
-      "site": "https://www.agrishow.com.br/",
-      "setor": "agronegócio e maquinário agrícola",
-      "local": "Parque Zilo Bezerra de Sales",
-      "cidade": "Ribeirão Preto",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 2,
-      "pagina_expositores": "https://app.agrishow.com.br/event/agrishow-experience-2026/exhibitors/RXZlbnRWaWV3XzEyMzgwOTI=",
-      "plataforma": "swapcard"
-    },
-    {
       "nome": "Rio Oil & Gas",
       "site": "https://www.riooilgas.com.br/",
       "setor": "óleo, gás e energia",
@@ -258,119 +395,6 @@
       "densidade_china": "media",
       "prioridade": 2,
       "observacao": "CNOOC, Sinopec, CNPC e fornecedores. Bienal."
-    },
-    {
-      "nome": "Couromoda",
-      "site": "https://www.couromoda.com/",
-      "setor": "calçados, bolsas e acessórios",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 3
-    },
-    {
-      "nome": "EXPOSEC",
-      "site": "https://www.exposec.tmp.br/",
-      "setor": "segurança eletrônica e vigilância",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "altissima",
-      "prioridade": 1,
-      "apelidos": [
-        "ISC Brasil",
-        "Exposec - Feira Internacional de Segurança"
-      ],
-      "observacao": "Câmeras e CFTV são dominados por Hikvision, Dahua, Uniview, TVT e dezenas de fabricantes menores de Shenzhen. Densidade comparável à solar."
-    },
-    {
-      "nome": "FIEE Smart Future",
-      "site": "https://www.fiee.com.br/",
-      "setor": "eletroeletrônica industrial e automação",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 1,
-      "apelidos": [
-        "FIEE"
-      ],
-      "observacao": "Componentes, cabos, painéis e automação — cadeia chinesa muito presente."
-    },
-    {
-      "nome": "Pet South America",
-      "site": "https://www.petsa.com.br/",
-      "setor": "produtos e serviços para animais de estimação",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 2,
-      "observacao": "Acessórios, brinquedos e petiscos importados da China em grande volume."
-    },
-    {
-      "nome": "Brasil Game Show",
-      "site": "https://www.brasilgameshow.com.br/",
-      "setor": "games, periféricos e hardware",
-      "local": "Expo Center Norte",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 2,
-      "apelidos": [
-        "BGS"
-      ],
-      "observacao": "Periféricos, cadeiras gamer e hardware — fabricantes de Shenzhen e Dongguan."
-    },
-    {
-      "nome": "Beauty Fair",
-      "site": "https://www.beautyfair.com.br/",
-      "setor": "beleza, estética e cosméticos",
-      "local": "Expo Center Norte",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 2,
-      "observacao": "Aparelhos de estética, embalagens e acessórios majoritariamente chineses."
-    },
-    {
-      "nome": "Movimat",
-      "site": "https://www.movimat.com.br/",
-      "setor": "intralogística e movimentação de materiais",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "alta",
-      "prioridade": 2,
-      "observacao": "Empilhadeiras e estanterias chinesas (Hangcha, EP, Noblelift)."
-    },
-    {
-      "nome": "Fispal Tecnologia",
-      "site": "https://www.fispaltecnologia.com.br/",
-      "setor": "máquinas e embalagens para alimentos",
-      "local": "São Paulo Expo",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "media",
-      "prioridade": 3
-    },
-    {
-      "nome": "FEBRABAN TECH",
-      "site": "https://febrabantech.com/",
-      "setor": "tecnologia para o setor financeiro",
-      "local": "Distrito Anhembi",
-      "cidade": "São Paulo",
-      "uf": "SP",
-      "densidade_china": "baixa",
-      "prioridade": 3,
-      "pagina_expositores": "https://febrabantech.com/expositores",
-      "apelidos": [
-        "FEBRABAN TECH 2026"
-      ],
-      "observacao": "Setor majoritariamente nacional; entra pela cobertura, não pela densidade.",
-      "plataforma": "noomis",
-      "slug_noomis": "febrabantech"
     },
     {
       "nome": "Web Summit Rio",

@@ -149,3 +149,91 @@ def coletar(site: str, tipo: str | None = None) -> dict:
         "expositores": expositores,
         "total_informado": len(expositores),
     }
+
+# ------------------------------------------------- WordPress headless (custom/v1/node)
+
+# Alguns sites usam WordPress só como CMS e servem o conteúdo por um endpoint próprio,
+# com os endpoints padrão (/wp/v2/...) bloqueados. O Beauty Fair é assim: a lista de
+# expositores vive em custom/v1/node, paginada, com 391 empresas em 27 páginas.
+#
+# A URL do CMS aparece no HTML da página pública, então não precisamos adivinhá-la.
+PADRAO_NODE = re.compile(
+    r"(https?://[\w.-]+/[\w-]*/?wp-json)/custom/v1/node", re.IGNORECASE
+)
+
+PAGINAS_MAX_NODE = 60
+
+
+def _achar_lista_no_bloco(dados) -> tuple[list, dict]:
+    """Devolve (itens, paginacao) do primeiro bloco que parece listagem."""
+    blocos = ((dados.get("fields") or {}).get("blocks")) or []
+    for bloco in blocos:
+        itens = bloco.get("list")
+        if isinstance(itens, list) and itens:
+            return itens, bloco.get("pagination") or {}
+    return [], {}
+
+
+def coletar_node(url_pagina: str, html: str | None = None) -> dict:
+    """Coleta de um WordPress headless que expõe custom/v1/node."""
+    from urllib.parse import urlparse
+
+    if html is None:
+        html = buscar(url_pagina, ttl_horas=12, timeout=30)
+
+    achado = PADRAO_NODE.search(html)
+    if not achado:
+        raise FalhouDeVerdade(url_pagina, "página não expõe custom/v1/node")
+    base_json = achado.group(1)
+
+    caminho = urlparse(url_pagina).path.strip("/").split("/")[-1] or "expositores"
+
+    expositores: list[dict] = []
+    vistos: set[str] = set()
+    total_paginas = 1
+
+    for pagina in range(1, PAGINAS_MAX_NODE + 1):
+        alvo = (f"{base_json}/custom/v1/node?path={caminho}&lang=pt"
+                f"&category=&paged={pagina}&search=")
+        try:
+            dados = json.loads(buscar(alvo, ttl_horas=12, tentativas=1, timeout=25))
+        except (json.JSONDecodeError, FalhouDeVerdade):
+            break
+
+        itens, paginacao = _achar_lista_no_bloco(dados)
+        total_paginas = paginacao.get("total_pages", total_paginas)
+        if not itens:
+            break
+
+        for item in itens:
+            nome = normalizar_texto(item.get("title") or "")
+            if not nome or nome.lower() in vistos:
+                continue
+            vistos.add(nome.lower())
+            link = item.get("url") or {}
+            categorias = [
+                normalizar_texto(c.get("label"))
+                for c in (item.get("categories") or []) if c.get("label")
+            ]
+            expositores.append({
+                "nome": nome,
+                "website": normalizar_url(link.get("url") if isinstance(link, dict) else ""),
+                "emails": [], "pais": "", "cidade": "", "endereco": "", "stand": "",
+                "categorias": categorias[:8], "descricao": "",
+                "ficha_feira": item.get("link") or "",
+                "fonte_plataforma": "wordpress_node",
+                "fonte_url": url_pagina,
+                "id_plataforma": str(item.get("id") or ""),
+            })
+
+        if pagina >= total_paginas:
+            break
+
+    if not expositores:
+        raise FalhouDeVerdade(url_pagina, "custom/v1/node não devolveu expositores")
+
+    return {
+        "evento": {"plataforma": "wordpress_node", "url_lista": url_pagina},
+        "expositores": expositores,
+        "total_informado": len(expositores),
+    }
