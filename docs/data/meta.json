@@ -1,14 +1,14 @@
 {
-  "atualizado_em": "2026-08-20T06:30:56+00:00",
-  "gerado_em_ambiente": "nuvem",
-  "total_empresas": 3383,
-  "empresas_com_contato": 1800,
-  "empresas_com_wechat": 79,
-  "empresas_feira_futura": 3324,
+  "atualizado_em": "2026-08-20T12:44:45+00:00",
+  "gerado_em_ambiente": "local",
+  "total_empresas": 3426,
+  "empresas_com_contato": 1865,
+  "empresas_com_wechat": 87,
+  "empresas_feira_futura": 3367,
   "total_revisao": 161,
   "total_feiras": 149,
   "feiras_futuras": 114,
-  "feiras_com_lista": 41,
+  "feiras_com_lista": 44,
   "vagas_consulado": 0,
   "vagas_consulado_recentes": 0
 }
