@@ -234,7 +234,7 @@
     "id": "ev:feiplar-feipur:2026",
     "nome": "FEIPLAR & FEIPUR",
     "site": "https://feiplar.com/",
-    "pagina_expositores": "https://feiplar.com/",
+    "pagina_expositores": "https://feiplar.com/expositores-confirmados-2026/",
     "inicio": "2026-08-25",
     "fim": "2026-08-27",
     "data_texto": "25 - 27 ago",
@@ -246,9 +246,9 @@
     "densidade_china": "",
     "encerrada": false,
     "dias": 6,
-    "total_expositores": 15,
-    "total_chinesas": 0,
-    "plataforma": "renderizado",
+    "total_expositores": 156,
+    "total_chinesas": 24,
+    "plataforma": "rotulos",
     "prioridade": 5
   },
   {
@@ -267,8 +267,8 @@
     "densidade_china": "altissima",
     "encerrada": false,
     "dias": 6,
-    "total_expositores": 486,
-    "total_chinesas": 131,
+    "total_expositores": 488,
+    "total_chinesas": 248,
     "plataforma": "smarter_e",
     "prioridade": 1
   },
@@ -309,8 +309,8 @@
     "densidade_china": "altissima",
     "encerrada": false,
     "dias": 6,
-    "total_expositores": 481,
-    "total_chinesas": 129,
+    "total_expositores": 488,
+    "total_chinesas": 248,
     "plataforma": "smarter_e",
     "prioridade": 1
   },
@@ -1149,8 +1149,8 @@
     "densidade_china": "",
     "encerrada": false,
     "dias": 62,
-    "total_expositores": 0,
-    "total_chinesas": 0,
+    "total_expositores": 439,
+    "total_chinesas": 54,
     "plataforma": "wordpress",
     "prioridade": 5
   },
@@ -1746,7 +1746,7 @@
     "id": "ev:expo-carrara-condominios:2026",
     "nome": "EXPO CARRARA CONDOMINIOS",
     "site": "https://www.carraracondominios.com.br/",
-    "pagina_expositores": "https://www.carraracondominios.com.br/expo-carrara-condominios/",
+    "pagina_expositores": "",
     "inicio": "2026-11-24",
     "fim": "2026-11-26",
     "data_texto": "24 - 26 nov",
@@ -1760,7 +1760,7 @@
     "dias": 97,
     "total_expositores": 0,
     "total_chinesas": 0,
-    "plataforma": "wordpress",
+    "plataforma": "",
     "prioridade": 5
   },
   {
@@ -1968,9 +1968,9 @@
     "densidade_china": "",
     "encerrada": false,
     "dias": null,
-    "total_expositores": 19,
-    "total_chinesas": 0,
-    "plataforma": "renderizado",
+    "total_expositores": 210,
+    "total_chinesas": 2,
+    "plataforma": "wordpress",
     "prioridade": 5
   },
   {
@@ -2271,7 +2271,7 @@
     "id": "ev:m-t-expo",
     "nome": "M&T Expo",
     "site": "https://www.mtexpo.com.br/",
-    "pagina_expositores": "https://www.mtexpo.com.br/",
+    "pagina_expositores": "https://www.mtexpo.com.br/expositores-2027/",
     "inicio": "",
     "fim": "",
     "data_texto": "",
@@ -2285,7 +2285,7 @@
     "dias": null,
     "total_expositores": 12,
     "total_chinesas": 0,
-    "plataforma": "renderizado",
+    "plataforma": "wordpress",
     "prioridade": 2
   },
   {
