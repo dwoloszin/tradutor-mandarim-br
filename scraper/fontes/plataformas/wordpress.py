@@ -25,7 +25,13 @@ from ...core.http import Bloqueado, FalhouDeVerdade, buscar
 from ...core.modelos import normalizar_texto, normalizar_url
 
 # Tipos de conteúdo que costumam guardar expositores.
-PADRAO_TIPO = re.compile(r"expositor|exhibit|marca|empresa|participante", re.IGNORECASE)
+# Feira nem sempre chama de expositor. A IntralogExpo guarda o diretorio inteiro num
+# tipo "patrocinadores" — 110 empresas, com ficha e contato. Fica por ultimo na ordem
+# de escolha, entao onde existir "expositores" de verdade ele continua perdendo.
+PADRAO_TIPO = re.compile(
+    r"expositor|exhibit|marca|empresa|participante|patrocinador|sponsor",
+    re.IGNORECASE,
+)
 
 # Tipos internos do WordPress: nunca são expositores.
 TIPOS_INTERNOS = {
@@ -56,7 +62,15 @@ def descobrir_tipo(base: str) -> str | None:
     if not candidatos:
         return None
     # o mais específico primeiro: "expositores" ganha de "marcas"
-    candidatos.sort(key=lambda n: (0 if "expositor" in n.lower() else 1, len(n)))
+    def preferencia(nome: str) -> tuple[int, int]:
+        baixo = nome.lower()
+        if "expositor" in baixo or "exhibit" in baixo:
+            return (0, len(nome))
+        if "patrocinador" in baixo or "sponsor" in baixo:
+            return (2, len(nome))  # so quando nao ha lista de expositor
+        return (1, len(nome))
+
+    candidatos.sort(key=preferencia)
     return candidatos[0]
 
 
@@ -237,3 +251,54 @@ def coletar_node(url_pagina: str, html: str | None = None) -> dict:
         "expositores": expositores,
         "total_informado": len(expositores),
     }
+
+
+# ------------------------------------------------- fichas dos expositores
+
+# A lista do WordPress vem limpa mas pobre: nome e link, nada mais. O contato costuma
+# estar na ficha de cada empresa, uma página por expositor. Na IntralogExpo a ficha da
+# Jiangsu Nova traz endereço em Nanjing, site, e-mail e telefone +86 — tudo o que
+# decide se a empresa é chinesa e se dá para falar com ela.
+#
+# É uma requisição por empresa, e vale: sem isso a feira entra na base como uma lista
+# de nomes que ninguém consegue contatar.
+
+PARALELAS_FICHA = 6
+
+
+def enriquecer_com_fichas(expositores: list[dict], paralelas: int = PARALELAS_FICHA,
+                          limite: int | None = None) -> int:
+    """Visita a ficha de cada expositor e completa contato, site e endereço."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    from ..enriquecimento.site_empresa import _extrair
+
+    alvos = [e for e in expositores if e.get("ficha_feira")]
+    if limite:
+        alvos = alvos[:limite]
+
+    def visitar(exp: dict):
+        try:
+            html = buscar(exp["ficha_feira"], ttl_horas=24 * 7, tentativas=1, timeout=25)
+            return exp, _extrair(html, exp["ficha_feira"], "")
+        except Exception:  # noqa: BLE001 - ficha ruim não derruba a coleta inteira
+            return exp, None
+
+    completados = 0
+    with ThreadPoolExecutor(max_workers=max(1, paralelas)) as executor:
+        for exp, dados in executor.map(visitar, alvos):
+            if not dados:
+                continue
+            for campo in ("website", "endereco", "pais", "cidade"):
+                if dados.get(campo) and not exp.get(campo):
+                    exp[campo] = dados[campo]
+            for campo in ("emails", "telefones", "whatsapps"):
+                if dados.get(campo):
+                    exp[campo] = list(dict.fromkeys(
+                        list(exp.get(campo) or []) + list(dados[campo])
+                    ))
+            if dados.get("wechat") and not exp.get("wechat"):
+                exp["wechat"] = dados["wechat"]
+            if dados.get("emails") or dados.get("telefones"):
+                completados += 1
+    return completados

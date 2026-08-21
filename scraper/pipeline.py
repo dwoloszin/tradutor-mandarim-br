@@ -142,10 +142,20 @@ def etapa_agenda(hoje: date | None = None) -> dict:
     # A checagem tem que considerar os apelidos: a Intersolar aparece na agenda do
     # Expo Center Norte como "The smarter E South America", e sem isso criávamos um
     # segundo evento para a mesma feira.
-    nomes_vistos = {nome_canonico(e.get("nome", "")) for e in eventos_tab.todos()}
+    # A pergunta "esta feira já está no calendário?" tem que ser respondida pela MESMA
+    # regra que liga evento e config. Antes esta checagem exigia nome idêntico enquanto
+    # _casar_config tolerava variação, e a inconsistência criava duplicata: a agenda
+    # trazia "Intralog", o config dizia "IntraLog Expo", o casamento reconhecia os dois
+    # como a mesma feira e mesmo assim nascia um segundo evento — um com data e sem
+    # expositores, outro com 110 expositores e sem data.
+    representadas = set()
+    for existente in eventos_tab.todos():
+        casada = _casar_config(existente, config)
+        if casada:
+            representadas.add(nome_canonico(casada["nome"]))
+
     for canonico, feira in config.items():
-        apelidos = {nome_canonico(a) for a in feira.get("apelidos", [])}
-        if canonico in nomes_vistos or (apelidos & nomes_vistos):
+        if canonico in representadas:
             continue
         from .core.datas import interpretar_periodo
         from .core.modelos import chave_evento, novo_evento
@@ -380,6 +390,12 @@ def _guardar_expositores(expositores, evento, empresas_tab, participacoes_tab, f
             website=normalizar_url(bruto.get("website", "")),
             contato_nome=bruto.get("contato_nome", ""),
             emails=[e for e in bruto.get("emails", []) if e],
+            # Telefone da ficha da feira também é contato. Só e-mail era copiado, então
+            # todo telefone que um adaptador colhia na lista morria aqui sem aviso — as
+            # 86 fichas da IntraLog traziam telefone e a base ficou com zero.
+            telefones=[x for x in bruto.get("telefones", []) if x],
+            whatsapps=[x for x in bruto.get("whatsapps", []) if x],
+            wechat=bruto.get("wechat", ""),
             produtos=bruto.get("produtos", []),
             setor=evento.get("setor", ""),
             descricao=bruto.get("descricao", ""),

@@ -326,6 +326,17 @@
       "pagina_expositores": "https://www.intersolar.net.br/relacao-de-expositoras"
     },
     {
+      "nome": "IntraLog Expo",
+      "site": "https://intralogexpo.com.br/",
+      "pagina_expositores": "https://intralogexpo.com.br/expositores",
+      "setor": "intralogística, armazenagem e movimentação",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "densidade_china": "alta",
+      "prioridade": 2,
+      "observacao": "110 empresas num tipo WordPress chamado 'patrocinadores', não 'expositores'. Cada ficha traz e-mail, telefone e endereço — 26 chinesas, todas com contato. O botão 'carregar mais' é só apresentação: a lista inteira já vem no HTML."
+    },
+    {
       "nome": "M&T Expo",
       "site": "https://www.mtexpo.com.br/",
       "setor": "equipamentos para construção e mineração",

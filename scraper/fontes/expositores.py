@@ -360,6 +360,11 @@ def coletar(evento: dict, config_feira: dict | None = None) -> dict:
         try:
             dados = wordpress.coletar(site)
             if dados["expositores"]:
+                # A lista do WordPress vem limpa mas pobre: nome e link. O contato
+                # esta na ficha de cada empresa, uma pagina por expositor. Sem esta
+                # visita a feira entra na base como nomes que ninguem consegue
+                # contatar — na IntralogExpo sao 110 e-mails que so existem la.
+                wordpress.enriquecer_com_fichas(dados["expositores"])
                 return _resultado(OK, plataforma="wordpress", pagina=pagina,
                                   url_dados=site, expositores=dados["expositores"],
                                   total_informado=dados["total_informado"])

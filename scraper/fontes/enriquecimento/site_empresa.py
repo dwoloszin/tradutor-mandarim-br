@@ -30,7 +30,7 @@ CAMINHOS_CONTATO = [
 
 EMAIL = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,12}")
 # telefone chinês: +86 seguido de 10-12 dígitos, com separadores variados
-TELEFONE_CHINA = re.compile(r"(?:\+|00)\s?86[\s\-.()]*\d[\d\s\-.()]{7,16}\d")
+TELEFONE_CHINA = re.compile(r"(?:\+|00)\s?86(?:[\s\-.()]?\d){7,15}")
 TELEFONE_BR = re.compile(r"(?:\+?55)?[\s(]*\d{2}[\s)]*[\s-]?9?\d{4}[\s-]?\d{4}")
 WHATSAPP_LINK = re.compile(r"(?:wa\.me/|api\.whatsapp\.com/send\?phone=)(\+?\d[\d\s%+-]{7,20})")
 
@@ -90,8 +90,12 @@ def _limpar_telefone(bruto: str) -> str:
     if len(digitos) < MIN_DIGITOS:
         return ""
     if len(digitos) > MAX_DIGITOS:
-        # veio mais de um número grudado: fica só o primeiro, que é o principal
-        digitos = digitos[:MAX_DIGITOS]
+        # Antes cortávamos em MAX_DIGITOS e guardávamos o pedaço. Isso não devolve o
+        # primeiro número: devolve um híbrido de dois, com cara de telefone válido.
+        # A QSLift, que tem "+86 15957263737" na ficha, entrou na base como
+        # "+8620159572637" — treze dígitos, formato plausível, ninguém atende.
+        # Número errado é pior que número nenhum: o intérprete liga e queima o contato.
+        return ""
     return ("+" if numero.startswith("+") else "") + digitos
 
 
