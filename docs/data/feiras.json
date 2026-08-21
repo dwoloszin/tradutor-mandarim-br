@@ -473,14 +473,14 @@
     "cidade": "São Paulo",
     "uf": "SP",
     "pavilhao": "Pavilhão",
-    "setor": "",
-    "densidade_china": "",
+    "setor": "intralogística, armazenagem e movimentação",
+    "densidade_china": "alta",
     "encerrada": false,
     "dias": 26,
-    "total_expositores": 20,
-    "total_chinesas": 0,
-    "plataforma": "renderizado",
-    "prioridade": 5
+    "total_expositores": 110,
+    "total_chinesas": 25,
+    "plataforma": "wordpress",
+    "prioridade": 2
   },
   {
     "id": "ev:china-homelife-machinex:2026",
