@@ -57,6 +57,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("argumento", nargs="?", default="")
     parser.add_argument("--limite", type=int, default=None,
                         help="máximo de tarefas nesta rodada")
+    parser.add_argument("--sem-publicar", action="store_true",
+                        help="não dá push no fim (por padrão a rodada local publica)")
     parser.add_argument("--esperar", type=int, default=0, metavar="SEGUNDOS",
                         help="espera a rodada em andamento terminar, em vez de recusar")
     args = parser.parse_args(argv)
@@ -164,6 +166,28 @@ def _executar(args, pipeline) -> int:
         _imprimir("EXPORTAÇÃO PARA O SITE", exportar())
 
     _imprimir("SITUAÇÃO FINAL", pipeline.situacao_geral())
+
+    # Publicar faz parte de terminar. Sem isto os dados ficavam no disco e o site
+    # continuava servindo a versão anterior, sem erro nenhum à vista — a rodada
+    # parecia ter dado certo e não tinha chegado a lugar nenhum.
+    if args.comando in ("tudo", "pendentes", "exportar"):
+        from .core.publicar import FalhaAoPublicar, publicar
+        try:
+            saida = publicar(sem_publicar=args.sem_publicar)
+        except FalhaAoPublicar as exc:
+            _imprimir("PUBLICAÇÃO", {"falhou": str(exc),
+                                     "seus_dados": "estão salvos no disco"})
+            return 0
+        if saida["publicou"]:
+            _imprimir("PUBLICAÇÃO", {
+                "commit": saida["commit"],
+                "site": "https://dwoloszin.github.io/tradutor-mandarim-br/",
+                "conflitos_fundidos": len(saida["conflitos_fundidos"]),
+                "obs": "o GitHub Pages leva ~1 min para servir a versão nova",
+            })
+        else:
+            _imprimir("PUBLICAÇÃO", {"nao_publicou": saida["motivo"]})
+
     return 0
 
 
