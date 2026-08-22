@@ -43,14 +43,6 @@
     {
       "titulo": "Tradutor De Mandarim",
       "empresa": "",
-      "local": "Goiânia - GO, 0 Km de você.",
-      "link": "https://www.infojobs.com.br/vaga-de-tradutor-mandarim-em-goias__11833544.aspx",
-      "fonte": "InfoJobs",
-      "termo_busca": "tradutor mandarim"
-    },
-    {
-      "titulo": "Tradutor De Mandarim",
-      "empresa": "",
       "local": "Brasília - DF, 0 Km de você.",
       "link": "https://www.infojobs.com.br/vaga-de-tradutor-mandarim-em-distrito-federal__11833539.aspx",
       "fonte": "InfoJobs",
@@ -181,14 +173,6 @@
       "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Brasilia",
       "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37597358",
-      "fonte": "Catho",
-      "termo_busca": "tradutor mandarim"
-    },
-    {
-      "titulo": "Tradutor de Mandarim",
-      "empresa": "J&T EXPRESS BRASIL",
-      "local": "1 vaga - Goiania",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37597361",
       "fonte": "Catho",
       "termo_busca": "tradutor mandarim"
     },
@@ -436,6 +420,14 @@
       "titulo": "Tradutor de Chinês",
       "empresa": "Empresa Confidencial",
       "local": "2 vagas - São Paulo + 1 cidade",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688655",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "Empresa Confidencial",
+      "local": "2 vagas - São Paulo + 1 cidade",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688676",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
@@ -445,14 +437,6 @@
       "empresa": "OLELON DO BRASIL",
       "local": "2 vagas - São Paulo + 1 cidade",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688696",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "Empresa Confidencial",
-      "local": "2 vagas - São Paulo + 1 cidade",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688655",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
@@ -497,10 +481,10 @@
       "termo_busca": "tradutor chinês"
     },
     {
-      "titulo": "Analista Tradutor Bilingue (Chinês)",
+      "titulo": "Analista Tradutor Bilingue (Chines)",
       "empresa": "ANJUN EXPRESS",
-      "local": "1 vaga - Carapicuíba",
-      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/37841599",
+      "local": "1 vaga - Guarulhos",
+      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/37841747",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     }
