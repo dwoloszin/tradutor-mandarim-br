@@ -49,13 +49,13 @@
         "uf": "SP",
         "stand": "B4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -110,13 +110,13 @@
         "uf": "SP",
         "stand": "H155",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "H155",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -182,13 +182,13 @@
         "uf": "SP",
         "stand": "G2a",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "G2a",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-09-01T06:42:01+00:00"
   },
@@ -242,13 +242,13 @@
         "uf": "SP",
         "stand": "R5.70",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R5.70",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -302,13 +302,13 @@
         "uf": "SP",
         "stand": "B6.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -362,13 +362,13 @@
         "uf": "SP",
         "stand": "G6.86",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G6.86",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -422,13 +422,13 @@
         "uf": "SP",
         "stand": "B3.63",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.63",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -482,13 +482,13 @@
         "uf": "SP",
         "stand": "G4.65",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G4.65",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -547,13 +547,13 @@
         "uf": "SP",
         "stand": "E3a",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "E3a",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-09-03T06:58:17+00:00"
   },
@@ -607,13 +607,13 @@
         "uf": "SP",
         "stand": "W5.24",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W5.24",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -667,13 +667,13 @@
         "uf": "SP",
         "stand": "B2.31",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B2.31",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -733,13 +733,13 @@
         "uf": "SP",
         "stand": "A038",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "A038",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -793,13 +793,13 @@
         "uf": "SP",
         "stand": "R5.34",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R5.34",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -853,13 +853,13 @@
         "uf": "SP",
         "stand": "W3.17",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W3.17",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -913,13 +913,13 @@
         "uf": "SP",
         "stand": "O037",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "O037",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -973,13 +973,13 @@
         "uf": "SP",
         "stand": "M105",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "M105",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -1033,13 +1033,13 @@
         "uf": "SP",
         "stand": "B6.70",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.70",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -1096,7 +1096,7 @@
         "uf": "SP",
         "stand": "G074",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -1108,13 +1108,13 @@
         "uf": "SP",
         "stand": "G074",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "G074",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -1168,13 +1168,13 @@
         "uf": "SP",
         "stand": "R0.13",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R0.13",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -1228,13 +1228,13 @@
         "uf": "SP",
         "stand": "B4.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -1288,13 +1288,13 @@
         "uf": "SP",
         "stand": "R6.89",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.89",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -1348,13 +1348,13 @@
         "uf": "SP",
         "stand": "B5.31",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B5.31",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -1408,13 +1408,13 @@
         "uf": "SP",
         "stand": "",
         "encerrada": false,
-        "dias": 6
+        "dias": 5
       }
     ],
     "proxima_feira": "FESQUA",
     "proxima_data": "2026-09-09",
     "proximo_stand": "",
-    "dias_para_proxima": 6,
+    "dias_para_proxima": 5,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-20T13:49:06+00:00"
   },
@@ -1468,13 +1468,13 @@
         "uf": "SP",
         "stand": "K146",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "K146",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -1590,13 +1590,13 @@
         "uf": "SP",
         "stand": "E306",
         "encerrada": false,
-        "dias": 215
+        "dias": 214
       }
     ],
     "proxima_feira": "FEICON",
     "proxima_data": "2027-04-06",
     "proximo_stand": "E306",
-    "dias_para_proxima": 215,
+    "dias_para_proxima": 214,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T18:13:12+00:00"
   },
@@ -1650,13 +1650,13 @@
         "uf": "SP",
         "stand": "J053",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "J053",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -1710,13 +1710,13 @@
         "uf": "SP",
         "stand": "R7.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R7.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T18:13:27+00:00"
   },
@@ -1770,13 +1770,13 @@
         "uf": "SP",
         "stand": "G1.101",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G1.101",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -1835,7 +1835,7 @@
         "uf": "SP",
         "stand": "F025",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -1847,13 +1847,13 @@
         "uf": "SP",
         "stand": "F025",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "F025",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-09-01T06:42:01+00:00"
   },
@@ -1907,7 +1907,7 @@
         "uf": "SP",
         "stand": "E100",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -1919,13 +1919,13 @@
         "uf": "SP",
         "stand": "E100",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "E100",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -1980,13 +1980,13 @@
         "uf": "SP",
         "stand": "G1a-D6",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "G1a-D6",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -2040,13 +2040,13 @@
         "uf": "SP",
         "stand": "B1.06",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.06",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2100,13 +2100,13 @@
         "uf": "SP",
         "stand": "B4.44",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.44",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2160,7 +2160,7 @@
         "uf": "SP",
         "stand": "",
         "encerrada": false,
-        "dias": 55
+        "dias": 54
       },
       {
         "evento_id": "ev:expo-abla:2026",
@@ -2172,13 +2172,13 @@
         "uf": "SP",
         "stand": "",
         "encerrada": false,
-        "dias": 55
+        "dias": 54
       }
     ],
     "proxima_feira": "CONGRESSO BRASILEIRO DE PSIQUIATRIA – CBP",
     "proxima_data": "2026-10-28",
     "proximo_stand": "",
-    "dias_para_proxima": 55,
+    "dias_para_proxima": 54,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T17:49:44+00:00"
   },
@@ -2232,7 +2232,7 @@
         "uf": "SP",
         "stand": "",
         "encerrada": false,
-        "dias": 36
+        "dias": 35
       },
       {
         "evento_id": "ev:brasil-game-show",
@@ -2250,7 +2250,7 @@
     "proxima_feira": "BRASIL GAME SHOW (BGS)",
     "proxima_data": "2026-10-09",
     "proximo_stand": "",
-    "dias_para_proxima": 36,
+    "dias_para_proxima": 35,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T17:13:52+00:00"
   },
@@ -2309,13 +2309,13 @@
         "uf": "SP",
         "stand": "K045",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "K045",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -2370,13 +2370,13 @@
         "uf": "SP",
         "stand": "B4d1",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "B4d1",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -2430,13 +2430,13 @@
         "uf": "SP",
         "stand": "B3.33",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.33",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2490,13 +2490,13 @@
         "uf": "SP",
         "stand": "W4.51",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.51",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2553,13 +2553,13 @@
         "uf": "SP",
         "stand": "B064",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "B064",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -2613,13 +2613,13 @@
         "uf": "SP",
         "stand": "G2.85",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G2.85",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2673,13 +2673,13 @@
         "uf": "SP",
         "stand": "B5.97",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B5.97",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2733,13 +2733,13 @@
         "uf": "SP",
         "stand": "G1.101",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G1.101",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2796,7 +2796,7 @@
         "uf": "SP",
         "stand": "H070",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -2808,13 +2808,13 @@
         "uf": "SP",
         "stand": "H070",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "H070",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-23T06:17:23+00:00"
   },
@@ -2868,13 +2868,13 @@
         "uf": "SP",
         "stand": "B4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2928,13 +2928,13 @@
         "uf": "SP",
         "stand": "B3.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -2988,13 +2988,13 @@
         "uf": "SP",
         "stand": "W6.85",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.85",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3048,13 +3048,13 @@
         "uf": "SP",
         "stand": "G3.15",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G3.15",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3108,13 +3108,13 @@
         "uf": "SP",
         "stand": "B6.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3168,13 +3168,13 @@
         "uf": "SP",
         "stand": "B4.100",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.100",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3233,7 +3233,7 @@
         "uf": "SP",
         "stand": "F069",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -3245,13 +3245,13 @@
         "uf": "SP",
         "stand": "F069",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "F069",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -3305,13 +3305,13 @@
         "uf": "SP",
         "stand": "R2.23",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R2.23",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3365,13 +3365,13 @@
         "uf": "SP",
         "stand": "W5.20",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W5.20",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3425,13 +3425,13 @@
         "uf": "SP",
         "stand": "R7.52",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R7.52",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3489,13 +3489,13 @@
         "uf": "SP",
         "stand": "J001",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "J001",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -3549,13 +3549,13 @@
         "uf": "SP",
         "stand": "B4.96",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.96",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3609,13 +3609,13 @@
         "uf": "SP",
         "stand": "G3.49",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G3.49",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3670,13 +3670,13 @@
         "uf": "SP",
         "stand": "M013",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "M013",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -3730,13 +3730,13 @@
         "uf": "SP",
         "stand": "B2.63",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B2.63",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3791,13 +3791,13 @@
         "uf": "SP",
         "stand": "N/A",
         "encerrada": false,
-        "dias": 54
+        "dias": 53
       }
     ],
     "proxima_feira": "BRAZIL WINDPOWER",
     "proxima_data": "2026-10-27",
     "proximo_stand": "N/A",
-    "dias_para_proxima": 54,
+    "dias_para_proxima": 53,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-23T06:50:05+00:00"
   },
@@ -3854,15 +3854,15 @@
         "uf": "SP",
         "stand": "F13a",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "F13a",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
-    "atualizado_em": "2026-08-19T14:55:26+00:00"
+    "atualizado_em": "2026-09-04T06:42:01+00:00"
   },
   {
     "id": "emp:n:hyxi",
@@ -3914,13 +3914,13 @@
         "uf": "SP",
         "stand": "W4.89",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.89",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -3974,13 +3974,13 @@
         "uf": "SP",
         "stand": "W2.31",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W2.31",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4034,13 +4034,13 @@
         "uf": "SP",
         "stand": "W6.40",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.40",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4094,13 +4094,13 @@
         "uf": "SP",
         "stand": "B3.90",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.90",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4154,13 +4154,13 @@
         "uf": "SP",
         "stand": "G4.40",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G4.40",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4214,13 +4214,13 @@
         "uf": "SP",
         "stand": "",
         "encerrada": false,
-        "dias": 6
+        "dias": 5
       }
     ],
     "proxima_feira": "FESQUA",
     "proxima_data": "2026-09-09",
     "proximo_stand": "",
-    "dias_para_proxima": 6,
+    "dias_para_proxima": 5,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-20T13:49:06+00:00"
   },
@@ -4274,13 +4274,13 @@
         "uf": "SP",
         "stand": "B4.55",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.55",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4334,7 +4334,7 @@
         "uf": "SP",
         "stand": "B068",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -4346,13 +4346,13 @@
         "uf": "SP",
         "stand": "B068",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "B068",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -4411,13 +4411,13 @@
         "uf": "SP",
         "stand": "G020",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "G020",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -4471,13 +4471,13 @@
         "uf": "SP",
         "stand": "W4.50",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.50",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4533,7 +4533,7 @@
         "uf": "SP",
         "stand": "I095",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       },
       {
         "evento_id": "ev:concrete-show:2026",
@@ -4545,13 +4545,13 @@
         "uf": "SP",
         "stand": "J10",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "I095",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T15:57:01+00:00"
   },
@@ -4610,13 +4610,13 @@
         "uf": "SP",
         "stand": "B13a",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "B13a",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -4670,13 +4670,13 @@
         "uf": "SP",
         "stand": "R2.25",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R2.25",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4730,13 +4730,13 @@
         "uf": "SP",
         "stand": "R6.40",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.40",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4790,13 +4790,13 @@
         "uf": "SP",
         "stand": "R6.40",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.40",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4850,13 +4850,13 @@
         "uf": "SP",
         "stand": "B4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4910,13 +4910,13 @@
         "uf": "SP",
         "stand": "B3.35",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.35",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -4974,13 +4974,13 @@
         "uf": "SP",
         "stand": "K013",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "K013",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -5034,13 +5034,13 @@
         "uf": "SP",
         "stand": "G5.81",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G5.81",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5094,13 +5094,13 @@
         "uf": "SP",
         "stand": "R2.86",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R2.86",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5154,13 +5154,13 @@
         "uf": "SP",
         "stand": "R6.63",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.63",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5215,13 +5215,13 @@
         "uf": "SP",
         "stand": "E4c1",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "E4c1",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -5275,13 +5275,13 @@
         "uf": "SP",
         "stand": "W6.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5335,13 +5335,13 @@
         "uf": "SP",
         "stand": "B6.70",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.70",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5396,13 +5396,13 @@
         "uf": "SP",
         "stand": "H17b",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "H17b",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -5456,13 +5456,13 @@
         "uf": "SP",
         "stand": "R6.55",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.55",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5516,13 +5516,13 @@
         "uf": "SP",
         "stand": "B3.70",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.70",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5576,13 +5576,13 @@
         "uf": "SP",
         "stand": "B1.30",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.30",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5636,13 +5636,13 @@
         "uf": "SP",
         "stand": "B4.117",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.117",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5696,13 +5696,13 @@
         "uf": "SP",
         "stand": "B6.59",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.59",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5756,7 +5756,7 @@
         "uf": "SP",
         "stand": "H67",
         "encerrada": false,
-        "dias": 229
+        "dias": 228
       },
       {
         "evento_id": "ev:automec:2027",
@@ -5768,13 +5768,13 @@
         "uf": "SP",
         "stand": "H67",
         "encerrada": false,
-        "dias": 229
+        "dias": 228
       }
     ],
     "proxima_feira": "AUTOMEC",
     "proxima_data": "2027-04-20",
     "proximo_stand": "H67",
-    "dias_para_proxima": 229,
+    "dias_para_proxima": 228,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:26:52+00:00"
   },
@@ -5834,7 +5834,7 @@
         "uf": "SP",
         "stand": "B054",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -5846,13 +5846,13 @@
         "uf": "SP",
         "stand": "B054",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "B054",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-09-03T06:58:17+00:00"
   },
@@ -5906,13 +5906,13 @@
         "uf": "SP",
         "stand": "B2.110",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B2.110",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -5966,13 +5966,13 @@
         "uf": "SP",
         "stand": "W2.82",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W2.82",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6026,13 +6026,13 @@
         "uf": "SP",
         "stand": "B4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6086,13 +6086,13 @@
         "uf": "SP",
         "stand": "B6.70",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.70",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6149,13 +6149,13 @@
         "uf": "SP",
         "stand": "C-50",
         "encerrada": false,
-        "dias": 54
+        "dias": 53
       }
     ],
     "proxima_feira": "BRAZIL WINDPOWER",
     "proxima_data": "2026-10-27",
     "proximo_stand": "C-50",
-    "dias_para_proxima": 54,
+    "dias_para_proxima": 53,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T17:53:05+00:00"
   },
@@ -6209,13 +6209,13 @@
         "uf": "SP",
         "stand": "B4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6269,13 +6269,13 @@
         "uf": "SP",
         "stand": "B4.79",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.79",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6334,13 +6334,13 @@
         "uf": "SP",
         "stand": "A029",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "A029",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -6394,13 +6394,13 @@
         "uf": "SP",
         "stand": "B3.119",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.119",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6455,13 +6455,13 @@
         "uf": "SP",
         "stand": "E110",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "E110",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -6515,13 +6515,13 @@
         "uf": "SP",
         "stand": "B1.04",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.04",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6580,13 +6580,13 @@
         "uf": "SP",
         "stand": "E10",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "CONCRETE SHOW",
     "proxima_data": "2026-08-25",
     "proximo_stand": "E10",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T15:57:01+00:00"
   },
@@ -6640,13 +6640,13 @@
         "uf": "SP",
         "stand": "B4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6700,13 +6700,13 @@
         "uf": "SP",
         "stand": "B3.89",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.89",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6760,13 +6760,13 @@
         "uf": "SP",
         "stand": "B6.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6820,7 +6820,7 @@
         "uf": "SP",
         "stand": "E120",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -6832,13 +6832,13 @@
         "uf": "SP",
         "stand": "E120",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "E120",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T13:04:30+00:00"
   },
@@ -6892,13 +6892,13 @@
         "uf": "SP",
         "stand": "B3.34",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.34",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -6952,13 +6952,13 @@
         "uf": "SP",
         "stand": "G5.85",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G5.85",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7012,13 +7012,13 @@
         "uf": "SP",
         "stand": "G6.105",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G6.105",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7072,13 +7072,13 @@
         "uf": "SP",
         "stand": "G1.70",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G1.70",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7132,13 +7132,13 @@
         "uf": "SP",
         "stand": "W4.30",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.30",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7192,13 +7192,13 @@
         "uf": "SP",
         "stand": "B4.51",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.51",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7252,13 +7252,13 @@
         "uf": "SP",
         "stand": "R6.53",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.53",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7312,13 +7312,13 @@
         "uf": "SP",
         "stand": "B3.99",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.99",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7372,13 +7372,13 @@
         "uf": "SP",
         "stand": "W5.40",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W5.40",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7432,13 +7432,13 @@
         "uf": "SP",
         "stand": "W2.66",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W2.66",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7492,13 +7492,13 @@
         "uf": "SP",
         "stand": "W4.41",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.41",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7552,13 +7552,13 @@
         "uf": "SP",
         "stand": "B6.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7616,13 +7616,13 @@
         "uf": "SP",
         "stand": "A048",
         "encerrada": true,
-        "dias": -142
+        "dias": -143
       }
     ],
     "proxima_feira": "Intermodal South America",
     "proxima_data": "2026-04-14",
     "proximo_stand": "A048",
-    "dias_para_proxima": -142,
+    "dias_para_proxima": -143,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T13:26:24+00:00"
   },
@@ -7681,13 +7681,13 @@
         "uf": "SP",
         "stand": "E22c",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "E22c",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -7741,13 +7741,13 @@
         "uf": "SP",
         "stand": "W6.20",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.20",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7801,13 +7801,13 @@
         "uf": "SP",
         "stand": "W6.36",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.36",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7861,13 +7861,13 @@
         "uf": "SP",
         "stand": "B3.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7921,13 +7921,13 @@
         "uf": "SP",
         "stand": "B1.02",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.02",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -7981,13 +7981,13 @@
         "uf": "SP",
         "stand": "B4b1",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "B4b1",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -8041,13 +8041,13 @@
         "uf": "SP",
         "stand": "G4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8101,13 +8101,13 @@
         "uf": "SP",
         "stand": "B5.110",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B5.110",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8168,13 +8168,13 @@
         "uf": "SP",
         "stand": "D2c",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "D2c",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -8228,13 +8228,13 @@
         "uf": "SP",
         "stand": "G3.17",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "G3.17",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8288,13 +8288,13 @@
         "uf": "SP",
         "stand": "B2.89",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B2.89",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8348,13 +8348,13 @@
         "uf": "SP",
         "stand": "W4.10",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.10",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8408,13 +8408,13 @@
         "uf": "SP",
         "stand": "W1.84",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W1.84",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8468,13 +8468,13 @@
         "uf": "SP",
         "stand": "W4.70",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.70",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8528,13 +8528,13 @@
         "uf": "SP",
         "stand": "B4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8592,13 +8592,13 @@
         "uf": "SP",
         "stand": "A83",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "CONCRETE SHOW",
     "proxima_data": "2026-08-25",
     "proximo_stand": "A83",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-26T06:23:13+00:00"
   },
@@ -8652,13 +8652,13 @@
         "uf": "SP",
         "stand": "W6.20",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W6.20",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8712,13 +8712,13 @@
         "uf": "SP",
         "stand": "W1.30",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W1.30",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8772,13 +8772,13 @@
         "uf": "SP",
         "stand": "B4.60",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.60",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8833,13 +8833,13 @@
         "uf": "SP",
         "stand": "F14d",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "F14d",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -8893,13 +8893,13 @@
         "uf": "SP",
         "stand": "B1.38",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.38",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -8954,13 +8954,13 @@
         "uf": "SP",
         "stand": "H028",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "H028",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -9015,7 +9015,7 @@
         "uf": "SP",
         "stand": "I006",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       },
       {
         "evento_id": "ev:pl-stico-brasil:2027",
@@ -9027,13 +9027,13 @@
         "uf": "SP",
         "stand": "I006",
         "encerrada": false,
-        "dias": 193
+        "dias": 192
       }
     ],
     "proxima_feira": "Plástico Brasil",
     "proxima_data": "2027-03-15",
     "proximo_stand": "I006",
-    "dias_para_proxima": 193,
+    "dias_para_proxima": 192,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T18:14:05+00:00"
   },
@@ -9051,7 +9051,9 @@
     "website_cn": "",
     "emails": [],
     "telefones": [],
-    "whatsapps": [],
+    "whatsapps": [
+      "5548992232890"
+    ],
     "wechat": "",
     "contato_nome": "",
     "funcionarios": "",
@@ -9081,7 +9083,7 @@
       "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=VIEMAQ+EQUIPAMENTOS",
       "contato_no_site": "https://www.google.com/search?q=site:viemaq.com.br+(contact+OR+contato+OR+%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC)"
     },
-    "tem_contato": false,
+    "tem_contato": true,
     "feiras": [
       {
         "evento_id": "ev:agrishow:2027",
@@ -9093,15 +9095,15 @@
         "uf": "SP",
         "stand": "G20a1",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "G20a1",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
-    "atualizado_em": "2026-08-23T06:18:37+00:00"
+    "atualizado_em": "2026-09-04T06:42:01+00:00"
   },
   {
     "id": "emp:d:walvoil.com",
@@ -9115,7 +9117,9 @@
     "produtos": [],
     "website": "https://www.walvoil.com",
     "website_cn": "",
-    "emails": [],
+    "emails": [
+      "info@walvoil.com"
+    ],
     "telefones": [],
     "whatsapps": [],
     "wechat": "",
@@ -9144,7 +9148,7 @@
       "linkedin": "https://www.linkedin.com/search/results/companies/?keywords=WALVOIL+SPA",
       "contato_no_site": "https://www.google.com/search?q=site:walvoil.com+(contact+OR+contato+OR+%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC)"
     },
-    "tem_contato": false,
+    "tem_contato": true,
     "feiras": [
       {
         "evento_id": "ev:agrishow:2027",
@@ -9156,15 +9160,15 @@
         "uf": "SP",
         "stand": "D2c1",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "D2c1",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
-    "atualizado_em": "2026-08-19T14:55:26+00:00"
+    "atualizado_em": "2026-09-04T06:42:01+00:00"
   },
   {
     "id": "emp:n:wanrun-energy",
@@ -9216,13 +9220,13 @@
         "uf": "SP",
         "stand": "R6.40",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.40",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9276,13 +9280,13 @@
         "uf": "SP",
         "stand": "R6.81",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R6.81",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9336,13 +9340,13 @@
         "uf": "SP",
         "stand": "B3.121",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B3.121",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9396,13 +9400,13 @@
         "uf": "SP",
         "stand": "B4.80",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B4.80",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9456,13 +9460,13 @@
         "uf": "SP",
         "stand": "R3.52",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R3.52",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9521,13 +9525,13 @@
         "uf": "SP",
         "stand": "G6a",
         "encerrada": false,
-        "dias": -129
+        "dias": -130
       }
     ],
     "proxima_feira": "AGRISHOW",
     "proxima_data": "2026-04-27",
     "proximo_stand": "G6a",
-    "dias_para_proxima": -129,
+    "dias_para_proxima": -130,
     "tem_feira_futura": true,
     "atualizado_em": "2026-08-19T14:55:26+00:00"
   },
@@ -9581,13 +9585,13 @@
         "uf": "SP",
         "stand": "B6.70",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B6.70",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9641,13 +9645,13 @@
         "uf": "SP",
         "stand": "R2.19",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "R2.19",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9701,13 +9705,13 @@
         "uf": "SP",
         "stand": "W4.61",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W4.61",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9761,13 +9765,13 @@
         "uf": "SP",
         "stand": "W1.30",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "W1.30",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   },
@@ -9821,13 +9825,13 @@
         "uf": "SP",
         "stand": "B1.05",
         "encerrada": true,
-        "dias": -9
+        "dias": -10
       }
     ],
     "proxima_feira": "Intersolar South America",
     "proxima_data": "2026-08-25",
     "proximo_stand": "B1.05",
-    "dias_para_proxima": -9,
+    "dias_para_proxima": -10,
     "tem_feira_futura": false,
     "atualizado_em": "2026-08-19T16:54:25+00:00"
   }
