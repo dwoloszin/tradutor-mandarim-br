@@ -115,14 +115,6 @@
     {
       "titulo": "Tradutor de Mandarim",
       "empresa": "J&T EXPRESS BRASIL",
-      "local": "1 vaga - Caxias do Sul",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37016601",
-      "fonte": "Catho",
-      "termo_busca": "tradutor mandarim"
-    },
-    {
-      "titulo": "Tradutor de Mandarim",
-      "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Passo Fundo",
       "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37016619",
       "fonte": "Catho",
@@ -133,6 +125,14 @@
       "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Santa Maria",
       "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37016638",
+      "fonte": "Catho",
+      "termo_busca": "tradutor mandarim"
+    },
+    {
+      "titulo": "Tradutor de Mandarim",
+      "empresa": "J&T EXPRESS BRASIL",
+      "local": "1 vaga - Caxias do Sul",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37016601",
       "fonte": "Catho",
       "termo_busca": "tradutor mandarim"
     },
@@ -299,8 +299,8 @@
     {
       "titulo": "Tradutor de Chinês",
       "empresa": "J&T EXPRESS BRASIL",
-      "local": "1 vaga - Piraquara",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37847007",
+      "local": "1 vaga - Araucaria",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846984",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
@@ -331,8 +331,8 @@
     {
       "titulo": "Tradutor de Chinês",
       "empresa": "J&T EXPRESS BRASIL",
-      "local": "1 vaga - Araucaria",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846984",
+      "local": "1 vaga - Piraquara",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37847007",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
@@ -354,22 +354,6 @@
     },
     {
       "titulo": "Tradutor de Chinês",
-      "empresa": "OLELON DO BRASIL",
-      "local": "2 vagas - São Paulo + 1 cidade",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688696",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "Empresa Confidencial",
-      "local": "2 vagas - São Paulo + 1 cidade",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688588",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Tradutor de Chinês",
       "empresa": "Empresa Confidencial",
       "local": "2 vagas - São Paulo + 1 cidade",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688655",
@@ -381,6 +365,22 @@
       "empresa": "Empresa Confidencial",
       "local": "2 vagas - São Paulo + 1 cidade",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688676",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "OLELON DO BRASIL",
+      "local": "2 vagas - São Paulo + 1 cidade",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688696",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "Empresa Confidencial",
+      "local": "2 vagas - São Paulo + 1 cidade",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688588",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
