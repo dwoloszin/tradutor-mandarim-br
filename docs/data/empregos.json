@@ -115,6 +115,14 @@
     {
       "titulo": "Tradutor de Mandarim",
       "empresa": "J&T EXPRESS BRASIL",
+      "local": "1 vaga - Caxias do Sul",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37016601",
+      "fonte": "Catho",
+      "termo_busca": "tradutor mandarim"
+    },
+    {
+      "titulo": "Tradutor de Mandarim",
+      "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Passo Fundo",
       "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37016619",
       "fonte": "Catho",
@@ -125,14 +133,6 @@
       "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Santa Maria",
       "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37016638",
-      "fonte": "Catho",
-      "termo_busca": "tradutor mandarim"
-    },
-    {
-      "titulo": "Tradutor de Mandarim",
-      "empresa": "J&T EXPRESS BRASIL",
-      "local": "1 vaga - Caxias do Sul",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-mandarim/37016601",
       "fonte": "Catho",
       "termo_busca": "tradutor mandarim"
     },
@@ -165,14 +165,6 @@
       "empresa": "dbrothers aulas particulares",
       "local": "São Paulo - SP, 0 Km de você.",
       "link": "https://www.infojobs.com.br/vaga-de-professor-mandarim-chines-em-sao-paulo__11910266.aspx",
-      "fonte": "InfoJobs",
-      "termo_busca": "intérprete mandarim"
-    },
-    {
-      "titulo": "Gerente De Produto Digital (Games E Social Apps)",
-      "empresa": "",
-      "local": "São Paulo - SP, 0 Km de você.",
-      "link": "https://www.infojobs.com.br/vaga-de-gerente-produto-digital-games-social-apps-em-sao-paulo__11692262.aspx",
       "fonte": "InfoJobs",
       "termo_busca": "intérprete mandarim"
     },
@@ -265,22 +257,6 @@
       "termo_busca": "tradutor chinês"
     },
     {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "Golden Internacional Trade",
-      "local": "5 vagas - Bom Jesus dos Perdões",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/38233444",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Analista Tradutor Bilingue (Chines)",
-      "empresa": "ANJUN EXPRESS",
-      "local": "1 vaga - Itaitinga",
-      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255291",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
       "titulo": "Analista Tradutor Bilingue (Chinês)",
       "empresa": "ANJUN EXPRESS",
       "local": "1 vaga - Carapicuíba",
@@ -293,6 +269,22 @@
       "empresa": "ANJUN EXPRESS",
       "local": "1 vaga - Guarulhos",
       "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255465",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Analista Tradutor Bilingue (Chines)",
+      "empresa": "ANJUN EXPRESS",
+      "local": "1 vaga - Itaitinga",
+      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255291",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "Golden Internacional Trade",
+      "local": "5 vagas - Bom Jesus dos Perdões",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/38233444",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
