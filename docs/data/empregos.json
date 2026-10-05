@@ -121,22 +121,6 @@
       "termo_busca": "intérprete mandarim"
     },
     {
-      "titulo": "tradutor chines",
-      "empresa": "TEAM",
-      "local": "1 vaga - Atibaia",
-      "link": "https://www.catho.com.br/vagas/tradutor-chines/38616686",
-      "fonte": "Catho",
-      "termo_busca": "intérprete mandarim"
-    },
-    {
-      "titulo": "intérprete de chinês",
-      "empresa": "REDROAD COMERCIO IMPORTACAO E EXPORTACAO",
-      "local": "1 vaga - São Paulo",
-      "link": "https://www.catho.com.br/vagas/interprete-de-chines/38613062",
-      "fonte": "Catho",
-      "termo_busca": "intérprete mandarim"
-    },
-    {
       "titulo": "Especialista de Mandarim",
       "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Ribeirão Preto",
@@ -177,10 +161,26 @@
       "termo_busca": "intérprete mandarim"
     },
     {
+      "titulo": "tradutor chines",
+      "empresa": "TEAM",
+      "local": "1 vaga - Atibaia",
+      "link": "https://www.catho.com.br/vagas/tradutor-chines/38616686",
+      "fonte": "Catho",
+      "termo_busca": "intérprete mandarim"
+    },
+    {
       "titulo": "Tradutor de Chinês",
       "empresa": "Storage Serv LTDA",
       "local": "1 vaga - Diadema",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37514062",
+      "fonte": "Catho",
+      "termo_busca": "intérprete mandarim"
+    },
+    {
+      "titulo": "intérprete de chinês",
+      "empresa": "REDROAD COMERCIO IMPORTACAO E EXPORTACAO",
+      "local": "1 vaga - São Paulo",
+      "link": "https://www.catho.com.br/vagas/interprete-de-chines/38613062",
       "fonte": "Catho",
       "termo_busca": "intérprete mandarim"
     },
@@ -227,6 +227,22 @@
     {
       "titulo": "Tradutor de Chinês",
       "empresa": "J&T EXPRESS BRASIL",
+      "local": "1 vaga - Piraquara",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37847007",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "J&T EXPRESS BRASIL",
+      "local": "1 vaga - Araucaria",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846984",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Pinhais",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846986",
       "fonte": "Catho",
@@ -245,22 +261,6 @@
       "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Curitiba",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846989",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "J&T EXPRESS BRASIL",
-      "local": "1 vaga - Araucaria",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846984",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "J&T EXPRESS BRASIL",
-      "local": "1 vaga - Piraquara",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37847007",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
@@ -321,6 +321,14 @@
       "termo_busca": "tradutor chinês"
     },
     {
+      "titulo": "Analista Tradutor Bilingue (Chinês)",
+      "empresa": "ANJUN EXPRESS",
+      "local": "1 vaga - Carapicuíba",
+      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255203",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
       "titulo": "Analista Tradutor Bilingue (Chines)",
       "empresa": "ANJUN EXPRESS",
       "local": "1 vaga - Guarulhos",
@@ -333,14 +341,6 @@
       "empresa": "ANJUN EXPRESS",
       "local": "1 vaga - Itaitinga",
       "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255291",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Analista Tradutor Bilingue (Chinês)",
-      "empresa": "ANJUN EXPRESS",
-      "local": "1 vaga - Carapicuíba",
-      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255203",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     }
