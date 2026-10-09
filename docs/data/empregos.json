@@ -114,6 +114,14 @@
     },
     {
       "titulo": "Professor de Mandarim",
+      "empresa": "PLUSOLUÇÃO",
+      "local": "1 vaga - São Paulo",
+      "link": "https://www.catho.com.br/vagas/professor-de-mandarim/38759198",
+      "fonte": "Catho",
+      "termo_busca": "tradutor mandarim"
+    },
+    {
+      "titulo": "Professor de Mandarim",
       "empresa": "DBROTHERS AULAS PARTICULARES",
       "local": "1 vaga - São Paulo",
       "link": "https://www.catho.com.br/vagas/professor-de-mandarim/37910606",
@@ -292,6 +300,22 @@
       "titulo": "Tradutor de Chinês",
       "empresa": "Empresa Confidencial",
       "local": "2 vagas - São Paulo + 1 cidade",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688655",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "OLELON DO BRASIL",
+      "local": "2 vagas - São Paulo + 1 cidade",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688696",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "Empresa Confidencial",
+      "local": "2 vagas - São Paulo + 1 cidade",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688588",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
@@ -308,23 +332,7 @@
       "titulo": "Tradutor de Chinês",
       "empresa": "Empresa Confidencial",
       "local": "2 vagas - São Paulo + 1 cidade",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688655",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "Empresa Confidencial",
-      "local": "2 vagas - São Paulo + 1 cidade",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688676",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "OLELON DO BRASIL",
-      "local": "2 vagas - São Paulo + 1 cidade",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688696",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
