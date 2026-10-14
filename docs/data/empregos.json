@@ -209,14 +209,6 @@
       "termo_busca": "intérprete mandarim"
     },
     {
-      "titulo": "Gerente de Marketing",
-      "empresa": "NOVA VIDA COMERCIO DE VARIEDADES LTDA",
-      "local": "1 vaga - São Paulo",
-      "link": "https://www.catho.com.br/vagas/gerente-de-marketing/37510425",
-      "fonte": "Catho",
-      "termo_busca": "intérprete mandarim"
-    },
-    {
       "titulo": "Analista Administrativo",
       "empresa": "BESSA PRESENTES",
       "local": "1 vaga - São Paulo",
@@ -233,18 +225,18 @@
       "termo_busca": "tradutor chinês"
     },
     {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "Golden Internacional Trade",
-      "local": "5 vagas - Bom Jesus dos Perdões",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/38233444",
+      "titulo": "Analista Tradutor Bilingue (Chinês)",
+      "empresa": "ANJUN EXPRESS",
+      "local": "1 vaga - Carapicuíba",
+      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/37652838",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
     {
       "titulo": "Tradutor de Chinês",
-      "empresa": "J&T EXPRESS BRASIL",
-      "local": "1 vaga - Curitiba",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846989",
+      "empresa": "Golden Internacional Trade",
+      "local": "5 vagas - Bom Jesus dos Perdões",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/38233444",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
@@ -275,8 +267,32 @@
     {
       "titulo": "Tradutor de Chinês",
       "empresa": "J&T EXPRESS BRASIL",
+      "local": "1 vaga - Curitiba",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846989",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "J&T EXPRESS BRASIL",
       "local": "1 vaga - Araucaria",
       "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37846984",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "Empresa Confidencial",
+      "local": "2 vagas - São Paulo + 1 cidade",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688588",
+      "fonte": "Catho",
+      "termo_busca": "tradutor chinês"
+    },
+    {
+      "titulo": "Tradutor de Chinês",
+      "empresa": "Empresa Confidencial",
+      "local": "2 vagas - São Paulo + 1 cidade",
+      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688627",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
@@ -305,22 +321,6 @@
       "termo_busca": "tradutor chinês"
     },
     {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "Empresa Confidencial",
-      "local": "2 vagas - São Paulo + 1 cidade",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688627",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Tradutor de Chinês",
-      "empresa": "Empresa Confidencial",
-      "local": "2 vagas - São Paulo + 1 cidade",
-      "link": "https://www.catho.com.br/vagas/tradutor-de-chines/37688588",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
       "titulo": "Representante Comercial/Tradutor Chinês",
       "empresa": "Maritel Orves Comercio de Eletronicos LTDA",
       "local": "1 vaga - São Paulo",
@@ -339,24 +339,16 @@
     {
       "titulo": "Analista Tradutor Bilingue (Chines)",
       "empresa": "ANJUN EXPRESS",
-      "local": "1 vaga - Itaitinga",
-      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255291",
-      "fonte": "Catho",
-      "termo_busca": "tradutor chinês"
-    },
-    {
-      "titulo": "Analista Tradutor Bilingue (Chines)",
-      "empresa": "ANJUN EXPRESS",
       "local": "1 vaga - Guarulhos",
       "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255465",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     },
     {
-      "titulo": "Analista Tradutor Bilingue (Chinês)",
+      "titulo": "Analista Tradutor Bilingue (Chines)",
       "empresa": "ANJUN EXPRESS",
-      "local": "1 vaga - Carapicuíba",
-      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/37652838",
+      "local": "1 vaga - Itaitinga",
+      "link": "https://www.catho.com.br/vagas/analista-tradutor-bilingue-chines/38255291",
       "fonte": "Catho",
       "termo_busca": "tradutor chinês"
     }
